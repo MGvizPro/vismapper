@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="100"
+   viewBox="0 0 99.999997 99.999997"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="logo.svg">
+  <title
+     id="title4179">ISMapper</title>
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.49"
+     inkscape:cx="22.647502"
+     inkscape:cy="46.071835"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1151"
+     inkscape:window-height="692"
+     inkscape:window-x="43"
+     inkscape:window-y="49"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>ISMapper</dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Jose Miguel Juanes &lt;josemijuanes@gmail.com&gt;</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-952.36223)">
+    <path
+       id="path4156"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#2979ff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:5.18041229;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 14.882812,971.82812 c -5.3588242,-0.24111 -9.0448702,6.58927 -5.7964201,10.90029 2.7748481,4.58865 10.3899051,3.82899 12.2420111,-1.18851 2.044504,-4.40609 -1.616021,-9.84681 -6.445591,-9.71178 z m 0.90625,43.90428 c -6.5259213,-0.2762 -11.3068377,7.6627 -7.9074645,13.2761 2.8451975,5.8518 11.9707725,6.3038 15.3621805,0.7422 4.124936,-5.6964 -0.455072,-14.2033 -7.454716,-14.0183 z m 48.273438,13.836 c -5.363329,-0.2448 -9.04325,6.59 -5.797707,10.9024 2.774741,4.5858 10.393017,3.8289 12.243984,-1.1886 2.030267,-4.432 -1.591128,-9.831 -6.446277,-9.7138 z m 22.222656,-27.6856 c -5.35688,-0.2395 -9.045568,6.5889 -5.795867,10.8994 2.774893,4.5898 10.388567,3.829 12.241163,-1.1885 2.033311,-4.4289 -1.598246,-9.8241 -6.445296,-9.7109 z M 74.806641,960.17773 c -6.527578,-0.27754 -11.30641,7.66295 -7.907821,13.27689 2.845069,5.85143 11.97157,6.30295 15.363002,0.74216 4.123599,-5.69699 -0.453551,-14.20538 -7.455181,-14.01905 z m -30.050782,-1.64648 c -5.358886,-0.24116 -9.044848,6.58928 -5.796439,10.90031 2.774846,4.58862 10.38995,3.829 12.24204,-1.18851 2.032365,-4.42982 -1.596031,-9.82621 -6.445601,-9.7118 z m -29.144531,18.3125 c -3.015142,-0.14867 -4.111861,4.39233 -1.386923,5.66615 11.116605,7.28316 22.233209,14.56633 33.349814,21.8495 4.577508,11.1418 9.011076,22.3529 13.678503,33.4514 1.559139,2.6707 6.091376,0.9356 5.468367,-2.0935 -3.828978,-9.9477 -8.019055,-19.7802 -11.986922,-29.6836 -1.227642,-2.3486 -1.437098,-5.6022 -4.104234,-6.84492 -11.291569,-7.35679 -22.514299,-14.83314 -33.848811,-22.11534 -0.36936,-0.15375 -0.769721,-0.23236 -1.169794,-0.22969 z m 58.427734,-10.37891 c -3.319205,10e-4 -4.478036,3.6402 -6.404333,5.72011 -6.797514,9.06335 -13.595027,18.1267 -20.392541,27.19005 -11.257474,7.2076 -22.640591,14.2422 -33.819764,21.5577 -2.815301,2.4139 -0.382041,7.5206 3.266194,6.8547 3.326648,-1.0525 5.980997,-3.6401 9.044219,-5.2854 8.996685,-5.7737 18.119687,-11.3735 27.037777,-17.2553 8.259002,-10.8255 16.37648,-21.77197 24.549414,-32.66684 1.663257,-2.51372 -0.263797,-6.11012 -3.280966,-6.11502 z M 45.042969,965.2832 c -2.017218,-0.12148 -2.766775,2.19744 -2.140433,3.80199 1.674493,11.34236 3.231594,22.70931 4.979479,34.03631 0.988498,2.1552 3.848229,1.5569 5.744273,2.2284 10.709861,2.026 21.40459,4.1701 32.123913,6.1222 2.440404,0.1164 3.062888,-3.7155 0.711128,-4.3776 -11.477925,-2.2574 -22.978577,-4.4189 -34.465235,-6.6394 -1.651653,-11.21485 -3.202082,-22.45038 -4.9168,-33.65235 -0.284399,-0.86332 -1.127583,-1.49263 -2.036325,-1.51955 z m 4.072265,12.11719 c -7.73141,0.27379 -15.333511,3.93517 -19.738281,10.85156 -9.700982,13.22075 -2.580369,33.64735 13.230469,37.98045 15.513043,5.3615 32.979808,-7.5017 32.386719,-23.9336 -0.0023,-5.57355 -1.91426,-11.06031 -5.378907,-15.42771 -4.880232,-6.62216 -12.748836,-9.74519 -20.5,-9.4707 z" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:6.19999981;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.82499999"
+       d="m 67,1002.3622 c 0.03357,-9.41075 -6.982455,-16.9747 -17,-16.99997"
+       id="path4226"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>

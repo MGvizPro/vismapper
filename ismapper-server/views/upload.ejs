@@ -1,0 +1,74 @@
+<% include layouts/head %>
+
+<!-- Main div -->
+<div class="grid">
+
+	<!-- Section title -->
+	<div class="page-nav">Upload</div>
+
+	<% if(error !== '') { %>
+		<div class="alert alert-red"><%= error %></div><br>
+	<% } %>
+
+	<!-- Description -->
+	Here you can create a new project by uploading your data files. Please note that <b>every project is
+	available up to 60 days</b>. After this time, the data in our server will be removed, and you must
+	upload again your data if you want to continue using the tool.<br><br>
+
+	<!-- Form -->
+	<form action="/upload" method="post" enctype="multipart/form-data">
+
+		<!-- Project title -->
+		<h2>Title</h2>
+
+		<!-- Description -->
+		You can set a title for your project. Use it for provide a short description of your experiment.<br>
+
+		<!-- Input for email -->
+		<input type="text" id="utitle" name="utitle" class="form-input form-input-500" placeholder="Yout project title">
+
+		<!-- Spaces -->
+		<br><br>
+
+		<!-- Attach files -->
+		<h2>Attach files</h2>
+
+		<!-- Description -->
+		Press the next button for attach your <b>fasta</b> containing the reads of your experiment.
+		Additionally, if your file is too big, you can compress in a <b>zip</b> and select it.<br>
+
+		<!-- Attach button -->
+		<div class="btn btn-green" onclick="document.getElementById('ufile').click();">Select file (fasta, fastq or zip)</div>
+		<input type="file" id="ufile" name="ufile" class="input" accept=".fasta,.fas,.fa,.fastq,.fq,.zip" style="display:none;">
+
+		<!-- Spaces -->
+		<br><br>
+
+		<!-- Set email -->
+		<h2>Your email (optional)</h2>
+
+		<!--Description -->
+		You can provide us an email and we will notify you when the process is completed.
+		Also, we will provide you a link where you can visualize your data.<br>
+
+		<!-- Input for email -->
+		<input type="text" id="uemail" name="uemail" class="form-input form-input-500" placeholder="you@domain.com">
+
+		<!-- Spaces -->
+		<br><br>
+
+		<!-- Run -->
+		<h2>Run your experiment</h2>
+
+		<!-- Run description -->
+		Are you ready? Press the next button for upload your data to the server and start the analysis:<br>
+
+		<!-- Run button -->
+		<div class="btn btn-blue" onclick="document.getElementById('ufile_send').click();">Upload and run</div>
+		<input type="submit" value="Upload" id="ufile_send" style="display:none;">
+
+	</form>
+</div>
+
+
+<% include layouts/foot %>

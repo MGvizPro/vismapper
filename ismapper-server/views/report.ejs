@@ -1,0 +1,88 @@
+<% include layouts/head %>
+
+<!-- Styles for jTables -->
+<!-- <link rel="stylesheet" type="text/css" href="<%= site.vendor %>jtables/css/font.css"> -->
+<link rel="stylesheet" type="text/css" href="<%= site.vendor %>jtables/css/style.css">
+
+<!-- JavaScript vendor for jTables -->
+<script type="text/javascript" src="<%= site.vendor %>jtables/vendor/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="<%= site.vendor %>jtables/vendor/objectsort/objectsort.js"></script>
+
+<!-- Javascript jTables -->
+<script type="text/javascript" src="<%= site.vendor %>jtables/js/jtables.min.js"></script>
+
+<!-- Run scripts -->
+<script type="text/javascript" src="/js/report.js"></script>
+
+<!-- Project -->
+<script type="text/javascript">var project = "<%= projectId %>"; </script>
+
+<!-- Main div -->
+<div class="grid">
+
+  <!-- Section title -->
+  <div class="page-nav">Report</div>
+
+  <!-- Description -->
+  <p>This is the report for the project <a href="/project/<%= projectId %>"><%= projectTitle %></a>.
+  For each <b>insertion site (IS)</b>, you will get the next information:</p>
+
+  <!-- Report content -->
+  <ul>
+    <li><b>Chr</b>: chromosome where the IS is located.</li>
+    <li><b>Position</b>: chromosomal coordinates for the IS.</li>
+    <li><b>Number of reads</b>: number of reads mapped on the same IS.</li>
+    <li><b>Mean MapQ</b>: mean of the map quality for all the reads that have been mapped on the IS.</li>
+    <li><b>Closest Cancer Gene</b>: gene symbol for the closest gene of the IS.</li>
+    <li><b>Distance</b>: distance (in nucleotides) from the closest gene to the IS.</li>
+    <li><b>Position</b>: relative position of the IS from the gene.</li>
+    <li><b>Entrez</b>: link for getting more info about the gene.</li>
+  </ul>
+
+  <!-- Download report -->
+  <p>You can filter the table by minium number of reads per each IS, and by distante to the closest Cancer
+  Gene. Additionally, you can download a tabulated file (TSV) with the full report by clicking on the
+  next button:<br>
+
+  <!-- Button for download report -->
+  <a href="/report/<%= projectId %>/download" class="btn-outline btn-small">Download report</a>
+
+  </p>
+
+  <!-- Filters -->
+  <div class="row filters-box">
+
+    <!-- Filter for min reads -->
+    <div class="col-5 filters">
+      <b>Filter by number of reads</b><br>
+      Show only the positions that have a minimum number of reads:<br>
+      <input id="filter-reads-input" class="form-input" style="width:auto;"><br>
+      <div class="btn-outline btn-small" id="filter-reads-send">Filter</div>
+      <div class="btn-outline btn-small btn-outline-red" id="filter-reads-reset">Reset filter</div>
+    </div>
+
+    <!-- Filter by distance to cancer gene -->
+    <div class="col-5 filters">
+      <b>Filter by distance to Cancer Gene</b><br>
+      Set the distance from the position to the closest cancer gene:<br>
+      <select id="filter-distance-select" class="form-select">
+        <option value="gt">Greater than</option>
+        <option value="lt">Lower than</option>
+      </select>
+      <input id="filter-distance-input" class="form-input" style="width:auto;"><br>
+      <div class="btn-outline btn-small" id="filter-distance-send">Filter</div>
+      <div class="btn-outline btn-small btn-outline-red" id="filter-distance-reset">Reset filter</div>
+    </div>
+
+  </div>
+
+  <!-- Spaces -->
+  <br><br>
+
+  <!-- Div for the table with the report -->
+  <div id="report_table"></div>
+
+</div>
+
+
+<% include layouts/foot %>

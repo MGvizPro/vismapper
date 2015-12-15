@@ -1,0 +1,28 @@
+{
+  "name": "ismapper",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": { "start": "node ismapper-server.js" },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "ejs": "~2.3.3",
+    "express": "~4.13.1",
+    "express-session": "*",
+    "morgan": "~1.6.1",
+    "serve-favicon": "~2.3.0",
+    "multer": "1.1.0",
+    "adm-zip": "0.4.7",
+    "mkdirp": "0.5.1",
+    "fasta2json": "*",
+    "dosql": "0.2.1",
+    "objectsort": "0.1.2",
+    "fasta-tools": "0.1.0"
+  },
+  "devDependencies": {
+    "should": "~7.1.0",
+    "mocha": "~2.3.3",
+    "supertest": "~1.1.0"
+  }
+}

@@ -1,0 +1,102 @@
+/* Input def */
+.form-input-500 { width: 500px; }
+
+/* Navbar */
+.navbar { display: block; width: 100%; height: 70px; background-color: #2979FF; line-height: 70px; }
+
+/* Navbar logo */
+.navbar-logo { display: inline-block; height: 60px; line-height: 60px; float: left; }
+.navbar-logo { margin-top: 5px; margin-left: 10px; margin-right: 10px; border-radius: 5px; }
+.navbar-logo { text-decoration: none; color: #ffffff; font-weight: 300; padding-left: 70px; }
+.navbar-logo { font-size: 30px; background-repeat: no-repeat; background-size: 50px 50px; }
+.navbar-logo { background-position: 10px center; background-image: url('../img/logo_white.svg'); }
+.navbar-logo { padding-right: 15px; transition: background-color 0.5s; }
+.navbar-logo:hover { background-color: #2962FF; text-decoration: none; }
+
+/* Navbar menu item */
+.navbar-item { display: inline-block; height: 40px; line-height: 40px; float: right; }
+.navbar-item { margin-top: 15px; margin-right: 10px; margin-left: 10px; border-radius: 5px; }
+.navbar-item { text-decoration: none; padding-left: 10px; padding-right: 10px; }
+.navbar-item { color: #ffffff; font-size: 16px; font-weight: 300; text-align: center; }
+.navbar-item { transition: background-color 0.5s; }
+.navbar-item:hover { background-color: #2962FF; text-decoration: none; }
+
+
+/* Site welcome */
+.welcome { display: block; padding-top: 50px; padding-bottom: 120px; background-color: #2979FF; }
+.welcome { color: #ffffff; }
+
+/* Site welcome logo */
+.welcome-logo { display: block; width: 180px; height: 180px; margin-left: auto; margin-right: auto; }
+.welcome-logo { background-position: center center; background-size: 180px 180px; }
+.welcome-logo { background-repeat: no-repeat; background-image: url('../img/logo_white.svg'); }
+
+/* Site welcome title */
+.welcome-title { font-size: 55px; margin-bottom: 10px; }
+
+/* Site welcome description */
+.welcome-description { font-size: 20px; margin-bottom: 15px; }
+
+/* Site welcome button */
+.welcome-btn:hover { color: #2979FF; }
+
+
+/* Page nav */
+.page-nav { display: block; width: 100%; height: 70px; line-height: 70px; }
+.page-nav { font-size: 30px; font-weight: 300; color: #536273; }
+.page-nav { border-bottom: 1px solid #d1e1e8; margin-bottom: 20px; }
+.page-nav { margin-left: auto; margin-right: auto; margin-top: 20px; }
+
+/* Page nav button */
+.page-nav > a { display: inline-block; float: right; text-align: center; }
+.page-nav > a { color: #09a0f6; border-radius: 5px; border: 2px solid #09a0f6; }
+.page-nav > a { padding-left: 15px; padding-right: 15px; height: 30px; line-height: 30px; }
+.page-nav > a { margin-top: 20px; margin-left: 10px; text-decoration: none; font-size: 14px; }
+.page-nav > a { transition: background-color 0.3s, color 0.3s; }
+.page-nav > a:hover { background-color: #09a0f6; color: #ffffff; }
+
+
+/* Dashboard */
+.dashboard { display: block; width: calc(100% - 50px); }
+.dashboard { padding-top: 0px; padding-bottom: 20px; padding-left: 25px; padding-right: 25px; }
+
+/* Dashoard left panel */
+.dashboard .dashboard-left { display: inline-block; width: 240px; vertical-align: top; padding-right: 10px; }
+
+/* Dashboard right panel */
+.dashboard .dashboard-right { display: inline-block; width: calc(100% - 255px); vertical-align: top; }
+
+/* Dashboard right karyojs viewer */
+.dashboard .dashboard-right-karyo { margin-top: 10px; }
+
+/* Dashboard right table viewer */
+.dashboard .dashboard-right-table { margin-top: 10px; }
+
+/* Dashboard right genome maps viewer */
+.dashboard .dashboard-right-gmaps { display: block; border-radius: 5px; border: 1px solid #ccdde4; }
+.dashboard .dashboard-right-gmaps { overflow: hidden; margin-top: 20px; }
+
+
+/* Filters */
+.filters { font-size: 14px; }
+
+/* Filters line */
+.filters hr { background-color: #ccdde4; height: 1px; border: 0px; margin-bottom: 15px; }
+
+/* Filters bold text */
+.filters b { font-size: 15px; }
+
+/* Filters input */
+.filters > .form-input, .filters > .form-select { padding-top: 5px; padding-bottom: 5px; height: 32px; }
+.filters > .form-input, .filters > .form-select  { font-size: 14px; margin-bottom: 0px; }
+
+/* Filters button */
+.filters > .btn-outline { margin-left: 0px; margin-top: 10px; }
+
+/* Filters box */
+.filters-box { border-radius: 5px; border: 1px solid #d1e1e8; }
+
+
+/* Foot */
+.foot { display: block; width: 100%; text-align: center; color: #ffffff; background-color: #2962FF; }
+.foot { padding-top: 50px; padding-bottom: 50px; font-size: 14px; margin-top: 50px; }

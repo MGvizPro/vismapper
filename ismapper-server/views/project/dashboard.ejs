@@ -1,0 +1,166 @@
+<% include ../layouts/head %>
+
+<!-- Styles for Karyo.js -->
+<link rel="stylesheet" type="text/css" href="<%= site.vendor %>karyojs/css/font.css">
+<link rel="stylesheet" type="text/css" href="<%= site.vendor %>karyojs/css/style.css">
+
+<!-- JavaScript vendor -->
+<script type="text/javascript" src="<%= site.vendor %>karyojs/vendor/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="<%= site.vendor %>karyojs/vendor/svgjs/svg.min.js"></script>
+
+<!-- Javascript Karyo.js -->
+<script type="text/javascript" src="<%= site.vendor %>karyojs/js/karyo.js"></script>
+
+
+<!-- Styles for GenomeMaps -->
+<link rel="stylesheet" href="<%= site.vendor %>gmaps/vendor/fontawesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="<%= site.vendor %>gmaps/vendor/qtip2/jquery.qtip.min.css">
+<link rel="stylesheet" href="<%= site.vendor %>gmaps/styles/css/style.css">
+
+<!-- Scripts for Genome Maps-->
+<script type="text/javascript" src="<%= site.vendor %>gmaps/vendor/underscore/underscore-min.js"></script>
+<script type="text/javascript" src="<%= site.vendor %>gmaps/vendor/backbone/backbone.js"></script>
+<script type="text/javascript" src="<%= site.vendor %>gmaps/vendor/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="<%= site.vendor %>gmaps/vendor/qtip2/jquery.qtip.min.js"></script>
+<script type="text/javascript" src="<%= site.vendor %>gmaps/vendor/uri.js/src/URI.min.js"></script>
+<script type="text/javascript" src="<%= site.vendor %>gmaps/gv-config.js"></script>
+<script type="text/javascript" src="<%= site.vendor %>gmaps/genome-viewer.js"></script>
+
+
+<!-- Styles for jTables -->
+<!-- <link rel="stylesheet" type="text/css" href="<%= site.vendor %>jtables/css/font.css"> -->
+<link rel="stylesheet" type="text/css" href="<%= site.vendor %>jtables/css/style.css">
+
+<!-- JavaScript vendor for jTables -->
+<!-- <script type="text/javascript" src="<%= site.vendor %>jtables/vendor/jquery/jquery.min.js"></script> -->
+<script type="text/javascript" src="<%= site.vendor %>jtables/vendor/objectsort/objectsort.js"></script>
+
+<!-- Javascript jTables -->
+<script type="text/javascript" src="<%= site.vendor %>jtables/js/jtables.min.js"></script>
+
+<!-- JavaScript GetQuery -->
+<script type="text/javascript" src="<%= site.vendor %>getquery/getquery.js"></script>
+
+
+<!-- Project -->
+<script type="text/javascript">var projectId = "<%= projectId %>"; </script>
+
+<!-- Dashboard scripts -->
+<script type="text/javascript" src="/js/dashboard.js"></script>
+<script type="text/javascript" src="/js/karyo.js"></script>
+<script type="text/javascript" src="/js/gmaps.js"></script>
+
+<!-- Dashboard panel -->
+<div class="dashboard">
+
+  <!-- Project title -->
+  <div class="page-nav"><%= projectTitle %></div>
+
+  <!-- Project description -->
+  <div style="display:block;">
+
+    <!-- Description -->
+    <p>This is the dashboard for the project <b><%= projectTitle %></b>. Here you can visualize your data
+    or generate a report with all the detected positions.</p>
+    <p>Remember that you must save the url to this page, because you need it to access again and
+    visualize your uploaded data. You can save this page to <i>Favorites</i> (if you are using Google
+    Chrome, just click on the start placed at the top right corner of your browser), or copy and save
+    the next link:</p>
+
+    <!-- Link -->
+  	<pre><%= site.url %>project/<%= projectId %></pre>
+
+  </div>
+
+  <!-- Dashboard left -->
+  <div class="dashboard-left">
+
+    <!-- Filter -->
+		<div class="panel">
+
+			<!-- Pannel head -->
+			<div class="panel-head">Options</div>
+
+			<!-- Pannel body -->
+			<div class="panel-body filters">
+
+        <!-- Filter by number of reads -->
+        <b>Filter by number of reads</b><br>
+        Show only the positions that have the minimum number of reads:
+
+        <!-- Input -->
+        <input id="input-reads" type="text" class="form-input" value="5"><br>
+
+        <!-- Update button -->
+        <div class="btn-outline btn-small" id="filter-reads">Filter</div>
+
+        <!-- Line -->
+        <hr>
+
+        <!-- Find gene -->
+        <b>Find Cancer Genes</b><br>
+        Find for genes implicated in cancer.
+
+        <!-- Input -->
+        <input id="input-genes" type="text" class="form-input" placeholder="Gene"><br>
+
+        <!-- Find button -->
+        <div class="btn-outline btn-small" id="find-genes">Find</div>
+
+        <!-- View the full list -->
+        <div class="btn-outline btn-small btn-outline-green" id="full-genes">Full list</div>
+
+        <!-- Line -->
+        <hr>
+
+        <!-- Find Tumour -->
+        <b>Find genes by Tumour Type</b><br>
+        Gives you a list with all genes involved in a seleted tumour type (somatic and germline):
+
+        <!-- Input -->
+        <input id="input-tumours" type="text" class="form-input" placeholder="Tumour"><br>
+
+        <!-- Find button -->
+        <div class="btn-outline btn-small" id="find-tumours">Find</div>
+
+        <!-- View the full list -->
+        <div class="btn-outline btn-small btn-outline-green" id="full-tumours">Full list</div>
+
+        <!-- Line -->
+        <hr>
+
+        <!-- Generate a report -->
+        <b>Report</b><br>
+        Generate a report with all the positions.<br>
+
+        <!-- Link -->
+        <a href="/report/<%= projectId %>" class="btn-outline btn-small" target="_blank">Generate</a>
+
+      </div>
+
+		</div>
+
+  </div>
+
+  <!-- Dashboard right -->
+  <div class="dashboard-right">
+
+    <!-- Div for alerts -->
+    <div id="alert_div"></div>
+
+    <!-- Div for tables -->
+    <div id="table_div"></div>
+
+    <!-- Karyo div -->
+		<div id="karyo_div" class="dashboard-right-karyo"></div>
+
+    <!-- Genome Maps div -->
+    <div id="application" class="dashboard-right-gmaps"></div>
+
+  </div>
+
+<!-- Close dashboard div -->
+</div>
+
+
+<% include ../layouts/foot %>
