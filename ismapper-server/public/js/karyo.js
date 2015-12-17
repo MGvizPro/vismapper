@@ -16,6 +16,7 @@ $(document).ready(function(){
   //Labels
   k.UseLabel({
     chromosome: function(chr){
+      
       //Get the regions for this chromosome
       var regs = k.GetRegionsByChr(chr);
 
@@ -24,6 +25,7 @@ $(document).ready(function(){
 
       //Return default
       return '0 positions';
+
     },
     region: function(chr, reg){
 
@@ -32,6 +34,7 @@ $(document).ready(function(){
 
       //Return the label
       return '' + regs[reg].label + ' reads';
+
     }
   });
 
@@ -46,6 +49,7 @@ $(document).ready(function(){
 
     //Clean the reads track
     genomeViewer.trackListPanel.tracks[2].clean();
+
   });
 
 });
