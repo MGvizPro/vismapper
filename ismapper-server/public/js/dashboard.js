@@ -20,8 +20,8 @@ Params.db.tumour = '/ws/cancer/tumours/'; //Find tumours by name
 
 //Full list
 Params.full = {};
-Params.full.genes = '/ws/oncogenes/full/genes'; //Full cancer genes list
-Params.full.tumours = '/ws/oncogenes/full/tumours'; //Full tumours list
+Params.full.genes = '/ws/cancer/full/genes'; //Full cancer genes list
+Params.full.tumours = '/ws/cancer/full/tumours'; //Full tumours list
 
 //Default values
 Params.default = {};
@@ -313,7 +313,7 @@ function FindTumours(tumour)
   TableClear();
 
   //Make the request and get the full list
-  var _req = $.ajax({url: Params.db.genes.tumour + tumour, dataType: 'json'});
+  var _req = $.ajax({url: Params.db.tumour + tumour, dataType: 'json'});
 
   //Done function
   _req.done(function(data){
@@ -347,7 +347,7 @@ function FindTerm(tumour)
   TableClear();
 
   //Make the request
-  var _req = $.ajax({url: Params.db.tumour + tumour, dataType: 'json'});
+  var _req = $.ajax({url: Params.db.genes.tumour + tumour, dataType: 'json'});
 
   //Done function
   _req.done(function(data){
