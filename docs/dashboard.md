@@ -25,11 +25,11 @@ Also, the chromosome explorer tool allows you to select a bigger region by click
 
 ### 2- Regions explorer (Genome Maps)
 
-With this tool, you can visualize chromosomal regions with more detail. This tool consists on two tracks: the **Cancer genes** explorer and the **reads** explorer:
+With this tool, you can visualize chromosomal regions with more detail. This tool consists of two tracks: the **Cancer genes** explorer and the **reads** explorer:
 
 > Image with the Genome Maps
 
-- **Cancer genes track**: this track allows you to visualize the cancer genes on the region, if any. You can move the mouse over a cancer gene (represented with a green rectangle) and a orange box will be shown with information about this gene:
+- **Cancer genes track**: this track allows you to visualize the cancer genes in the region, if any. You can move the mouse over a cancer gene (represented by a green rectangle) and an orange box will be shown with information about this gene:
   * **Gene**: gene symbol.
   * **Name**: gene name.
   * **Start-End**: start and end positions of the gene.
@@ -37,8 +37,14 @@ With this tool, you can visualize chromosomal regions with more detail. This too
   * **Synonyms**: Gene synonyms (like EnsmblID, ect..).
   * **Tumour types (somatic or germline)**.
 
-- **Reads**: this track shows you the reads that have been mapped to the a IS. Like the cancer genes, you can place the mouse over a read (showed with a red rectangle), and you will get the next information:
+- **Reads track**: this track shows you the reads that have been mapped to the a IS. Like the cancer genes, you can place the mouse over a read (showed with a red rectangle), and you will get the next information:
   * **ID**: read ID, extracted from your FASTA/FASTQ file.
   * **Start-End**: start and end positions where the read has been mapped.
   * **CIGAR**: Cigar code of the read.
   * **MapQ**: quality of the mapping.
+
+### 3- Options panel
+
+Use the options panel for filter the IS and find cancer genes and tumours. The options panel consists of three tools:
+
+> Image with the Options panel
