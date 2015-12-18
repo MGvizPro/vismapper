@@ -9,6 +9,8 @@ few seconds. Distinct context-specific information on the mapping sites, know
 cancer genes in the neighbourhood, etc. is provided both in graphical and tabular
 modes.
 
+The web application is freely accessible at http://ismapper.babelomics.org/
+
 
 ### Documentation
 
