@@ -12,7 +12,7 @@ modes.
 
 ### Documentation
 
-Visit the [wiki](./wiki) for a usage guide and tutorials.
+Visit the [wiki](https://github.com/biowt/ismapper/wiki) for a usage guide and tutorials.
 
 
 ### Authors
