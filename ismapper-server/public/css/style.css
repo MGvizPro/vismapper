@@ -23,7 +23,7 @@
 
 
 /* Site welcome */
-.welcome { display: block; padding-top: 50px; padding-bottom: 120px; background-color: #2979FF; }
+.welcome { display: block; padding-top: 50px; padding-bottom: 80px; background-color: #2979FF; }
 .welcome { color: #ffffff; }
 
 /* Site welcome logo */
@@ -39,6 +39,10 @@
 
 /* Site welcome button */
 .welcome-btn:hover { color: #2979FF; }
+
+
+/* Description */
+.description { padding-top: 30px; padding-bottom: 30px; }
 
 
 /* Page nav */
