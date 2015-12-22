@@ -5,7 +5,7 @@ var fs = require('fs');
 var Config = require('../ismapper-config.json');
 
 //Sh name
-var sh = 'run2.sh';
+var sh = 'run.sh';
 
 //Line end
 var endl = '\n';
@@ -75,14 +75,15 @@ c = c + '$FOLDER_BIN/sam2sql $PROJECT $FOLDER_FILES' + endl;
 c = c + endl;
 
 // Inserts SQL file into database
-c = c + 'mysql --user=' + Config.db.user + ' --password=' + Config.db.pass + ' < $FOLDER_FILES/query.sql' + endl;
+c = c + 'mysql --host=' + Config.db.host + ' --user=' + Config.db.user + ' --password=' + Config.db.pass + ' < $FOLDER_FILES/query.sql' + endl;
 c = c + endl;
 
 //Send confirmation email
 //Coming soon
 
 // Delete files
-//Coming soon
+//c = c + 'rm -rf $FOLDER_FILES' + endl;
+//c = c + endl;
 
 //Save the new sh file
 fs.writeFileSync(sh, c, 'utf8');
