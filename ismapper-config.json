@@ -1,0 +1,23 @@
+{
+  "name": "ISMapper",
+  "server":
+  {
+    "port": 3000,
+    "host": "http://ismapper.babelomics.org/",
+    "uploads": "/path/to/uploads/folder"
+  },
+  "database":
+  {
+    "host": "ismapper-db-host",
+    "user": "ismapper-db-user",
+    "pass": "ismapper-db-pass",
+    "db": "ismapper-db-database"
+  },
+  "bin":
+  {
+    "path": "/path/to/bin/folder",
+    "bwa": "/complete/path/to/bwa",
+    "samtools": "/complete/path/to/samtools",
+    "reference": "/complete/path/to/hsapiens.fa"
+  }
+}
