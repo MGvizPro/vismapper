@@ -14,6 +14,9 @@ function FindLocation(loc)
 	return [chr[0], region[0], region[1]];
 }
 
+//Import configuration
+var Config = require('../../ismapper-config.json');
+
 //Import the values
 var file = require('./full-genes.json');
 
@@ -27,6 +30,8 @@ var rows = ['gene','name','entrez','location','chrband','somatic',
 var insert = '';
 
 //Initialize the query
+console.log('USE ' + Config.db.db + ';');
+console.log('');
 console.log('CREATE TABLE cancerGenes');
 console.log('(');
 

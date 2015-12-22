@@ -38,6 +38,9 @@ function CapitalizeStr(string)
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+//Import configuration
+var Config = require('../../ismapper-config.json');
+
 //Import the values
 var file = require('./full-genes.json');
 var abbr = require('./abbreviations.json');
@@ -101,6 +104,8 @@ function CheckDiseaseList(type)
 }
 
 //Initialize the query
+console.log('USE ' + Config.db.db + ';');
+console.log('');
 console.log('CREATE TABLE cancerTumours');
 console.log('(');
 
