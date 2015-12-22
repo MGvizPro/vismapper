@@ -8,6 +8,9 @@ var FastaTools = require('fasta-tools');
 //Import config
 var Config = require('../../ismapper-config.json');
 
+//Application variables
+var AppVars = require('../app.json');
+
 //Import libs
 var ExtractFile = require('./extract-file');
 var GenID = require('./utils/gen-id');
@@ -44,7 +47,7 @@ function CreateProject(req, res, next)
 		//Check if is fastq
 		if(isFQ === true)
 		{
-			//Set isfastaq as YES
+			//Set isfastq as YES
 			var isfastq = 'YES';
 
 			//Output file name
@@ -55,7 +58,7 @@ function CreateProject(req, res, next)
 		}
 		else
 		{
-			//Set isfastaq as NO
+			//Set isfastq as NO
 			var isfastq = 'NO';
 
 			//Output file name
@@ -78,19 +81,29 @@ function CreateProject(req, res, next)
 				//Create project to database
 				db.Do({in: 'project', do: 'insert', values: obj}, function(results){
 
-					//Generate the Script
-					var script = Config.bin.path + 'run.sh ' + id + ' ' + Config.server.uploads + ' ';
+					//Create the command
+					var command = AppVars.command;
 
-					//Add the is fastq or fasta
-					script = script + isfastq + ' ';
+					//Replace the script location
+					command = command.replace(/{bin}/g, Config.bin.path);
 
-					//Add the end of the script
-					script = script + '> ' + Config.server.uploads + id + '/out.log &';
+					//Replace the uploads folder
+					command = command.replace(/{uploads}/g, Config.server.uploads);
 
-					console.log(script);
+					//Replace the project ID
+					command = command.replace(/{project}/g, id);
 
-					//Execute the script
-					exec(script);
+					//Replace if is fastQ
+					command = command.replace(/{isfastq}/g, isfastq);
+
+					//Replace the user email
+					command = command.replace(/{email}/g, email);
+
+					//Show in console the command
+					console.log(command);
+
+					//Execute the command
+					exec(command);
 
 					//Redirect
 					res.redirect('/project/' + id);
