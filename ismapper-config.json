@@ -18,6 +18,6 @@
     "path": "/path/to/bin/folder",
     "bwa": "/complete/path/to/bwa",
     "samtools": "/complete/path/to/samtools",
-    "reference": "/complete/path/to/hsapiens.fa"
-  }
+  },
+  "reference": "/complete/path/to/hsapiens.fa"
 }
