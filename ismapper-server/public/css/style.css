@@ -52,8 +52,8 @@
 .page-nav { margin-left: auto; margin-right: auto; margin-top: 20px; }
 
 /* Page nav button */
-.page-nav > a { display: inline-block; float: right; text-align: center; }
-.page-nav > a { color: #09a0f6; border-radius: 5px; border: 2px solid #09a0f6; }
+.page-nav > a { display: inline-block; float: right; text-align: center; font-weight: 300; }
+.page-nav > a { color: #09a0f6; border-radius: 5px; border: 1px solid #09a0f6; }
 .page-nav > a { padding-left: 15px; padding-right: 15px; height: 30px; line-height: 30px; }
 .page-nav > a { margin-top: 20px; margin-left: 10px; text-decoration: none; font-size: 14px; }
 .page-nav > a { transition: background-color 0.3s, color 0.3s; }
