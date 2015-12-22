@@ -39,7 +39,7 @@ function CreateProject(req, res, next)
 		}
 
 		//Make the new dir
-		mkdirp.sync(Config.paths.uploads + id);
+		mkdirp.sync(Config.server.uploads + id);
 
 		//Check if is fastq
 		if(isFQ === true)
@@ -66,10 +66,10 @@ function CreateProject(req, res, next)
 		}
 
 		//Rename the file using the new ID
-		fs.rename(file_path, Config.paths.uploads + id + output, function(err){
+		fs.rename(file_path, Config.server.uploads + id + output, function(err){
 
 			//Validate the fasta/fastq file
-			if(FastaTools.ValidateSync(Config.paths.uploads + id + output, fastaf) === true)
+			if(FastaTools.ValidateSync(Config.server.uploads + id + output, fastaf) === true)
 			{
 
 				//Create the new object for insert
@@ -79,13 +79,13 @@ function CreateProject(req, res, next)
 				db.Do({in: 'project', do: 'insert', values: obj}, function(results){
 
 					//Generate the Script
-					var script = Config.paths.run + ' ' + id + ' ' + Config.paths.uploads + ' ';
+					var script = Config.bin.path + 'run.sh ' + id + ' ' + Config.server.uploads + ' ';
 
 					//Add the is fastq or fasta
 					script = script + isfastq + ' ';
 
 					//Add the end of the script
-					script = script + '> ' + Config.paths.uploads + id + '/out.log &';
+					script = script + '> ' + Config.server.uploads + id + '/out.log &';
 
 					console.log(script);
 
@@ -100,10 +100,10 @@ function CreateProject(req, res, next)
 			else
 			{
 				//Delete the input file
-				fs.unlinkSync(Config.paths.uploads + id + output);
+				fs.unlinkSync(Config.server.uploads + id + output);
 
 				//Delete the folder
-				fs.rmdirSync(Config.paths.uploads + id);
+				fs.rmdirSync(Config.server.uploads + id);
 
 				//Render the error page
 				res.render('upload', { title: 'Upload', error: 'Error: corrupted fasta/fastq file.' });
