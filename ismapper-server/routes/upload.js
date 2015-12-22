@@ -11,7 +11,7 @@ var Config = require('../../ismapper-config.json');
 
 
 //Configure for file uploads
-var ufile = multer({ dest: Config.paths.uploads }).single('ufile');
+var ufile = multer({ dest: Config.server.uploads }).single('ufile');
 
 
 //Upload
