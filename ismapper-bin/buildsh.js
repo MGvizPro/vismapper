@@ -5,7 +5,7 @@ var fs = require('fs');
 var Config = require('../ismapper-config.json');
 
 //Sh name
-var sh = 'run.sh';
+var sh = 'run2.sh';
 
 //Line end
 var endl = '\n';
@@ -78,4 +78,11 @@ c = c + endl;
 c = c + 'mysql --user=' + Config.db.user + ' --password=' + Config.db.pass + ' < $FOLDER_FILES/query.sql' + endl;
 c = c + endl;
 
+//Send confirmation email
+//Coming soon
+
 // Delete files
+//Coming soon
+
+//Save the new sh file
+fs.writeFileSync(sh, c, 'utf8');
