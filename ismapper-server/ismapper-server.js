@@ -36,13 +36,12 @@ app.use(cookieParser('CEAF3FA4-F385-49AA-8FE4-54766A9874F2'));
 app.use(session({secret: '59B93087-78BC-4EB9-993A-A61FC844F6C0'}));
 
 //Initialize request client
-db.Connect(Config.sql);
+db.Connect(Config.database);
 
 //Local vars
 app.locals.site = {};
 app.locals.site.title = ' · ' + Config.name; //Site title
 app.locals.site.url = Config.server.host; //Site url
-app.locals.site.vendor = Config.vendor.host; //Vendor files url
 
 
 //Routes and path
