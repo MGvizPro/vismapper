@@ -6,7 +6,7 @@
     "host": "http://ismapper.babelomics.org/",
     "uploads": "/path/to/uploads/folder"
   },
-  "database":
+  "db":
   {
     "host": "ismapper-db-host",
     "user": "ismapper-db-user",

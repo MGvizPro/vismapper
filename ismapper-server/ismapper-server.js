@@ -36,7 +36,7 @@ app.use(cookieParser('CEAF3FA4-F385-49AA-8FE4-54766A9874F2'));
 app.use(session({secret: '59B93087-78BC-4EB9-993A-A61FC844F6C0'}));
 
 //Initialize request client
-db.Connect(Config.database);
+db.Connect(Config.db);
 
 //Local vars
 app.locals.site = {};
