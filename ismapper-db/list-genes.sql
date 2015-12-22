@@ -1,3 +1,5 @@
+USE ismapper;
+
 CREATE TABLE cancerGenes
 (
 	id int(99) NOT NULL,

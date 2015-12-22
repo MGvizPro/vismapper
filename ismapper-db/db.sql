@@ -1,3 +1,5 @@
+USE ismapper;
+
 CREATE TABLE project
 (
   id varchar(255) NOT NULL,
