@@ -4,6 +4,9 @@ var db = require('dosql');
 //Import Config
 var Config = require('../../../ismapper-config.json');
 
+//Application variables
+var AppVars = require('../app.json');
+
 //Function for create a new chr
 function CreateChr(chr) { return {"id": chr, "regions": []}; }
 
@@ -54,7 +57,7 @@ function GetRegions(req, res, next)
       for(var j = i + 1; j < results.length; j++)
       {
         //Check positions
-        if(position + Config.vars.readsmargin > results[j].start)
+        if(position + AppVars.readsmargin > results[j].start)
         {
           //Increment the counter
           counter = counter + 1;

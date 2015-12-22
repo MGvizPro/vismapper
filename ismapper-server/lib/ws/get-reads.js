@@ -7,6 +7,9 @@ var RegionSplit = require('../utils/regionsplit');
 //Import Config
 var Config = require('../../../ismapper-config.json');
 
+//Application variables
+var AppVars = require('../app.json');
+
 //Function for get all the reads
 function GetReads(req, res, next)
 {
@@ -64,7 +67,7 @@ function GetReadsByRegion(project, reg, callback)
   db.Do({in: 'data_' + project, do: 'select', where: {chr: reg.chr}}, function(results){
 
     //Limit of reads
-    var limitreads = Config.vars.readsmax;
+    var limitreads = AppVars.readsmax;
 
     //Counter for all the reads
     var i = 0;
@@ -86,7 +89,7 @@ function GetReadsByRegion(project, reg, callback)
         var read = results[j];
 
         //Check positions
-        if(position + Config.vars.readsmargin > read.start)
+        if(position + AppVars.readsmargin > read.start)
         {
           //Increment the counter
           counter = counter + 1;
