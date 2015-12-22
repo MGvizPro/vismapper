@@ -129,7 +129,7 @@ int main(int argc, char **argv)
 
   //Use the virus database
   output << "## Uses the virus database" << endl;
-  output << "USE virus;" << endl << endl;
+  output << "USE ismapper;" << endl << endl;
 
   //Create the new table
   output << "## Create the new table for the data" << endl;
