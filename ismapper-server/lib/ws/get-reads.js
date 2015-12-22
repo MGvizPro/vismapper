@@ -8,7 +8,7 @@ var RegionSplit = require('../utils/regionsplit');
 var Config = require('../../../ismapper-config.json');
 
 //Application variables
-var AppVars = require('../app.json');
+var AppVars = require('../../app.json');
 
 //Function for get all the reads
 function GetReads(req, res, next)

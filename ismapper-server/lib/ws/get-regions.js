@@ -5,7 +5,7 @@ var db = require('dosql');
 var Config = require('../../../ismapper-config.json');
 
 //Application variables
-var AppVars = require('../app.json');
+var AppVars = require('../../app.json');
 
 //Function for create a new chr
 function CreateChr(chr) { return {"id": chr, "regions": []}; }
