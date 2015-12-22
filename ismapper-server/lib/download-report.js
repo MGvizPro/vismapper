@@ -1,5 +1,5 @@
-//Import Config
-var Config = require('../../ismapper-config.json');
+//Application variables
+var AppVars = require('../app.json');
 
 //Initialize the columns
 var cols = ['Chr','Position','Number of reads','Mean MapQ','Closest Cancer Gene',

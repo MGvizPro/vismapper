@@ -2,8 +2,8 @@
 var db = require('dosql');
 var ObjSort = require('objectsort');
 
-//Import Config
-var Config = require('../../ismapper-config.json');
+//Application variables
+var AppVars = require('../app.json');
 
 //Get all the regions
 function GetRegions(project, callback)
@@ -33,7 +33,7 @@ function GetRegions(project, callback)
       for(var j = i + 1; j < results.length; j++)
       {
         //Check positions
-        if(position + Config.vars.readsmargin > results[j].start)
+        if(position + AppVars.readsmargin > results[j].start)
         {
           //Increment the counter
           counter = counter + 1;
@@ -192,7 +192,7 @@ function MakeReport(req, res, next)
         reads[i].entrez = g[index].entrez;
 
         //Add the entrez url
-        reads[i].entrezurl = Config.entrez + g[index].entrez;
+        reads[i].entrezurl = AppVars.entrez + g[index].entrez;
       }
 
       //Return the out

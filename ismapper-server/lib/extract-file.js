@@ -6,6 +6,9 @@ var AdmZip = require('adm-zip');
 //Import config
 var Config = require('../../ismapper-config.json');
 
+//Application variables
+var AppVars = require('../app.json');
+
 //Function for extract the file
 function ExtractFile(file, callback)
 {
@@ -25,7 +28,7 @@ function ExtractFile(file, callback)
 		var zipcont = zip.getEntries();
 
 		//Generate the array with the fasta formats
-		var formats = Config.extf.fasta.concat(Config.extf.fastq);
+		var formats = AppVars.fasta.concat(AppVars.fastq);
 
 		//For check if zip is ok
 		var extracted = false;
@@ -37,10 +40,10 @@ function ExtractFile(file, callback)
 			if(formats.indexOf(path.extname(zipcont[i].name)) > -1)
 			{
 				//Extract the file
-				zip.extractEntryTo(zipcont[i], Config.paths.uploads, false, true);
+				zip.extractEntryTo(zipcont[i], Config.server.uploads, false, true);
 
 				//Save the file path
-				file_path = Config.paths.uploads + zipcont[i].name;
+				file_path = Config.server.uploads + zipcont[i].name;
 
 				//Save the extension
 				ext = path.extname(zipcont[i].name);
@@ -65,8 +68,8 @@ function ExtractFile(file, callback)
 	}
 
   //Get the type
-  var isFQ = Config.extf.fastq.indexOf(ext);
-  var isFA = Config.extf.fasta.indexOf(ext);
+  var isFQ = AppVars.fastq.indexOf(ext);
+  var isFA = AppVars.fasta.indexOf(ext);
 
 	//Check if the file extension is fasta or fasq
 	if( isFQ > -1 || isFA > -1)
