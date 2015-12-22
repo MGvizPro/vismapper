@@ -4,7 +4,7 @@
   {
     "port": 3000,
     "host": "http://ismapper.babelomics.org/",
-    "uploads": "/path/to/uploads/folder"
+    "uploads": "/path/to/uploads/folder/"
   },
   "db":
   {
@@ -15,7 +15,7 @@
   },
   "bin":
   {
-    "path": "/path/to/bin/folder",
+    "path": "/path/to/bin/folder/",
     "bwa": "/complete/path/to/bwa",
     "samtools": "/complete/path/to/samtools"
   },
