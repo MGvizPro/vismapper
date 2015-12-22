@@ -24,7 +24,7 @@ c = c + 'PROJECT=$1' + endl;
 c = c + 'ISFASTQ=$2' + endl;
 
 //Save the user email
-c = c + 'EMAIL=$3' + endl;
+//c = c + 'EMAIL=$3' + endl;
 
 //Space
 c = c + endl;
