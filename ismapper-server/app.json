@@ -1,0 +1,7 @@
+{
+  "fasta": [".fasta", ".fas", ".fa"],
+  "fastq": [".fastq", ".fq"],
+  "readsmax": 100,
+  "readsmargin": 5,
+  "entrez": "http://www.ncbi.nlm.nih.gov/gene/?term="
+}
