@@ -1,3 +1,16 @@
+/* Links */
+a { color: #2979FF; }
+
+/* Button blue */
+.btn-blue { background-color: #2979FF !important; }
+.btn-outline-blue { color: #2979FF !important; border-color: #2979FF !important; }
+.btn-outline-blue:hover { background-color: #2979FF !important; }
+
+/* Button green */
+.btn-green { background-color: #00C853 !important; }
+.btn-outline-green { color: #00C853 !important; border-color: #00C853 !important; }
+.btn-outline-green:hover { background-color: #00C853 !important; } 
+
 /* Input def */
 .form-input-500 { width: 500px; }
 
@@ -53,11 +66,11 @@
 
 /* Page nav button */
 .page-nav > a { display: inline-block; float: right; text-align: center; font-weight: 300; }
-.page-nav > a { color: #09a0f6; border-radius: 5px; border: 1px solid #09a0f6; }
+.page-nav > a { color: #2979FF; border-radius: 5px; border: 1px solid #2979FF; }
 .page-nav > a { padding-left: 15px; padding-right: 15px; height: 30px; line-height: 30px; }
 .page-nav > a { margin-top: 20px; margin-left: 10px; text-decoration: none; font-size: 14px; }
 .page-nav > a { transition: background-color 0.3s, color 0.3s; }
-.page-nav > a:hover { background-color: #09a0f6; color: #ffffff; }
+.page-nav > a:hover { background-color: #2979FF; color: #ffffff; }
 
 
 /* Dashboard */
