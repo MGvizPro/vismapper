@@ -9,7 +9,12 @@ a { color: #2979FF; }
 /* Button green */
 .btn-green { background-color: #00C853 !important; }
 .btn-outline-green { color: #00C853 !important; border-color: #00C853 !important; }
-.btn-outline-green:hover { background-color: #00C853 !important; color: #ffffff !important; } 
+.btn-outline-green:hover { background-color: #00C853 !important; color: #ffffff !important; }
+
+/* Button red */
+.btn-red { background-color: #D50000 !important; }
+.btn-outline-red { color: #D50000 !important; border-color: #D50000 !important; }
+.btn-outline-red:hover { background-color: #D50000 !important; color: #ffffff !important; }
 
 /* Input def */
 .form-input-500 { width: 500px; }
