@@ -1,0 +1,19 @@
+{
+  "name": "project",
+  "structure":
+  {
+    "cols":
+    {
+      "id": "varchar(255) NOT NULL",
+      "email": "varchar(255) NOT NULL",
+      "title": "text NOT NULL",
+      "date": "bigint(99) NOT NULL",
+      "ready": "bigint(1) NOT NULL"
+    },
+    "primary": "id"
+  },
+  "content":
+  [
+    {"id":"demo","email":"null","title":"Demo data","date":-9999999,"ready":1}
+  ]
+}
