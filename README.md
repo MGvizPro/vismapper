@@ -18,3 +18,10 @@ Visit the [wiki](https://github.com/biowt/ismapper/wiki) for a usage guide and t
 
 
 ### Authors
+
+The main developers of **ISMapper** are:
+
+- Joaquín Dopazo &lt;jdopazo@cipf.es&gt;
+- Joaquín Tárraga &lt;jtarraga@cipf.es&gt;
+- Vicente Arnau &lt;Vicente.Arnau@uv.es&gt;
+- Jose M. Juanes &lt;J.Miguel.Juanes@uv.es&gt;
