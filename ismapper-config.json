@@ -11,7 +11,7 @@
     "host": "ismapper-db-host",
     "user": "ismapper-db-user",
     "pass": "ismapper-db-pass",
-    "db": "ismapper-db-database"
+    "db": "ismapper"
   },
   "bin":
   {
