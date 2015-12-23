@@ -4,12 +4,12 @@ a { color: #2979FF; }
 /* Button blue */
 .btn-blue { background-color: #2979FF !important; }
 .btn-outline-blue { color: #2979FF !important; border-color: #2979FF !important; }
-.btn-outline-blue:hover { background-color: #2979FF !important; }
+.btn-outline-blue:hover { background-color: #2979FF !important; color: #ffffff !important; }
 
 /* Button green */
 .btn-green { background-color: #00C853 !important; }
 .btn-outline-green { color: #00C853 !important; border-color: #00C853 !important; }
-.btn-outline-green:hover { background-color: #00C853 !important; } 
+.btn-outline-green:hover { background-color: #00C853 !important; color: #ffffff !important; } 
 
 /* Input def */
 .form-input-500 { width: 500px; }
