@@ -25,7 +25,7 @@ Params.full.tumours = '/ws/cancer/full/tumours'; //Full tumours list
 
 //Default values
 Params.default = {};
-Params.default.minreads = 5; //Default Minimum number of reads for each position
+Params.default.minreads = ((projectId === 'demo')? 0 : 5); //Default Minimum number of reads
 Params.default.chunk = 500000000; //Default Chunk size (def 500000000)
 Params.default.time = 3000; //Default time for wait load complete
 
@@ -84,6 +84,9 @@ $(document).ready(function(){
     }, Params.default.time);
   }
 
+  //Change the input reads value
+  $('#' + Params.input.reads).val(Params.default.minreads);
+  
   //Event for input reads
   $('#' + Params.input.reads).keyup(function(e){ if(e.keyCode == 13){ InputReads(); } });
 

@@ -16,7 +16,7 @@ $(document).ready(function(){
   //Labels
   k.UseLabel({
     chromosome: function(chr){
-      
+
       //Get the regions for this chromosome
       var regs = k.GetRegionsByChr(chr);
 
