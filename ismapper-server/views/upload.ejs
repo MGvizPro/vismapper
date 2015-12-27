@@ -11,11 +11,11 @@
 	<% } %>
 
 	<!-- Description -->
-	Here you can create a new project by uploading your data files. You can test the tool by uploading our
-	<a href="https://github.com/biowt/ismapper/raw/master/ismapper-test/sample100k.fasta.zip" target="_blank">sample data</a>.<br><br>
+	<p>Here you can create a new project by uploading your data files. You can test the tool by uploading our
+	<a href="https://goo.gl/lrq7XR" target="_blank">sample data</a>.</p>
 
-	Please note that <b>every project is available up to 60 days</b>. After this time, the data in our server
-	will be removed, and you must upload again your data if you want to continue using the tool.<br><br>
+	<p>Please note that <b>every project is available up to 60 days</b>. After this time, the data in our server
+	will be removed, and you must upload again your data if you want to continue using the tool.</p>
 
 	<!-- Form -->
 	<form action="/upload" method="post" enctype="multipart/form-data">
@@ -24,7 +24,7 @@
 		<h2>Title</h2>
 
 		<!-- Description -->
-		You can set a title for your project. Use it for provide a short description of your experiment.<br>
+		<p>You can set a title for your project. Use it for provide a short description of your experiment.</p>
 
 		<!-- Input for email -->
 		<input type="text" id="utitle" name="utitle" class="form-input form-input-500" placeholder="Yout project title">
@@ -36,8 +36,8 @@
 		<h2>Select files</h2>
 
 		<!-- Description -->
-		Press the next button for select your <b>FASTA</b> or <b>FASTQ</b> file containing the reads of your
-		experiment. Additionally, if your file is too big, you can compress in a <b>zip</b> and select it.<br>
+		<p>Press the next button for select your <b>FASTA</b> or <b>FASTQ</b> file containing the reads of your
+		experiment. Additionally, if your file is too big, you can compress in a <b>zip</b> and select it.</p>
 
 		<!-- Attach button -->
 		<div class="btn btn-green" onclick="document.getElementById('ufile').click();">Select file (fasta, fastq or zip)</div>
@@ -50,8 +50,8 @@
 		<h2>Your email (optional)</h2>
 
 		<!--Description -->
-		You can provide us an email and we will notify you when the process is completed.
-		Also, we will provide you a link where you can visualize your data.<br>
+		<p>You can provide us an email and we will notify you when the process is completed. Also, we will provide
+		you a link where you can visualize your data.</p>
 
 		<!-- Input for email -->
 		<input type="text" id="uemail" name="uemail" class="form-input form-input-500" placeholder="you@domain.com">
@@ -63,14 +63,15 @@
 		<h2>Run your experiment</h2>
 
 		<!-- Run description -->
-		Check if all the information that you have provided is correct and press the next button for upload your data to the
-		server and start the analysis:<br>
+		<p>Check if all the information that you have provided is correct and press the next button for upload your data to the
+		server and start the analysis:</p>
 
 		<!-- Run button -->
 		<div class="btn btn-blue" onclick="document.getElementById('ufile_send').click();">Upload and run</div>
 		<input type="submit" value="Upload" id="ufile_send" style="display:none;">
 
 	</form>
+
 </div>
 
 
