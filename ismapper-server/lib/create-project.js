@@ -44,6 +44,9 @@ function CreateProject(req, res, next)
 		//Make the new dir
 		mkdirp.sync(Config.server.uploads + id);
 
+		//Change the dir permissions
+		exec('chmod a+w ' + Config.server.uploads + id);
+
 		//Check if is fastq
 		if(isFQ === true)
 		{
