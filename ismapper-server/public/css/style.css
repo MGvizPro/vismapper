@@ -1,10 +1,11 @@
 /* Links */
-a { color: #2979FF; }
+a { color: #448AFF; }
+a:hover { color: #2979FF; }
 
 /* Button blue */
-.btn-blue { background-color: #2979FF !important; }
-.btn-outline-blue { color: #2979FF !important; border-color: #2979FF !important; }
-.btn-outline-blue:hover { background-color: #2979FF !important; color: #ffffff !important; }
+.btn-blue { background-color: #448AFF !important; }
+.btn-outline-blue { color: #448AFF !important; border-color: #448AFF !important; }
+.btn-outline-blue:hover { background-color: #448AFF !important; color: #ffffff !important; }
 
 /* Button green */
 .btn-green { background-color: #00C853 !important; }
@@ -16,11 +17,16 @@ a { color: #2979FF; }
 .btn-outline-red { color: #D50000 !important; border-color: #D50000 !important; }
 .btn-outline-red:hover { background-color: #D50000 !important; color: #ffffff !important; }
 
+/* Button white */
+.btn-white { background-color: #ffffff !important; color: #448AFF !important; }
+.btn-outline-white { color: #ffffff !important; border-color: #ffffff !important; }
+.btn-outline-white:hover { background-color: #ffffff !important; color: #448AFF !important; }
+
 /* Input def */
 .form-input-500 { width: 500px; }
 
 /* Navbar */
-.navbar { display: block; width: 100%; height: 70px; background-color: #2979FF; line-height: 70px; }
+.navbar { display: block; width: 100%; height: 70px; background-color: #448AFF; line-height: 70px; }
 
 /* Navbar logo */
 .navbar-logo { display: inline-block; height: 60px; line-height: 60px; float: left; }
@@ -29,7 +35,7 @@ a { color: #2979FF; }
 .navbar-logo { font-size: 30px; background-repeat: no-repeat; background-size: 50px 50px; }
 .navbar-logo { background-position: 10px center; background-image: url('../img/logo_white.svg'); }
 .navbar-logo { padding-right: 15px; transition: background-color 0.5s; }
-.navbar-logo:hover { background-color: #2962FF; text-decoration: none; }
+.navbar-logo:hover { background-color: #2962FF; text-decoration: none; color: #ffffff; }
 
 /* Navbar menu item */
 .navbar-item { display: inline-block; height: 40px; line-height: 40px; float: right; }
@@ -37,11 +43,11 @@ a { color: #2979FF; }
 .navbar-item { text-decoration: none; padding-left: 10px; padding-right: 10px; }
 .navbar-item { color: #ffffff; font-size: 16px; font-weight: 300; text-align: center; }
 .navbar-item { transition: background-color 0.5s; }
-.navbar-item:hover { background-color: #2962FF; text-decoration: none; }
+.navbar-item:hover { background-color: #2962FF; text-decoration: none; color: #ffffff; }
 
 
 /* Site welcome */
-.welcome { display: block; padding-top: 50px; padding-bottom: 80px; background-color: #2979FF; }
+.welcome { display: block; padding-top: 50px; padding-bottom: 80px; background-color: #448AFF; }
 .welcome { color: #ffffff; }
 
 /* Site welcome logo */
@@ -60,7 +66,7 @@ a { color: #2979FF; }
 
 
 /* Description */
-.description { padding-top: 30px; padding-bottom: 30px; }
+.description { padding-top: 30px; padding-bottom: 0px; }
 
 
 /* Page nav */
@@ -79,7 +85,7 @@ a { color: #2979FF; }
 
 /* Dashboard */
 .dashboard { display: block; width: calc(100% - 50px); }
-.dashboard { padding-top: 0px; padding-bottom: 20px; padding-left: 25px; padding-right: 25px; }
+.dashboard { padding-top: 20px; padding-bottom: 20px; padding-left: 25px; padding-right: 25px; }
 
 /* Dashoard left panel */
 .dashboard .dashboard-left { display: inline-block; width: 240px; vertical-align: top; padding-right: 10px; }
@@ -88,10 +94,10 @@ a { color: #2979FF; }
 .dashboard .dashboard-right { display: inline-block; width: calc(100% - 255px); vertical-align: top; }
 
 /* Dashboard right karyojs viewer */
-.dashboard .dashboard-right-karyo { margin-top: 10px; }
+.dashboard .dashboard-right-karyo { margin-top: 0px; }
 
 /* Dashboard right table viewer */
-.dashboard .dashboard-right-table { margin-top: 10px; }
+.dashboard .dashboard-right-table { margin-bottom: 10px; }
 
 /* Dashboard right genome maps viewer */
 .dashboard .dashboard-right-gmaps { display: block; border-radius: 5px; border: 1px solid #ccdde4; }
@@ -119,5 +125,12 @@ a { color: #2979FF; }
 
 
 /* Foot */
-.foot { display: block; width: 100%; text-align: center; color: #ffffff; background-color: #2962FF; }
-.foot { padding-top: 50px; padding-bottom: 50px; font-size: 14px; margin-top: 50px; }
+.foot { display: block; width: 960px; margin-left: auto; margin-right: auto; text-align: center; }
+.foot { border-top: 1px solid #d1e1e8; line-height: 25px; font-size: 15px; color: #5f7186; }
+.foot { padding-top: 20px; padding-bottom: 50px; margin-top: 50px; }
+
+/* Foot logo */
+.foot-logo { display: block; width: 50px; height: 50px; padding-bottom: 30px; opacity: 0.7; }
+.foot-logo { background-repeat: no-repeat; background-position: center center; background-size: 50px 50px; }
+.foot-logo { background-image: url('../img/logo_grey.svg'); margin-left: auto; margin-right: auto; }
+.foot-logo:hover { opacity: 1.0; }
