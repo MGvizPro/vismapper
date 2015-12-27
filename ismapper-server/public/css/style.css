@@ -85,23 +85,26 @@ a:hover { color: #2979FF; }
 
 /* Dashboard */
 .dashboard { display: block; width: calc(100% - 50px); }
-.dashboard { padding-top: 20px; padding-bottom: 20px; padding-left: 25px; padding-right: 25px; }
+.dashboard { padding-top: 0px; padding-bottom: 20px; padding-left: 25px; padding-right: 25px; }
+
+/* Dashboard description */
+.dashboard-description { display: block; padding-bottom: 20px; }
 
 /* Dashoard left panel */
-.dashboard .dashboard-left { display: inline-block; width: 240px; vertical-align: top; padding-right: 10px; }
+.dashboard-left { display: inline-block; width: 240px; vertical-align: top; padding-right: 10px; }
 
 /* Dashboard right panel */
-.dashboard .dashboard-right { display: inline-block; width: calc(100% - 255px); vertical-align: top; }
+.dashboard-right { display: inline-block; width: calc(100% - 255px); vertical-align: top; }
 
 /* Dashboard right karyojs viewer */
-.dashboard .dashboard-right-karyo { margin-top: 0px; }
+.dashboard-right-karyo { margin-top: 0px; }
 
 /* Dashboard right table viewer */
-.dashboard .dashboard-right-table { margin-bottom: 10px; }
+.dashboard-right-table { margin-bottom: 10px; }
 
 /* Dashboard right genome maps viewer */
-.dashboard .dashboard-right-gmaps { display: block; border-radius: 5px; border: 1px solid #ccdde4; }
-.dashboard .dashboard-right-gmaps { overflow: hidden; margin-top: 20px; }
+.dashboard-right-gmaps { display: block; border-radius: 5px; border: 1px solid #ccdde4; }
+.dashboard-right-gmaps { overflow: hidden; margin-top: 20px; }
 
 
 /* Filters */
