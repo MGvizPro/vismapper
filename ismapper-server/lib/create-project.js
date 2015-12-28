@@ -12,8 +12,9 @@ var Config = require('../../ismapper-config.json');
 var AppVars = require('../app.json');
 
 //Import libs
-var ExtractFile = require('./extract-file');
-var GenID = require('./utils/gen-id');
+var ExtractFile = require('./extract-file.js');
+var GenID = require('./utils/gen-id.js');
+var Days = require('./utils/days.js');
 
 
 //Function for create the new project
@@ -77,9 +78,11 @@ function CreateProject(req, res, next)
 			//Validate the fasta/fastq file
 			if(FastaTools.ValidateSync(Config.server.uploads + id + output, fastaf) === true)
 			{
+				//Get the expiration time
+				var expire = Days.Expiration();
 
 				//Create the new object for insert
-				var obj = {id: id, email: email, ready: 0, title: title, date: Date.now()};
+				var obj = {id: id, email: email, ready: 0, title: title, date: expire};
 
 				//Create project to database
 				db.Do({in: 'project', do: 'insert', values: obj}, function(results){
