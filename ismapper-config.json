@@ -3,8 +3,13 @@
   "server":
   {
     "port": 3000,
-    "host": "http://ismapper.babelomics.org/",
-    "uploads": "/path/to/uploads/folder/"
+    "host": "http://ismapper.babelomics.org/"
+  },
+  "uploads": "/path/to/uploads/folder/",
+  "vendor":
+  {
+    "host": 3001,
+    "host": "http://ismapper.babelomics.org:3001"
   },
   "db":
   {
