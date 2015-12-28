@@ -70,7 +70,9 @@
     <!-- Link -->
   	<pre><%= site.url %>project/<%= projectId %></pre>
 
-    <p>Please, note that this project will be removed from our server in <b>[days]</b> days.</p>
+    <p>This project will be removed from our server in <b><%= projectDays %></b> days.
+    You can add 30 days to the expiration by clicking <a href="/project/<%= projectId %>/extend">here</a>.
+    Note that you can only extend the expiration time if the remaining days is lower than 10 days.</p>
 
   </div>
 
