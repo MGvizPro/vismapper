@@ -1,10 +1,10 @@
 <% include layouts/head %>
 
 <!-- Main div -->
-<div class="grid">
+<div class="grid main">
 
 	<!-- Section title -->
-	<div class="page-nav">Upload and Run</div>
+	<h1>Upload and Run</h1>
 
 	<% if(error !== '') { %>
 		<div class="alert alert-red"><%= error %></div><br>
@@ -21,7 +21,7 @@
 	<form action="/upload" method="post" enctype="multipart/form-data">
 
 		<!-- Project title -->
-		<h2>Title</h2>
+		<h3>Title</h3>
 
 		<!-- Description -->
 		<p>You can set a title for your project. Use it for provide a short description of your experiment.</p>
@@ -33,7 +33,7 @@
 		<br><br>
 
 		<!-- Select files -->
-		<h2>Select files</h2>
+		<h3>Select files</h3>
 
 		<!-- Description -->
 		<p>Press the next button for select your <b>FASTA</b> or <b>FASTQ</b> file containing the reads of your
@@ -47,7 +47,7 @@
 		<br><br>
 
 		<!-- Set email -->
-		<h2>Your email (optional)</h2>
+		<h3>Your email (optional)</h3>
 
 		<!--Description -->
 		<p>You can provide us an email and we will notify you when the process is completed. Also, we will provide
@@ -60,7 +60,7 @@
 		<br><br>
 
 		<!-- Run -->
-		<h2>Run your experiment</h2>
+		<h3>Run your experiment</h3>
 
 		<!-- Run description -->
 		<p>Check if all the information that you have provided is correct and press the next button for upload your data to the

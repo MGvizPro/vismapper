@@ -18,14 +18,15 @@
 <script type="text/javascript">var project = "<%= projectId %>"; </script>
 
 <!-- Main div -->
-<div class="grid">
+<div class="grid main">
 
   <!-- Section title -->
-  <div class="page-nav">Report</div>
+  <h1>Report</h1>
 
   <!-- Description -->
   <p>This is the text report for the project <a href="/project/<%= projectId %>"><%= projectTitle %></a>.
-  For each <b>integration site (IS)</b>, you will get the next information:</p>
+  Each <b>integration site (IS)</b> that we have detected in your data will be shown in a row of the
+  below table. Each row of the table contains the next columns:</p>
 
   <!-- Report content -->
   <ul>
@@ -41,19 +42,14 @@
 
   <!-- Download report -->
   <p>You can filter the table by minium number of reads per each IS and by distante to the closest Cancer
-  Gene. Additionally, you can download a tabulated file (in TSV format) with the full report clicking on the
-  next button:<br>
-
-  <!-- Button for download report -->
-  <a href="/report/<%= projectId %>/download" class="btn-outline btn-outline-blue btn-small">Download report</a>
-
-  </p>
+  Gene. Additionally, you can <b>download a tabulated file</b> (in TSV format) with the full report from
+  <a href="/report/<%= projectId %>/download">here</a>.</p>
 
   <!-- Filters -->
-  <div class="row filters-box">
+  <div class="row">
 
     <!-- Filter for min reads -->
-    <div class="col-5 filters">
+    <div class="col-6 filters">
       <b>Filter by number of reads</b><br>
       Show only the positions that have a minimum number of reads:<br>
       <input id="filter-reads-input" class="form-input" style="width:auto;"><br>
@@ -62,7 +58,7 @@
     </div>
 
     <!-- Filter by distance to cancer gene -->
-    <div class="col-5 filters">
+    <div class="col-6 filters">
       <b>Filter by distance to Cancer Gene</b><br>
       Set the distance from the position to the closest cancer gene:<br>
       <select id="filter-distance-select" class="form-select">
