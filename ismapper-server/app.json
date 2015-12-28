@@ -3,5 +3,7 @@
   "fastq": [".fastq", ".fq"],
   "readsmax": 100,
   "readsmargin": 5,
-  "entrez": "http://www.ncbi.nlm.nih.gov/gene/?term="
+  "time": {"extend": 2592000000, "expiration": 5184000000},
+  "entrez": "http://www.ncbi.nlm.nih.gov/gene/?term=",
+  "command": "{bin}run.sh {project} {uploads} {isfastq} {email} &"
 }
