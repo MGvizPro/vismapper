@@ -1,5 +1,5 @@
 {
-  "name": "ismapper",
+  "name": "ismapper-server",
   "version": "0.0.1",
   "private": true,
   "scripts": { "start": "node ismapper-server.js" },
