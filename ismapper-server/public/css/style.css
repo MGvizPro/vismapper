@@ -13,9 +13,9 @@ a:hover { color: #2979FF; }
 .btn-outline-green:hover { background-color: #00C853 !important; color: #ffffff !important; }
 
 /* Button red */
-.btn-red { background-color: #D50000 !important; }
-.btn-outline-red { color: #D50000 !important; border-color: #D50000 !important; }
-.btn-outline-red:hover { background-color: #D50000 !important; color: #ffffff !important; }
+.btn-red { background-color: #FF5252 !important; }
+.btn-outline-red { color: #FF5252 !important; border-color: #FF5252 !important; }
+.btn-outline-red:hover { background-color: #FF5252 !important; color: #ffffff !important; }
 
 /* Button white */
 .btn-white { background-color: #ffffff !important; color: #448AFF !important; }
