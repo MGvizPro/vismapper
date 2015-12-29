@@ -23,7 +23,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 //Static files
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico'))); //Favicon
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico'))); //Favicon
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Boddy parser
