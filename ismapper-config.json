@@ -9,7 +9,7 @@
   "vendor":
   {
     "host": 3001,
-    "host": "http://ismapper.babelomics.org:3001"
+    "host": "http://ismapper.babelomics.org:3001/"
   },
   "db":
   {
