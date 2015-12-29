@@ -1,4 +1,4 @@
-# Integration Sites Mapper
+![](https://raw.githubusercontent.com/wiki/biowt/ismapper/img/logo.png)
 
 ### Overview
 
