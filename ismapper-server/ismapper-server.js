@@ -42,6 +42,7 @@ db.Connect(Config.db);
 app.locals.site = {};
 app.locals.site.title = ' · ' + Config.name; //Site title
 app.locals.site.url = Config.server.host; //Site url
+app.locals.site.vendor = Config.vendor.host; //Vendor files url
 
 
 //Routes and path
