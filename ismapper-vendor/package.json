@@ -1,0 +1,8 @@
+{
+  "name": "ismapper-vendor",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": { "start": "node ismapper-vendor.js" },
+  "dependencies": {"stattic": "0.1.0"},
+  "devDependencies": { }
+}
