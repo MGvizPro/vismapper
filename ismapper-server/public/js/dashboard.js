@@ -2,7 +2,7 @@
 var Params = {};
 
 //Server for specie
-Params.specie = 'http://tilingscan.uv.es:3002/karyojs/species/human.json';
+Params.specie = 'http://ismapper.babelomics.org:3051/human.json';
 
 //Server for regions
 Params.regions = '/ws/regions/' + projectId + '/';
@@ -86,7 +86,7 @@ $(document).ready(function(){
 
   //Change the input reads value
   $('#' + Params.input.reads).val(Params.default.minreads);
-  
+
   //Event for input reads
   $('#' + Params.input.reads).keyup(function(e){ if(e.keyCode == 13){ InputReads(); } });
 
