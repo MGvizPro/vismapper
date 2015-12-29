@@ -109,7 +109,7 @@ a:hover { color: #2979FF; }
 .filters > .btn-outline { margin-left: 0px; margin-top: 10px; }
 
 /* Filters box */
-.filters-box { border-radius: 5px; border: 1px solid #d1e1e8; }
+.filters-box { border-radius: 5px; background-color: #f1f5fa; padding-top: 7px; } 
 
 
 /* Foot */
