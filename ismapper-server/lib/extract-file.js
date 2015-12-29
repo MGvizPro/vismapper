@@ -40,10 +40,10 @@ function ExtractFile(file, callback)
 			if(formats.indexOf(path.extname(zipcont[i].name)) > -1)
 			{
 				//Extract the file
-				zip.extractEntryTo(zipcont[i], Config.server.uploads, false, true);
+				zip.extractEntryTo(zipcont[i], Config.uploads, false, true);
 
 				//Save the file path
-				file_path = Config.server.uploads + zipcont[i].name;
+				file_path = Config.uploads + zipcont[i].name;
 
 				//Save the extension
 				ext = path.extname(zipcont[i].name);

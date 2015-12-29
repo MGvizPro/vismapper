@@ -43,10 +43,10 @@ function CreateProject(req, res, next)
 		}
 
 		//Make the new dir
-		mkdirp.sync(Config.server.uploads + id);
+		mkdirp.sync(Config.uploads + id);
 
 		//Change the dir permissions
-		exec('chmod a+w ' + Config.server.uploads + id);
+		exec('chmod a+w ' + Config.uploads + id);
 
 		//Check if is fastq
 		if(isFQ === true)
@@ -73,10 +73,10 @@ function CreateProject(req, res, next)
 		}
 
 		//Rename the file using the new ID
-		fs.rename(file_path, Config.server.uploads + id + output, function(err){
+		fs.rename(file_path, Config.uploads + id + output, function(err){
 
 			//Validate the fasta/fastq file
-			if(FastaTools.ValidateSync(Config.server.uploads + id + output, fastaf) === true)
+			if(FastaTools.ValidateSync(Config.uploads + id + output, fastaf) === true)
 			{
 				//Get the expiration time
 				var expire = Days.Expiration();
@@ -94,7 +94,7 @@ function CreateProject(req, res, next)
 					command = command.replace(/{bin}/g, Config.bin.path);
 
 					//Replace the uploads folder
-					command = command.replace(/{uploads}/g, Config.server.uploads);
+					command = command.replace(/{uploads}/g, Config.uploads);
 
 					//Replace the project ID
 					command = command.replace(/{project}/g, id);
@@ -119,10 +119,10 @@ function CreateProject(req, res, next)
 			else
 			{
 				//Delete the input file
-				fs.unlinkSync(Config.server.uploads + id + output);
+				fs.unlinkSync(Config.uploads + id + output);
 
 				//Delete the folder
-				fs.rmdirSync(Config.server.uploads + id);
+				fs.rmdirSync(Config.uploads + id);
 
 				//Render the error page
 				res.render('upload', { title: 'Upload', error: 'Error: corrupted fasta/fastq file.' });

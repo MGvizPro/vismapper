@@ -46,7 +46,7 @@ function BuildSH(f)
   c = c + endl;
 
   // Define the folders
-  c = c + 'FOLDER_FILES=\'' + Config.server.uploads + '\'$PROJECT' + endl;
+  c = c + 'FOLDER_FILES=\'' + Config.uploads + '\'$PROJECT' + endl;
   c = c + 'FOLDER_SAMTOOLS=\'' + Config.bin.samtools + '\'' + endl;
   c = c + 'FOLDER_BWA=\'' + Config.bin.bwa + '\'' + endl;
   c = c + 'FOLDER_BIN=\'' + Config.bin.path + '\'' + endl;
