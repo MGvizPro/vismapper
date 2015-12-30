@@ -25,25 +25,14 @@
 
   <!-- Description -->
   <p>This is the text report for the project <a href="/project/<%= projectId %>"><%= projectTitle %></a>.
-  Each <b>integration site (IS)</b> that we have detected in your data will be shown in a row of the
-  below table. Each row of the table contains the next columns:</p>
-
-  <!-- Report content -->
-  <ul>
-    <li><b>Chr</b>: chromosome where the IS is located.</li>
-    <li><b>Position</b>: chromosomal coordinates for the IS.</li>
-    <li><b>Number of reads</b>: number of reads mapped on the same IS.</li>
-    <li><b>Mean MapQ</b>: mean of the map quality for all the reads that have been mapped on the IS.</li>
-    <li><b>Closest Cancer Gene</b>: gene symbol for the closest gene of the IS.</li>
-    <li><b>Distance</b>: distance (in nucleotides) from the closest gene to the IS.</li>
-    <li><b>Position</b>: relative position of the IS from the gene.</li>
-    <li><b>Entrez</b>: link for getting more info about the gene.</li>
-  </ul>
+  Each integration site (IS) that we have detected in your data will be shown in a row of the
+  table below. For get more information about the report, please read the report section in our
+  <a href="https://github.com/biowt/ismapper/wiki/Report" target="_blank">wiki</a>.</p>
 
   <!-- Download report -->
   <p>You can filter the table by minium number of reads per each IS and by distante to the closest Cancer
-  Gene. Additionally, you can <b>download a tabulated file</b> (in TSV format) with the full report from
-  <a href="/report/<%= projectId %>/download">here</a>.</p>
+  Gene, using the form below. Additionally, you can <b>download a tabulated file</b> (in TSV format)
+  with the full report from <a href="/report/<%= projectId %>/download">here</a>.</p>
 
   <!-- Filters -->
   <div class="row filters-box">
