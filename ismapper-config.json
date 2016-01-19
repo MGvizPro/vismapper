@@ -8,7 +8,7 @@
   "uploads": "/path/to/uploads/folder/",
   "vendor":
   {
-    "host": 3001,
+    "port": 3001,
     "host": "http://ismapper.babelomics.org:3001/"
   },
   "db":
