@@ -1,5 +1,5 @@
-//Application variables
-var AppVars = require('../app.json');
+//Config
+var Config = require('../config.json');
 
 //Initialize the columns
 var cols = ['Chr','Position','Number of reads','Mean MapQ','Closest Cancer Gene',
