@@ -1,6 +1,3 @@
-//Import app config
-var AppVars = require('../../app.json');
-
 //ml2seconds * seconds2min * min2hours * hours2days
 var ml2days = 1000 * 60 * 60 * 24;
 
@@ -18,18 +15,18 @@ exports.Remaining = function(ml)
 };
 
 //Function for get the final date
-exports.Expiration = function()
+exports.Expiration = function(available)
 {
   //Get the actual date
   var d = new Date();
 
   //Return the expiration day
-  return d.getTime() + AppVars.time.expiration;
+  return d.getTime() + available;
 };
 
 //Function for get the extended time
-exports.Extend = function(d)
+exports.Extend = function(d, extend)
 {
   //Extend the time one month more
-  return d + AppVars.time.extend;
+  return d + extend;
 };
