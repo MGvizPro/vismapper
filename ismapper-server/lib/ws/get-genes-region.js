@@ -1,11 +1,9 @@
 //Import dependencies
 var db = require('dosql');
-
-//Import utils
-var RegionSplit = require('../utils/regionsplit');
+var Genom = require('genom');
 
 //Import Config
-var Config = require('../../../ismapper-config.json');
+var ISConfig = require('../../../ismapper-config.json');
 
 //Function for get the list with the cancer genes by region
 function GetGenesByRegion(req, res, next)
@@ -49,7 +47,7 @@ function GetGenesByRegion(req, res, next)
 function FindGenesForRegion(reg, callback)
 {
   //Get the region
-  var reg = RegionSplit(reg);
+  var reg = Genom.Split(reg);
 
   //Create the new object
   var obj = [];

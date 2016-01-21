@@ -1,14 +1,10 @@
 //Import dependencies
 var db = require('dosql');
-
-//Import utils
-var RegionSplit = require('../utils/regionsplit');
+var Genom = require('genom');
 
 //Import Config
-var Config = require('../../../ismapper-config.json');
-
-//Application variables
-var AppVars = require('../../app.json');
+var ISConfig = require('../../../ismapper-config.json');
+var Config = require('../../config.json');
 
 //Function for get all the reads
 function GetReads(req, res, next)
@@ -55,7 +51,7 @@ function GetReads(req, res, next)
 function GetReadsByRegion(project, reg, callback)
 {
   //Get the region
-  var reg = RegionSplit(reg);
+  var reg = Genom.Split(reg);
 
   //Create the new object
   var obj = [];
@@ -67,7 +63,7 @@ function GetReadsByRegion(project, reg, callback)
   db.Do({in: 'data_' + project, do: 'select', where: {chr: reg.chr}}, function(results){
 
     //Limit of reads
-    var limitreads = AppVars.readsmax;
+    var limitreads = Config.readsmax;
 
     //Counter for all the reads
     var i = 0;
@@ -89,7 +85,7 @@ function GetReadsByRegion(project, reg, callback)
         var read = results[j];
 
         //Check positions
-        if(position + AppVars.readsmargin > read.start)
+        if(position + Config.readsmargin > read.start)
         {
           //Increment the counter
           counter = counter + 1;

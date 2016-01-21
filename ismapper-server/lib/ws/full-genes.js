@@ -2,7 +2,7 @@
 var db = require('dosql');
 
 //Import Config
-var Config = require('../../../ismapper-config.json');
+var ISConfig = require('../../../ismapper-config.json');
 
 //Function for get the full list of cancer genes
 function FullGenes(req, res, next)

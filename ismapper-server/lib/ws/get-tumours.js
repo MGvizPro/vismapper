@@ -2,7 +2,7 @@
 var db = require('dosql');
 
 //Import Config
-var Config = require('../../../ismapper-config.json');
+var ISConfig = require('../../../ismapper-config.json');
 
 //Find tumours by name
 function GetTumours(req, res, next)
