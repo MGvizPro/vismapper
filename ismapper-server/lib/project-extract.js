@@ -3,14 +3,12 @@ var fs = require('fs');
 var path = require('path');
 var AdmZip = require('adm-zip');
 
-//Import config
-var Config = require('../../ismapper-config.json');
+//Import configs
+var ISConfig = require('../../ismapper-config.json');
+var Config = require('../config.json');
 
-//Application variables
-var AppVars = require('../app.json');
-
-//Function for extract the file
-function ExtractFile(file, callback)
+//Function for extract the project
+function ProjectExtract(file)
 {
 	//Get the file path
 	var file_path = file.path;
@@ -28,7 +26,7 @@ function ExtractFile(file, callback)
 		var zipcont = zip.getEntries();
 
 		//Generate the array with the fasta formats
-		var formats = AppVars.fasta.concat(AppVars.fastq);
+		var formats = Config.formats.fasta.concat(Config.formats.fasta.fastq);
 
 		//For check if zip is ok
 		var extracted = false;
@@ -40,10 +38,10 @@ function ExtractFile(file, callback)
 			if(formats.indexOf(path.extname(zipcont[i].name)) > -1)
 			{
 				//Extract the file
-				zip.extractEntryTo(zipcont[i], Config.uploads, false, true);
+				zip.extractEntryTo(zipcont[i], ISConfig.uploads, false, true);
 
 				//Save the file path
-				file_path = Config.uploads + zipcont[i].name;
+				file_path = ISConfig.uploads + zipcont[i].name;
 
 				//Save the extension
 				ext = path.extname(zipcont[i].name);
@@ -59,28 +57,23 @@ function ExtractFile(file, callback)
 		//Check for error
 		if(extracted === false)
 		{
-			//Set the callback with an error
-			callback(true, null, null);
+			//Return with an error
+			return { error: true };
 		}
 
     //Delete the zip file
 		fs.unlinkSync(file.path);
 	}
 
-  //Get the type
-  var isFQ = AppVars.fastq.indexOf(ext);
-  var isFA = AppVars.fasta.indexOf(ext);
+	//Save the fasta type
+	var ftype = 'fastq';
 
-	//Check if the file extension is fasta or fasq
-	if( isFQ > -1 || isFA > -1)
-  {
-    //Generate the callback args
-    var args = (isFQ > -1) ? true : false;
+	//Check for fasta file type
+	if(Config.formats.fasta.indexOf(ext) > -1){ ftype = 'fasta'; }
 
-    //Do the callback
-    callback(false, file_path, args);
-  }
+  //Return the results
+	return { error: false, path: file_path, type: ftype };
 }
 
 //Exports to node
-module.exports = ExtractFile;
+module.exports = ProjectExtract;
