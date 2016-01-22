@@ -48,6 +48,12 @@ function GetRegions(req, res, next)
       //Save the position
       var position = results[i].start;
 
+      //Create the strand array
+      var strand = { pos: 0, neg: 0};
+
+      //Initialize the strand array
+      if(results[i].strand === '+'){ strand.pos = 1; } else { strand.neg = 1; }
+
       //Create the new counter
       var counter = 1;
 
@@ -62,6 +68,9 @@ function GetRegions(req, res, next)
 
           //Save the next position
           position = results[j].start;
+
+          //Increment the strand
+          if(results[j].strand === '+'){ strand.pos++; } else { strand.neg++; }
         }
         else
         {
@@ -70,12 +79,24 @@ function GetRegions(req, res, next)
         }
       }
 
-      //Create the new region
-      var reg = {"start": results[i].start, "end": results[i].start, "label": "" + counter + ""};
-
-      //Check the counter
+      //Check the reads counter
       if(counter >= minreads)
       {
+        //Create the new region
+        var reg = {"start": results[i].start, "end": results[i].start, "label": "" + counter + ""};
+
+        //Add the strand
+        if(strand.pos >= strand.neg)
+        {
+          //Save the positive strand
+          reg.strand = '+';
+        }
+        else
+        {
+          //Save the negative strand
+          reg.strand = '-';
+        }
+        
         //Insert the new region
         obj[index].regions.push(reg);
       }
