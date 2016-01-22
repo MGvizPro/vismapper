@@ -6,8 +6,8 @@
 	//Wait for page complete
 	$(document).ready(function(){
 
-		//Refresh the page after 20 seconds
-		setTimeout(function(){ Refresh(); }, 30000);
+		//Refresh the page after {refresh} seconds
+		setTimeout(function(){ Refresh(); }, <%= refresh %>000);
 
 	});
 
@@ -30,7 +30,7 @@
 	<p>Your project <b><%= projectId %></b> is still running.</p>
 
 	<p>The process will take several minutes, depending on the number of reads of your experiment.
-	This page will refresh automatically every 30 seconds.</p>
+	This page will refresh automatically every <%= refresh %> seconds.</p>
 
 	<p>Save the next link, because you need it for visualize your data when the process is completed:</p>
 
