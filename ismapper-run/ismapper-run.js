@@ -49,13 +49,15 @@ db.Do({ in: 'project', do: 'select', wherer: {id: id }}, function(err, results){
 	console.log('Run ' + mapper + ' in ' + time + 'ms');
 
 	//Read the sam file
-	Sam(id, folder + 'input.sam', Config.quality, function(){
+	Sam(id, folder + 'output.sam', Config.quality, function(num){
 
 		//Create the update object
-		var upd = { ready: 1, time: time };
+		var upd = { ready: 1, time: time, seq_mapp: num };
 
 		//Update the project
 		db.Do({ in: 'project', do: 'update', where: { id: id }, set: upd }, function(res){
+
+			//Remove files
 
 			//Send the mail and exit
 			Mail(id, function(){ process.exit(0); });
