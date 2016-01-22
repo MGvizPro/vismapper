@@ -9,11 +9,11 @@ var multer  = require('multer');
 var ProjectCreate = require('../lib/project-create.js');
 
 //Import config
-var Config = require('../../ismapper-config.json');
+var ISConfig = require('../../ismapper-config.json');
 
 
 //Configure for file uploads
-var ufile = multer({ dest: Config.uploads }).single('ufile');
+var ufile = multer({ dest: ISConfig.uploads }).single('ufile');
 
 
 //Upload
