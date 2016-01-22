@@ -21,7 +21,7 @@ function GetRegions(req, res, next)
   var obj = [];
 
   //Get all the regions
-  db.Do({in: 'data_' + project, do: 'select'}, function(results){
+  db.Do({in: project, do: 'select'}, function(results){
 
     //Initialize Index
     var index = 0;

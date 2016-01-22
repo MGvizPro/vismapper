@@ -60,7 +60,7 @@ function GetReadsByRegion(project, reg, callback)
   var wh = 'chr="' + reg.chr + '" AND start <= ' + reg.end + ' AND end >= ' + reg.start;
 
   //Get the regions in a selected chromosome
-  db.Do({in: 'data_' + project, do: 'select', where: {chr: reg.chr}}, function(results){
+  db.Do({in: project, do: 'select', where: {chr: reg.chr}}, function(results){
 
     //Limit of reads
     var limitreads = Config.readsmax;
