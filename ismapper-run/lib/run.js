@@ -17,8 +17,8 @@ function Run(folder, mapper, reference)
 	//Add the mapper path
 	command = command.replace(/{mapper}/, Config[mapper]);
 
-	//Replace the path to the aligner
-	command = command.replace(/{path}/g, ISConfig.bin[aligner]);
+	//Replace the path to the mapper
+	command = command.replace(/{path}/g, ISConfig.bin[mapper]);
 
 	//Replace the reference genome
 	command = command.replace(/{reference}/g, genome.path);
