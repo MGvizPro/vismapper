@@ -34,7 +34,7 @@ db.Do({ in: 'project', do: 'select', wherer: {id: id }}, function(err, results){
 	time = Date.now();
 
 	//Run the aligner
-	Run(folder, results[0].aligner, results[0].reference);
+	Run(folder, results[0].aligner, results[0].specie);
 
 	//Get the new time
 	time = Date.now() - time;
