@@ -1,5 +1,6 @@
 //Import dependencies
 var exec = require('child_process').exec;
+var path = require('path');
 
 //Import configs
 var Config = require('../config.json');
@@ -13,8 +14,11 @@ function ProjectRun(id)
 	//Replace the node bin location
 	command = command.replace(/{node}/g, ISConfig.bin.node);
 
+	//Get the script folder
+	var runf = path.join(ISConfig.run.replace('ismapper-run.js', ''), 'ismapper-run.js');
+
 	//Replace the run script location
-	command = command.replace(/{run}/g, ISConfig.run);
+	command = command.replace(/{run}/g, runf);
 
 	//Replace the project ID
 	command = command.replace(/{project}/g, id);
