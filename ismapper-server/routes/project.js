@@ -16,7 +16,7 @@ var Config = require('../config.json');
 router.get('/project', function(req, res, next){ res.redirect('/'); });
 
 //Project with ID
-router.get('/project/:id', CheckProject, function(req, res, next){
+router.get('/project/:id', Status, function(req, res, next){
 
 	//Get the project ID
 	var id = req.params.id;
