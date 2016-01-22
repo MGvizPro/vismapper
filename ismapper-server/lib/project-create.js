@@ -49,10 +49,10 @@ function ProjectCreate(req, res, next)
 	execSync('chmod a+w ' + ISConfig.uploads + id);
 
 	//Rename the file using the new ID
-	fs.renameSync(exResult.path, ISConfig.uploads + id + 'input.fastq');
+	fs.renameSync(exResult.path, ISConfig.uploads + id + '/input.fastq');
 
 	//Validate the fasta/fastq file
-	var faResult = ProjectFasta(ISConfig.uploads + id + 'input.fastq', exResult.type);
+	var faResult = ProjectFasta(ISConfig.uploads + id + '/input.fastq', exResult.type);
 
 	//Check for error
 	if(faResult.error === false)
