@@ -26,6 +26,12 @@ function ProjectCreate(req, res, next)
 	//Get the title
 	var title = (typeof req.body.utitle !== 'undefined' && req.body.utitle) ? req.body.utitle : 'Untitled';
 
+	//Get the aligner
+	var aligner = (typeof req.body.ualigner !== 'undefined' && req.body.ualigner) ? req.body.ualigner : 'bwa';
+
+	//Get the specie
+	var specie = (typeof req.body.uspecie !== 'undefined' && req.body.uspecie) ? req.body.uspecie : 'hsapiens/grch38';
+
 	//Get the new ID
 	var id = getID({ prefix: 'ISM' });
 
@@ -61,7 +67,7 @@ function ProjectCreate(req, res, next)
 		var expire = Days.Expiration(Config.time.expiration);
 
 		//Create the new object for insert
-		var obj = { id: id, email: email, ready: 0, title: title, date: expire, seq_orig: faResult.num, seq_mapp: 0, mapper: 'bwa', specie: 'hsapiens/grch38', time: 0 };
+		var obj = { id: id, email: email, ready: 0, title: title, date: expire, seq_orig: faResult.num, seq_mapp: 0, aligner: aligner, specie: specie, time: 0 };
 
 		//Create the project on the database
 		db.Do({in: 'project', do: 'insert', values: obj}, function(results){
