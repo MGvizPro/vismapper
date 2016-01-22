@@ -172,13 +172,15 @@ function run() {
 
         renderer: new FeatureRenderer({
             label: function(f){
-              var str = (f.strand === '+')? '>' : '<';
-              return str + ' ' + f.id; 
+              console.log(f.strand);
+              var str = (f.strand == 1)? '>' : '<';
+              return str + ' ' + f.id;
             },
             color: function(f) { return '#FF1744'; },
             tooltipText: function(f){
               var txt = 'ID: ' + f.id + '<br>';
               txt = txt + 'Start-End: ' + f.start + '-' + f.end + '<br>';
+              txt = txt + 'Strand: ' + ((f.strand == 1)?'+':'-') + '<br>';
               txt = txt + 'CIGAR: ' + f.cigar + '<br>';
               txt = txt + 'MapQ: ' + f.mapq + '<br>';
               return txt;},
@@ -193,14 +195,11 @@ function run() {
            parse: function (response) {
                for (var i = 0; i < response.length; i++)
                {
-                 var r = response[i];
-
-                 for (var j = 0; j < r.length; j++)
+                 for (var j = 0; j < response[i].length; j++)
                  {
-                     var rr = r[j];
-                     rr.id = rr.name;
-                     rr.chromosome = rr.chr;
-                     rr.strand = "1";
+                     response[i][j].id = response[i][j].name;
+                     response[i][j].chromosome = response[i][j].chr;
+                     response[i][j].strand = (response[i][j].strand === '+')? 1 : -1;
                  }
                }
                return response;
