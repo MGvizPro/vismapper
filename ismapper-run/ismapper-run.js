@@ -27,8 +27,8 @@ var folder = path.join(ISConfig.uploads, id + '/');
 //Time for complete the run
 var time = 0;
 
-//Mapper
-var mapper = 'bwa';
+//Aligner
+var aligner = 'bwa';
 
 //Reference genome
 var reference = 'hsapiens/grch38';
@@ -39,14 +39,14 @@ db.Do({ in: 'project', do: 'select', wherer: {id: id }}, function(err, results){
 	//Initialize the time
 	time = Date.now();
 
-	//Run the mapper
-	Run(folder, mapper, reference);
+	//Run the aligner
+	Run(folder, aligner, reference);
 
 	//Get the new time
 	time = Date.now() - time;
 
 	//Show confirmation in console
-	console.log('Run ' + mapper + ' in ' + time + 'ms');
+	console.log('Run ' + aligner + ' in ' + time + 'ms');
 
 	//Read the sam file
 	Sam(id, folder + 'output.sam', Config.quality, function(num){
