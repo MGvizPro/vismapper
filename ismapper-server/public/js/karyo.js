@@ -8,15 +8,15 @@ $(document).ready(function(){
   k = new Karyo('karyo_div');
 
   //Use the Human test specie
-  k.ImportChrs(Params.specie);
+  k.ImportChrs({ fromDB: 'hsapiens/grch38' });
 
   //Use the human test data
-  k.ImportRegions(Params.regions + Params.default.minreads);
+  k.ImportRegions({ url: Params.regions + Params.default.minreads });
 
   //Labels
   k.UseLabel({
-    chromosome: function(chr){
-
+    chromosome: function(chr)
+    {
       //Get the regions for this chromosome
       var regs = k.GetRegionsByChr(chr);
 
@@ -25,16 +25,24 @@ $(document).ready(function(){
 
       //Return default
       return '0 positions';
-
     },
-    region: function(chr, reg){
-
-      //Get the regions for this chromosome
-      var regs = k.GetRegionsByChr(chr);
-
+    region: function(chr, region)
+    {
       //Return the label
-      return '' + regs[reg].label + ' reads';
+      return '' + region.label + ' reads';
+    }
+  });
 
+  //Report table
+  k.TableOpt({
+    colsName: ['Chr','Start','End','Reads', 'CLCG', 'CRCG'],
+    colsAlign: ['center','right','right','right','center','center'],
+    //openShow: true,
+    //openText: 'Open',
+    parser: function(chr, region)
+    {
+      //Return the default row
+      return [chr, region.start, region.end, region.label + ' reads', '-', '-'];
     }
   });
 
