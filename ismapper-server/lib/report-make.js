@@ -12,7 +12,7 @@ function GetRegions(project, callback)
   var obj = [];
 
   //Get all the regions
-  db.Do({in: 'data_' + project, do: 'select'}, function(results){
+  db.Do({in: project, do: 'select'}, function(results){
 
     //Start the counter
     var i = 0;
