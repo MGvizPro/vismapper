@@ -27,9 +27,6 @@ var folder = path.join(ISConfig.uploads, id + '/');
 //Time for complete the run
 var time = 0;
 
-//Reference genome
-var reference = 'hsapiens/grch38';
-
 //Get the project info
 db.Do({ in: 'project', do: 'select', wherer: {id: id }}, function(err, results){
 
