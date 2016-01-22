@@ -46,6 +46,22 @@
 		<!-- Spaces -->
 		<br><br>
 
+		<!-- Aligner -->
+		<h3>Select aligner</h3>
+
+		<!-- Description -->
+		<p>Select the aligner tool for align your reads.</p>
+
+		<!-- Select the aligner -->
+		<select class="form-select" name="aligner" id="aligner">
+			<% for(var key in site.aligner) { %>
+			<option value="<%= key %>"><%= site.aligner[key].name %></option>
+			<% } %>
+		</select>
+
+		<!-- Spaces -->
+		<br><br>
+
 		<!-- Set email -->
 		<h3>Your email (optional)</h3>
 
