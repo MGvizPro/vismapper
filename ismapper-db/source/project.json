@@ -10,7 +10,7 @@
       "date": "bigint(99) NOT NULL",
       "seq_orig": "bigint(99) NOT NULL",
       "seq_mapp": "bigint(99) NOT NULL",
-      "mapper": "varchar(255) NOT NULL",
+      "aligner": "varchar(255) NOT NULL",
       "specie": "varchar(255) NOT NULL",
       "time": "bigint(99) NOT NULL",
       "ready": "bigint(1) NOT NULL"
@@ -19,6 +19,6 @@
   },
   "content":
   [
-    {"id":"demo","email":"null","title":"Demo data","date":0,"seq_orig":1000,"seq_mapp":930,"mapper":"bwa","specie":"hsapiens/grch38","time":1000,"ready":1}
+    {"id":"demo","email":"null","title":"Demo data","date":0,"seq_orig":1000,"seq_mapp":930,"aligner":"bwa","specie":"hsapiens/grch38","time":1000,"ready":1}
   ]
 }
