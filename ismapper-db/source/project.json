@@ -8,12 +8,17 @@
       "email": "varchar(255) NOT NULL",
       "title": "text NOT NULL",
       "date": "bigint(99) NOT NULL",
+      "seq_orig": "bigint(99) NOT NULL",
+      "seq_mapp": "bigint(99) NOT NULL",
+      "mapper": "varchar(255) NOT NULL",
+      "specie": "varchar(255) NOT NULL",
+      "time": "bigint(99) NOT NULL",
       "ready": "bigint(1) NOT NULL"
     },
     "primary": "id"
   },
   "content":
   [
-    {"id":"demo","email":"null","title":"Demo data","date":4604859384191,"ready":1}
+    {"id":"demo","email":"null","title":"Demo data","date":0,"ready":1}
   ]
 }
