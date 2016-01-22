@@ -36,7 +36,7 @@ $(document).ready(function(){
   //Report table
   k.TableOpt({
     colsName: ['Chr','Start','End','Strand','Reads','CLCG','CRCG'],
-    colsAlign: ['center','right','right','center','right','center','center'],
+    colsAlign: ['center','right','right','center','center','center','center'],
     //openShow: true,
     //openText: 'Open',
     parser: function(chr, region)
