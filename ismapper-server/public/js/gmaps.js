@@ -171,7 +171,10 @@ function run() {
         height: 200,
 
         renderer: new FeatureRenderer({
-            label: function(f) { return f.id; },
+            label: function(f){
+              var str = (f.strand === '+')? '>' : '<';
+              return str + ' ' + f.id; 
+            },
             color: function(f) { return '#FF1744'; },
             tooltipText: function(f){
               var txt = 'ID: ' + f.id + '<br>';
