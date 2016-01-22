@@ -11,7 +11,7 @@ function ProjectFasta(file, format)
 	if(f.num == 0)
 	{
 		//File is not correct, return false
-		return false;
+		return { error: true, num: 0 };
 	}
 
 	//Check the format
@@ -25,7 +25,7 @@ function ProjectFasta(file, format)
 	}
 
 	//Exit
-	return true;
+	return { error: false, num: f.num };
 }
 
 //Exports to node
