@@ -28,7 +28,7 @@ var folder = path.join(ISConfig.uploads, id + '/');
 var time = 0;
 
 //Get the project info
-db.Do({ in: 'project', do: 'select', wherer: {id: id }}, function(err, results){
+db.Do({ in: 'project', do: 'select', where: { id: id }}, function(results){
 
 	//Initialize the time
 	time = Date.now();
