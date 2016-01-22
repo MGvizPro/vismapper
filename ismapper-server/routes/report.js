@@ -4,19 +4,18 @@ var router = express.Router();
 
 //Import dependencies
 var db = require('dosql');
-var SetJson = require('../lib/set-json.js');
-var ShowJson = require('../lib/show-json.js');
+var resJson = require('../lib/utils/res-json.js');
 
 //Import sections
-var MakeReport = require('../lib/make-report.js');
-var DownloadReport = require('../lib/download-report.js');
-var CheckProject = require('../lib/check-project.js');
+var ReportMake = require('../lib/report-make.js');
+var ReportDownload = require('../lib/report-download.js');
+var Status = require('../lib/status.js');
 
 //Report root
 router.get('/report', function(req, res, next){ res.redirect('/'); });
 
 //Report with ID
-router.get('/report/:id', CheckProject, function(req, res, next){
+router.get('/report/:id', Status, function(req, res, next){
 
 	//Save the options
 	var options = {title: 'Report', projectId: req.result.id, projectTitle: req.result.title};
@@ -27,10 +26,10 @@ router.get('/report/:id', CheckProject, function(req, res, next){
 });
 
 //Generate the report
-router.get('/report/:project/get', SetJson, MakeReport, ShowJson);
+router.get('/report/:project/get', resJson.Set, ReportMake, resJson.Show);
 
 //Download the report
-router.get('/report/:project/download', MakeReport, DownloadReport);
+router.get('/report/:project/download', ReportMake, ReportDownload);
 
 //Exports to node
 module.exports = router;
