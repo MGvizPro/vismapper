@@ -43,6 +43,8 @@ app.locals.site = {};
 app.locals.site.title = ' · ISMapper'; //Site title
 app.locals.site.url = Config.server.host; //Site url
 app.locals.site.vendor = Config.vendor.host; //Vendor files url
+app.locals.site.aligner = Config.aligner; //Available aligners
+app.locals.site.specie = Config.reference; //Available species
 
 
 //Routes and path
