@@ -5,23 +5,20 @@ var execSync = require('child_process').execSync;
 var Config = require('../config.json');
 var ISConfig = require('../../ismapper-config.json');
 
-//Function for run the mapper
-function Run(folder, mapper, reference)
+//Function for run the aligner
+function Run(folder, aligner, reference)
 {
-	//Get the reference genome
-	var genome = ISConfig.reference[reference];
-
 	//Get the command base
 	var command = Config.base;
 
-	//Add the mapper path
-	command = command.replace(/{mapper}/, Config[mapper]);
+	//Add the aligner path
+	command = command.replace(/{aligner}/, Config[aligner]);
 
-	//Replace the path to the mapper
-	command = command.replace(/{path}/g, ISConfig.bin[mapper]);
+	//Replace the path to the aligner
+	command = command.replace(/{path}/g, ISConfig.aligner[aligner].path);
 
 	//Replace the reference genome
-	command = command.replace(/{reference}/g, genome.path);
+	command = command.replace(/{reference}/g, ISConfig.reference[reference].path);
 
 	//Replace the input file
 	command = command.replace(/{input}/g, folder + 'input.fastq');
