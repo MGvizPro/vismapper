@@ -42,7 +42,7 @@ router.get('/project/:id', Status, function(req, res, next){
 });
 
 //For extend the project life
-router.get('/project/:id/extend', CheckProject, function(req, res, next){
+router.get('/project/:id/extend', Status, function(req, res, next){
 
 	//Get the project ID
 	var id = req.params.id;
