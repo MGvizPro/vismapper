@@ -50,12 +50,28 @@
 		<h3>Select aligner</h3>
 
 		<!-- Description -->
-		<p>Select the aligner tool for align your reads.</p>
+		<p>Select the aligner tool for align your reads:</p>
 
 		<!-- Select the aligner -->
 		<select class="form-select" name="aligner" id="aligner">
 			<% for(var key in site.aligner) { %>
 			<option value="<%= key %>"><%= site.aligner[key].name %></option>
+			<% } %>
+		</select>
+
+		<!-- Spaces -->
+		<br><br>
+
+		<!-- Specie -->
+		<h3>Select reference genome</h3>
+
+		<!-- Description -->
+		<p>Select the reference genome:</p>
+
+		<!-- Select the aligner -->
+		<select class="form-select" name="specie" id="specie">
+			<% for(var key in site.specie) { %>
+			<option value="<%= key %>"><%= site.specie[key].name %></option>
 			<% } %>
 		</select>
 
