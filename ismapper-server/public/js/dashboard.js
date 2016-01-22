@@ -1,9 +1,6 @@
 /* Params values */
 var Params = {};
 
-//Server for specie
-Params.specie = 'http://ismapper.babelomics.org:3051/human.json';
-
 //Server for regions
 Params.regions = '/ws/regions/' + projectId + '/';
 
@@ -148,6 +145,7 @@ function TableGenes(data, title)
 
     //Go to region
     k.GoTo(el.chr + ':' + start + '-' + end);
+
   });
 
   //Show the table
@@ -258,6 +256,7 @@ function FindGenes(gene)
 
     //Clear the alert
     AlertClear();
+
   });
 
   //Fail function
@@ -427,5 +426,5 @@ function InputReads()
   }
 
   //Call to karyo for refresh the view
-  k.ImportRegions(Params.regions + num);
+  k.ImportRegions({ url: Params.regions + num });
 }
