@@ -1,0 +1,15 @@
+{
+	"cols":
+	{
+		"id": "bigint(99) NOT NULL AUTO_INCREMENT",
+		"name": "varchar(255) NOT NULL",
+		"chr": "varchar(2) NOT NULL",
+		"start": "bigint(99) NOT NULL",
+		"end": "bigint(99) NOT NULL",
+		"strand": "varchar(2) NOT NULL",
+		"mapq": "bigint(11) NOT NULL",
+		"cigar": "varchar(255) NOT NULL",
+		"seq": "text NOT NULL"
+	},
+	"primary": "id"
+}
