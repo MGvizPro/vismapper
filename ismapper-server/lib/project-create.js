@@ -55,13 +55,13 @@ function ProjectCreate(req, res, next)
 	var faResult = ProjectFasta(ISConfig.uploads + id + 'input.fastq', exResult.type);
 
 	//Check for error
-	if(faResult === true)
+	if(faResult.error === false)
 	{
 		//Get the expiration time
 		var expire = Days.Expiration(Config.time.expire);
 
 		//Create the new object for insert
-		var obj = {id: id, email: email, ready: 0, title: title, date: expire};
+		var obj = { id: id, email: email, ready: 0, title: title, date: expire, seq_orig: faResult.num, seq_mapp: 0, mapper: 'bwa', specie: 'hsapiens/grch38', time: 0 };
 
 		//Create the project on the database
 		db.Do({in: 'project', do: 'insert', values: obj}, function(results){
