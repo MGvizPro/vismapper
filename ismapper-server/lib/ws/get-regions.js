@@ -3,7 +3,7 @@ var db = require('dosql');
 
 //Import Config
 var ISConfig = require('../../../ismapper-config.json');
-var Config = require('../../app.json');
+var Config = require('../../config.json');
 
 //Function for create a new chr
 function CreateChr(chr) { return {"id": chr, "regions": []}; }
