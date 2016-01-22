@@ -35,14 +35,14 @@ $(document).ready(function(){
 
   //Report table
   k.TableOpt({
-    colsName: ['Chr','Start','End','Reads', 'CLCG', 'CRCG'],
-    colsAlign: ['center','right','right','right','center','center'],
+    colsName: ['Chr','Start','End','Strand','Reads','CLCG','CRCG'],
+    colsAlign: ['center','right','right','center','right','center','center'],
     //openShow: true,
     //openText: 'Open',
     parser: function(chr, region)
     {
       //Return the default row
-      return [chr, region.start, region.end, region.label + ' reads', '-', '-'];
+      return [chr, region.start, region.end, region.strand, region.label + ' reads', '-', '-'];
     }
   });
 
