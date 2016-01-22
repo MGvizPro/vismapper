@@ -5,5 +5,5 @@
   "time": {"extend": 2592000000, "expiration": 5184000000},
   "entrez": "http://www.ncbi.nlm.nih.gov/gene/?term=",
   "formats": { "fasta": [".fasta", ".fas", ".fa"], "fastq": [".fastq", ".fq"] },
-  "command": "{node}node {run} {project} &"
+  "command": "{node} {run} {project} &"
 }
