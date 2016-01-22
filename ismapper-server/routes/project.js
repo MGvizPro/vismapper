@@ -6,8 +6,11 @@ var router = express.Router();
 var db = require('dosql');
 
 //Import sections
-var CheckProject = require('../lib/check-project.js');
+var Status = require('../lib/status.js');
 var Days = require('../lib/utils/days.js');
+
+//Import configs
+var Config = require('../config.json');
 
 //Project root
 router.get('/project', function(req, res, next){ res.redirect('/'); });
@@ -22,7 +25,7 @@ router.get('/project/:id', CheckProject, function(req, res, next){
 	if(req.result.ready > 0)
 	{
 		//Get the remaining days
-		var days = Days.Remaining(req.result.date);
+		var days = Days.Remaining(req.result.date, Config.time.extend);
 
 		//Save the options
 		var options = {title: 'Dashboard', projectId: req.result.id, projectTitle: req.result.title, projectDays: days};
@@ -33,7 +36,7 @@ router.get('/project/:id', CheckProject, function(req, res, next){
 	else
 	{
 		//Wait
-		res.render('project/status', {title: 'Status', projectId: req.result.id });
+		res.render('project/status', {title: 'Status', projectId: req.result.id, refresh: Config.refresh });
 	}
 
 });
