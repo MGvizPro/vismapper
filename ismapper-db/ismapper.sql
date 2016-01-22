@@ -8,14 +8,14 @@ CREATE TABLE project
   date bigint(99) NOT NULL,
   seq_orig bigint(99) NOT NULL,
   seq_mapp bigint(99) NOT NULL,
-  mapper varchar(255) NOT NULL,
+  aligner varchar(255) NOT NULL,
   specie varchar(255) NOT NULL,
   time bigint(99) NOT NULL,
   ready bigint(1) NOT NULL,
   PRIMARY KEY (id)
 );
 
-INSERT INTO project (id,email,title,date,seq_orig,seq_mapp,mapper,specie,time,ready) VALUES 
+INSERT INTO project (id,email,title,date,seq_orig,seq_mapp,aligner,specie,time,ready) VALUES 
 ("demo","null","Demo data",0,1000,930,"bwa","hsapiens/grch38",1000,1);
 
 CREATE TABLE demo
