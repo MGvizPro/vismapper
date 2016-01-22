@@ -4,7 +4,9 @@ var router = express.Router();
 
 //Import dependencies
 var multer  = require('multer');
-var CreateProject = require('../lib/create-project');
+
+//Import libs
+var ProjectCreate = require('../lib/project-create.js');
 
 //Import config
 var Config = require('../../ismapper-config.json');
@@ -23,7 +25,7 @@ router.get('/upload', function(req, res, next){
 });
 
 //Upload post
-router.post('/upload', ufile, CreateProject);
+router.post('/upload', ufile, ProjectCreate);
 
 
 //Exports to node
