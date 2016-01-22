@@ -19,6 +19,6 @@
   },
   "content":
   [
-    {"id":"demo","email":"null","title":"Demo data","date":0,"ready":1}
+    {"id":"demo","email":"null","title":"Demo data","date":0,"seq_orig":1000,"seq_mapp":930,"mapper":"bwa","specie":"hsapiens/grch38","time":1000,"ready":1}
   ]
 }
