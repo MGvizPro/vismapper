@@ -75,6 +75,10 @@ a:hover { color: #2979FF; }
 /* Dashboard description */
 .dashboard-description { display: block; padding-bottom: 20px; }
 
+/* Dashboard status */
+.dashboard-status { display: block; border-radius: 5px; background-color: #f1f5fa; padding: 14px; }
+.dashboard-status { margin-bottom: 20px; width: calc(100% - 28px); line-height: 26px; }
+
 /* Dashoard left panel */
 .dashboard-left { display: inline-block; width: 240px; vertical-align: top; padding-right: 10px; }
 
@@ -109,7 +113,7 @@ a:hover { color: #2979FF; }
 .filters > .btn-outline { margin-left: 0px; margin-top: 10px; }
 
 /* Filters box */
-.filters-box { border-radius: 5px; background-color: #f1f5fa; padding-top: 7px; } 
+.filters-box { border-radius: 5px; background-color: #f1f5fa; padding-top: 7px; }
 
 
 /* Foot */
