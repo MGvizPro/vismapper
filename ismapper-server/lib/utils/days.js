@@ -4,24 +4,18 @@ var ml2days = 1000 * 60 * 60 * 24;
 //Function for count the remaining days
 exports.Remaining = function(ml)
 {
-  //Create a new data
-  var d = new Date();
-
   //Get the remaining time in ml
-  var rest = ml - d.getTime();
+  var rest = ml - Date.now();
 
   //Return the time
-  return Math.max(0, Math.floor(rest/ml2days));
+  return Math.max(0, Math.floor(rest/ml2days) + 1);
 };
 
 //Function for get the final date
 exports.Expiration = function(available)
 {
-  //Get the actual date
-  var d = new Date();
-
   //Return the expiration day
-  return d.getTime() + available;
+  return Date.now() + available;
 };
 
 //Function for get the extended time
