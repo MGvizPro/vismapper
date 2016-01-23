@@ -11,6 +11,7 @@ var Days = require('../lib/utils/days.js');
 
 //Import configs
 var Config = require('../config.json');
+var ISConfig = require('../../ismapper-config.json');
 
 //Project root
 router.get('/project', function(req, res, next){ res.redirect('/'); });
@@ -28,7 +29,15 @@ router.get('/project/:id', Status, function(req, res, next){
 		var days = Days.Remaining(req.result.date, Config.time.extend);
 
 		//Save the options
-		var options = {title: 'Dashboard', projectId: req.result.id, projectTitle: req.result.title, projectDays: days};
+		var options = { title: 'Dashboard', projectId: req.result.id, projectTitle: req.result.title };
+
+		//Save other project info
+		options.projectDays = days;
+		options.projectAligner = ISConfig.aligner[req.result.aligner].name;
+		options.projectSpecie = ISConfig.reference[req.result.specie].name;
+		options.projectTime = req.result.time/1000;
+		options.projectSeqOrig = req.result.seq_orig;
+		options.projectSeqMapp = req.result.seq_mapp;
 
 		//Show project dashboard
 		res.render('project/dashboard', options);
