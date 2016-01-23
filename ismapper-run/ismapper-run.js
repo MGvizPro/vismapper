@@ -52,6 +52,11 @@ db.Do({ in: 'project', do: 'select', where: { id: id }}, function(results){
 		db.Do({ in: 'project', do: 'update', where: { id: id }, set: upd }, function(res){
 
 			//Remove files
+			//fs.unlinkSync(folder + 'output.sam');
+			//fs.unlinkSync(folder + 'input.fastq');
+
+			//Delete the folder
+			//fs.rmdirSync(folder);
 
 			//Send the mail and exit
 			Mail(id, function(){ process.exit(0); });
