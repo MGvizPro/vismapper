@@ -2,8 +2,8 @@
 var Config = require('../config.json');
 
 //Initialize the columns
-var cols = ['Chr','Position','Number of reads','Mean MapQ','Closest Cancer Gene',
-						'Distance to Cancer Gene','Cancer Gene position','Cancer Gene Entrez', 'Entrez URL'];
+var cols = ['Chr','Position','Strand','Number of reads','Mean MapQ','CLCG Name','CLCG Distance',
+						'CLCG Entrez','CLCG Url','CRCG Name','CRCG Distance','CRCG Entrez','CRCG Url'];
 
 //Tabulator
 var tab = '\t';
@@ -45,21 +45,44 @@ function DownloadReport(req, res, next)
   //Read all fields
   for(var i = 0; i < content.length; i++)
   {
-    //Counter
-    var count = 0;
+    //Save the chromosome
+		out = out + content[i].chr + tab;
 
-    //Read all items
-    for(var key in content[i])
-    {
-      //Insert the tab
-      if(count > 0) { out = out + tab; }
+		//Save the position
+		out = out + content[i].start + tab;
 
-      //Insert the content
-      out = out + content[i][key];
+		//Save the strand
+		out = out + content[i].strand + tab;
 
-      //Increment the counter
-      count = count + 1;
-    }
+		//Save the number of reads
+		out = out + content[i].label + tab;
+
+		//Save the mean map quality
+		out = out + content[i].mapq + tab;
+
+		//Save the CLCG name
+		out = out + content[i].leftg + tab;
+
+		//Save the CLCG distance
+		out = out + content[i].leftd + tab;
+
+		//Save the CLCG Entrez
+		out = out + content[i].lefte + tab;
+
+		//Save the CLCG Entrez url
+		out = out + Config.entrez + content[i].lefte + tab;
+
+		//Save the CRCG Name
+		out = out + content[i].rightg + tab;
+
+		//Save the CRCG distance
+		out = out + content[i].rightd + tab;
+
+		//Save the CRCG Entrez
+		out = out + content[i].righte + tab;
+
+		//Save the CRCG Entrez URL
+		out = out + Config.entrez + content[i].righte;
 
     //Add end line
     out = out + endl;
