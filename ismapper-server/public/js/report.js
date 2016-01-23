@@ -1,6 +1,9 @@
 //Params
 var Params = {};
 
+//Entrez url
+Params.entrez = 'http://www.ncbi.nlm.nih.gov/gene/?term=';
+
 //Filter by reads
 Params.reads = {};
 Params.reads.default = {}; //Default values
@@ -112,13 +115,16 @@ function ReportTable()
 
   //Cols for the genes table
   t.AddColumn({'key':'chr','label':'Chr','align':'right'});
-  t.AddColumn({'key':'pos','label':'Position','align':'right'});
-  t.AddColumn({'key':'num','label':'Number of reads','align':'right'});
+  t.AddColumn({'key':'start','label':'Position','align':'right'});
+  t.AddColumn({'key':'strand','label':'Strand','align':'center'});
+  t.AddColumn({'key':'count','label':'Reads','align':'right'});
   t.AddColumn({'key':'mapq','label':'Mean MapQ','align':'right'});
-  t.AddColumn({'key':'genename','label':'Closest Cancer Gene'});
-  t.AddColumn({'key':'genedistance','label':'Distance','align':'right'});
-  t.AddColumn({'key':'geneposition','label':'Position','align':'center'});
-  t.AddColumn({'key':'entrez','label':'Entrez','align':'right','style':tableStyle});
+  t.AddColumn({'key':'leftg','label':'CLCG Name','align':'center'});
+  t.AddColumn({'key':'leftd','label':'CLCG Distance','align':'right'});
+  t.AddColumn({'key':'lefte','label':'CLCG Entrez','align':'center','style':tableStyle});
+  t.AddColumn({'key':'rightg','label':'CRCG Name','align':'center'});
+  t.AddColumn({'key':'rightd','label':'CRCG Distance','align':'right'});
+  t.AddColumn({'key':'righte','label':'CRCG Entrez','align':'center','style':tableStyle});
 
   //Content
   t.Content(data.processed);
@@ -127,15 +133,20 @@ function ReportTable()
   t.Callback(function(row, col){
 
     //Check the column type
-    if(col == 'entrez')
+    if(col == 'lefte')
     {
       //View gene in entrez
-      window.open(row['entrezurl'], '_blank');
+      window.open(Params.entrez + row['lefte'], '_blank');
+    }
+    else if(col == 'righte')
+    {
+      //View gene in entrez
+      window.open(Params.entrez + row['righte'], '_blank');
     }
     else
     {
       //Do the region for show
-      var region = row['chr'] + ':' + row['pos'] + '-' + row['pos'];
+      var region = row['chr'] + ':' + row['start'] + '-' + row['start'];
 
       //Open a new window with the region
       window.open('/project/' + project + '/?r=' + region, '_blank');
