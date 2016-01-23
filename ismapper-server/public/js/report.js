@@ -76,18 +76,24 @@ function FilterData()
     var d = data.original[i];
 
     //Filter the number of reads
-    if(d.num < readsVal.input) { continue; }
+    if(d.count < readsVal.input) { continue; }
 
     //Filter by distance
     if(distVal.select === 'gt')
     {
       //Check for greater than
-      if(d.genedistance < distVal.input) { continue; }
+      if(d.leftd < distVal.input || d.rightd < distVal.input) { continue; }
     }
     else
     {
-      //Check for lower than
-      if(d.genedistance > distVal.input) { continue; }
+      //Check the distance for both genes
+      if(d.leftd > distVal.input && d.rightd > distVal.input) { continue; }
+
+      //Check the left gene name
+      if(d.leftg === '--' && d.rightd > distVal.input) { continue; }
+
+      //Check the right gene name
+      if(d.leftd > distVal.input && d.rightg === '--') { continue; }
     }
 
     //Add the position
