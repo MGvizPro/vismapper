@@ -2,11 +2,14 @@
 var express = require('express');
 var router = express.Router();
 
+//Import libs
+var Clean = require('../lib/clean.js');
+
 //Index
-router.get('/', function(req, res, next){
-	
+router.get('/', Clean, function(req, res, next){
+
 	res.render('index', { title: 'Home' });
-	
+
 });
 
 //Exports to node
