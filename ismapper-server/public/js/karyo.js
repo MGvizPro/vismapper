@@ -42,7 +42,7 @@ $(document).ready(function(){
     parser: function(chr, region)
     {
       //Return the default row
-      return [chr, region.start, region.end, region.strand, region.label + ' reads', '-', '-'];
+      return [chr,region.start,region.end,region.strand,region.label+' reads',region.leftg,region.rightg];
     }
   });
 
