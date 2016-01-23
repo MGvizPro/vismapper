@@ -53,15 +53,26 @@
 <!-- Dashboard panel -->
 <div class="dashboard main">
 
-  <!-- Project title -->
-  <h1><%= projectTitle %></h1>
-
   <!-- Project description -->
   <div class="dashboard-description">
 
+    <!-- Project status -->
+    <div class="dashboard-status">
+
+      <!-- Project title -->
+      <h1><%= projectTitle %></h1>
+
+      <!-- Run information -->
+      Your reads have been aligned with <b><%= projectAligner %></b> using the
+      <b><%= projectSpecie %></b> reference genome, in <b><%= projectTime %> seconds</b>.<br>
+
+      <!-- Reads status -->
+      Initial number of reads: <b><%= projectSeqOrig %></b>.
+      Number of mapped reads: <b><%= projectSeqMapp %></b>.
+
+    </div>
+
     <!-- Description -->
-    <p>This is the dashboard for the project <b><%= projectTitle %></b>. Here you can visualize your data
-    or generate a report with all the detected positions.</p>
     <p>Remember that you must save the url to this page, because you need it to access again and
     visualize your uploaded data. You can save this page to <i>Favorites</i> (if you are using Google
     Chrome, just click on the star placed at the top right corner of your browser), or copy and save
