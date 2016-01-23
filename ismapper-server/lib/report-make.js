@@ -11,6 +11,9 @@ var Config = require('../config.json');
 //Make the report
 function MakeReport(req, res, next)
 {
+  //Initialize
+  req.output = { "json": null };
+
   //Get the project
   var project = req.params.project;
 
