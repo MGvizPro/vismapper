@@ -19,7 +19,7 @@
     "dosql": "0.2.1",
     "objectsort": "0.1.2",
     "fasta-tools": "0.1.1-alpha",
-    "genom": "0.1.1",
+    "gen-coord": "1.0.0",
     "getid": "0.1.0"
   },
   "devDependencies": {
