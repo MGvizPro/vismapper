@@ -59,7 +59,7 @@ db.Do({ in: 'project', do: 'select', where: { id: id }}, function(results){
 			//fs.rmdirSync(folder);
 
 			//Send the mail and exit
-			Mail(id, function(){ process.exit(0); });
+			Mail(id, results[0], function(){ process.exit(0); });
 
 		});
 
