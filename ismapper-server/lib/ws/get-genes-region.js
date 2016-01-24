@@ -1,6 +1,6 @@
 //Import dependencies
 var db = require('dosql');
-var Genom = require('genom');
+var genCoord = require('gen-coord');
 
 //Import Config
 var ISConfig = require('../../../ismapper-config.json');
@@ -47,7 +47,7 @@ function GetGenesByRegion(req, res, next)
 function FindGenesForRegion(reg, callback)
 {
   //Get the region
-  var reg = Genom.Split(reg);
+  var reg = genCoord.Split(reg);
 
   //Create the new object
   var obj = [];
