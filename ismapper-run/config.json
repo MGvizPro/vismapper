@@ -1,0 +1,6 @@
+{
+	"quality": 20,
+	"base2": "/opt/soft/sge/bin/linux-x64/qsub -N ismapper -q clinic.q@clinic10 -l clinicq=true -sync y -l h_vmem=10G -pe smp 1 -o /opt/ismapper/tmp/6rqa1450792890158 -j y -b y '{aligner}'",
+	"base": "{aligner}",
+	"bwa": "{path} mem -t 2 {reference} {input} > {output}"
+}
