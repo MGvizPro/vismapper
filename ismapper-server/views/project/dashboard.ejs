@@ -91,69 +91,61 @@
   <div class="dashboard-left">
 
     <!-- Filter -->
-		<div class="panel">
+		<div class="filters">
 
-			<!-- Pannel head -->
-			<div class="panel-head">Options</div>
+      <!-- Filter by number of reads -->
+      <b>Filter by number of reads</b><br>
+      Show only the positions that have the minimum number of reads:
 
-			<!-- Pannel body -->
-			<div class="panel-body filters">
+      <!-- Input -->
+      <input id="input-reads" type="text" class="form-input" value="5">
 
-        <!-- Filter by number of reads -->
-        <b>Filter by number of reads</b><br>
-        Show only the positions that have the minimum number of reads:
+      <!-- Update button -->
+      <div class="btn btn-blue btn-small" id="filter-reads">Filter</div>
 
-        <!-- Input -->
-        <input id="input-reads" type="text" class="form-input" value="5">
+      <!-- Line -->
+      <hr>
 
-        <!-- Update button -->
-        <div class="btn-outline btn-outline-blue btn-small" id="filter-reads">Filter</div>
+      <!-- Find gene -->
+      <b>Find Cancer Genes</b><br>
+      Find for genes implicated in cancer.
 
-        <!-- Line -->
-        <hr>
+      <!-- Input -->
+      <input id="input-genes" type="text" class="form-input" placeholder="Gene">
 
-        <!-- Find gene -->
-        <b>Find Cancer Genes</b><br>
-        Find for genes implicated in cancer.
+      <!-- Find button -->
+      <div class="btn btn-blue btn-small" id="find-genes">Find</div>
 
-        <!-- Input -->
-        <input id="input-genes" type="text" class="form-input" placeholder="Gene">
+      <!-- View the full list -->
+      <div class="btn btn-small btn-green" id="full-genes">Full list</div>
 
-        <!-- Find button -->
-        <div class="btn-outline btn-outline-blue btn-small" id="find-genes">Find</div>
+      <!-- Line -->
+      <hr>
 
-        <!-- View the full list -->
-        <div class="btn-outline btn-small btn-outline-green" id="full-genes">Full list</div>
+      <!-- Find Tumour -->
+      <b>Find genes by Tumour Type</b><br>
+      Gives you a list with all genes involved in a seleted tumour type (somatic and germline):
 
-        <!-- Line -->
-        <hr>
+      <!-- Input -->
+      <input id="input-tumours" type="text" class="form-input" placeholder="Tumour">
 
-        <!-- Find Tumour -->
-        <b>Find genes by Tumour Type</b><br>
-        Gives you a list with all genes involved in a seleted tumour type (somatic and germline):
+      <!-- Find button -->
+      <div class="btn btn-blue btn-small" id="find-tumours">Find</div>
 
-        <!-- Input -->
-        <input id="input-tumours" type="text" class="form-input" placeholder="Tumour">
+      <!-- View the full list -->
+      <div class="btn btn-small btn-green" id="full-tumours">Full list</div>
 
-        <!-- Find button -->
-        <div class="btn-outline btn-outline-blue btn-small" id="find-tumours">Find</div>
+      <!-- Line -->
+      <hr>
 
-        <!-- View the full list -->
-        <div class="btn-outline btn-small btn-outline-green" id="full-tumours">Full list</div>
+      <!-- Generate a report -->
+      <b>Report</b><br>
+      Generate a report with all the integration sites.<br>
 
-        <!-- Line -->
-        <hr>
+      <!-- Link -->
+      <a href="/report/<%= projectId %>" class="btn btn-blue btn-small" target="_blank">Generate</a>
 
-        <!-- Generate a report -->
-        <b>Report</b><br>
-        Generate a report with all the positions.<br>
-
-        <!-- Link -->
-        <a href="/report/<%= projectId %>" class="btn-outline btn-outline-blue btn-small" target="_blank">Generate</a>
-
-      </div>
-
-		</div>
+    </div>
 
   </div>
 
