@@ -1,29 +1,29 @@
 /* Links */
-a { color: #448AFF; }
-a:hover { color: #2979FF; }
+a { color: #448AFF; } a:hover { color: #2979FF; }
 
 /* Button blue */
 .btn-blue { background-color: #448AFF !important; }
-.btn-outline-blue { color: #448AFF !important; border-color: #448AFF !important; }
-.btn-outline-blue:hover { background-color: #448AFF !important; color: #ffffff !important; }
+.btn-blue:hover { color: #ffffff !important; }
 
 /* Button green */
 .btn-green { background-color: #00C853 !important; }
-.btn-outline-green { color: #00C853 !important; border-color: #00C853 !important; }
-.btn-outline-green:hover { background-color: #00C853 !important; color: #ffffff !important; }
+.btn-green:hover { color: #ffffff !important; }
 
 /* Button red */
 .btn-red { background-color: #FF5252 !important; }
-.btn-outline-red { color: #FF5252 !important; border-color: #FF5252 !important; }
-.btn-outline-red:hover { background-color: #FF5252 !important; color: #ffffff !important; }
+.btn-red:hover { color: #ffffff !important; }
 
 /* Button white */
 .btn-white { background-color: #ffffff !important; color: #448AFF !important; }
 .btn-outline-white { color: #ffffff !important; border-color: #ffffff !important; }
 .btn-outline-white:hover { background-color: #ffffff !important; color: #448AFF !important; }
 
-/* Input def */
+/* Forms */
 .form-input-500 { width: 500px; }
+.form-select { width: auto; }
+
+/* Pre code */
+pre { background-color: #ebf0fa !important; }
 
 /* Navbar */
 .navbar { display: block; width: 100%; height: 70px; background-color: #448AFF; line-height: 70px; }
@@ -76,7 +76,7 @@ a:hover { color: #2979FF; }
 .dashboard-description { display: block; padding-bottom: 20px; }
 
 /* Dashboard status */
-.dashboard-status { display: block; border-radius: 5px; background-color: #f1f5fa; padding: 14px; }
+.dashboard-status { display: block; border-radius: 5px; background-color: #ebf0fa; padding: 14px; }
 .dashboard-status { margin-bottom: 20px; width: calc(100% - 28px); line-height: 26px; }
 
 /* Dashoard left panel */
@@ -97,7 +97,8 @@ a:hover { color: #2979FF; }
 
 
 /* Filters */
-.filters { font-size: 14px; }
+.filters { font-size: 14px; padding: 14px; padding-top: 20px; line-height: 21px; }
+.filters { border-radius: 5px; background-color: #ebf0fa; width: calc(100% - 28px); }
 
 /* Filters line */
 .filters hr { background-color: #ccdde4; height: 1px; border: 0px; margin-bottom: 15px; }
@@ -106,14 +107,11 @@ a:hover { color: #2979FF; }
 .filters b { font-size: 15px; }
 
 /* Filters input */
-.filters > .form-input, .filters > .form-select { padding-top: 5px; padding-bottom: 5px; height: 32px; }
-.filters > .form-input, .filters > .form-select  { font-size: 14px; margin-bottom: 0px; margin-top: 10px; }
+.filters .form-input, .filters .form-select { padding-top: 5px; padding-bottom: 5px; height: 32px; }
+.filters .form-input, .filters .form-select  { font-size: 14px; margin-bottom: 0px; margin-top: 10px; }
 
 /* Filters button */
-.filters > .btn-outline { margin-left: 0px; margin-top: 10px; }
-
-/* Filters box */
-.filters-box { border-radius: 5px; background-color: #f1f5fa; padding-top: 7px; }
+.filters .btn { margin-left: 0px; margin-top: 10px; }
 
 
 /* Foot */
