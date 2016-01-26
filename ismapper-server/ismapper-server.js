@@ -35,6 +35,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser('CEAF3FA4-F385-49AA-8FE4-54766A9874F2'));
 app.use(session({secret: '59B93087-78BC-4EB9-993A-A61FC844F6C0'}));
 
+//Enable CORS
+app.use(function(req, res, next){
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 //Initialize request client
 db.Connect(Config.db);
 
