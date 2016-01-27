@@ -53,40 +53,6 @@
 <!-- Dashboard panel -->
 <div class="dashboard main">
 
-  <!-- Project description -->
-  <div class="dashboard-description">
-
-    <!-- Project status -->
-    <div class="dashboard-status">
-
-      <!-- Project title -->
-      <h1><%= projectTitle %></h1>
-
-      <!-- Run information -->
-      Your reads have been aligned with <b><%= projectAligner %></b> using the
-      <b><%= projectSpecie %></b> reference genome, in <b><%= projectTime %> seconds</b>.<br>
-
-      <!-- Reads status -->
-      Initial number of reads: <b><%= projectSeqOrig %></b>.
-      Number of mapped reads: <b><%= projectSeqMapp %></b>.
-
-    </div>
-
-    <!-- Description -->
-    <p>Remember that you must save the url to this page, because you need it to access again and
-    visualize your uploaded data. You can save this page to <i>Favorites</i> (if you are using Google
-    Chrome, just click on the star placed at the top right corner of your browser), or copy and save
-    the next link:</p>
-
-    <!-- Link -->
-  	<pre><%= site.url %>project/<%= projectId %></pre>
-
-    <p>This project will be removed from our server in <b><%= projectDays %></b> days.
-    You can add 30 days to the expiration by clicking <a href="/project/<%= projectId %>/extend">here</a>.
-    Note that you can only extend the expiration time if the remaining days is lower than 10 days.</p>
-
-  </div>
-
   <!-- Dashboard left -->
   <div class="dashboard-left">
 
@@ -151,6 +117,24 @@
 
   <!-- Dashboard right -->
   <div class="dashboard-right">
+
+    <!-- Project status -->
+    <div class="dashboard-status" align="center">
+
+      <!-- Project title -->
+      <h1><%= projectTitle %></h1>
+
+      <!-- Aligner information -->
+      Aligner: <b><%= projectAligner %></b> (in <b><%= projectTime %> seconds</b>).
+      Reference genome: <b><%= projectSpecie %></b>.
+
+      <!-- Reads status -->
+      Reads: <b><%= projectSeqOrig %></b>. Mapped: <b><%= projectSeqMapp %></b>.<br>
+
+      <!-- Project information -->
+      Remaining days: <b><%= projectDays %></b> [<a href="/project/<%= projectId %>/extend">Extend</a>].<br>
+
+    </div>
 
     <!-- Div for alerts -->
     <div id="alert_div"></div>
