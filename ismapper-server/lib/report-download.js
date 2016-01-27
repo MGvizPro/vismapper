@@ -2,8 +2,8 @@
 var Config = require('../config.json');
 
 //Initialize the columns
-var cols = ['Chr','Position','Strand','Number of reads','Mean MapQ','CLCG Name','CLCG Distance',
-						'CLCG Entrez','CLCG Url','CRCG Name','CRCG Distance','CRCG Entrez','CRCG Url'];
+var cols = ['Chr','Position','Strand','Number of reads','Mean MapQ','Left Gene','Left Gene Distance',
+						'Left Gene Entrez','Left Gene Url','Right Gene','Right Gene Distance','Right Gene Entrez','Right Gene Url'];
 
 //Tabulator
 var tab = '\t';
