@@ -89,7 +89,7 @@ pre { background-color: #ebf0fa !important; }
 .dashboard-right-karyo { margin-top: 0px; }
 
 /* Dashboard right table viewer */
-.dashboard-right-table { margin-bottom: 10px; }
+.dashboard-right-table { margin-bottom: 20px; }
 
 /* Dashboard right genome maps viewer */
 .dashboard-right-gmaps { display: block; border-radius: 5px; border: 1px solid #ccdde4; }
@@ -102,6 +102,7 @@ pre { background-color: #ebf0fa !important; }
 
 /* Filters line */
 .filters hr { background-color: #ccdde4; height: 1px; border: 0px; margin-bottom: 15px; }
+.filters hr { margin-top: 15px !important; }
 
 /* Filters bold text */
 .filters b { font-size: 15px; }
@@ -111,7 +112,8 @@ pre { background-color: #ebf0fa !important; }
 .filters .form-input, .filters .form-select  { font-size: 14px; margin-bottom: 0px; margin-top: 10px; }
 
 /* Filters button */
-.filters .btn { margin-left: 0px; margin-top: 10px; }
+.filters .btn { margin-left: 0px; margin-top: 10px; margin-bottom: 0px !important; }
+
 
 
 /* Foot */
