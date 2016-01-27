@@ -21,35 +21,22 @@
 <div class="grid main">
 
   <!-- Section title -->
-  <h1>Report</h1>
-
-  <!-- Description -->
-  <p>This is the text report for the project <a href="/project/<%= projectId %>"><%= projectTitle %></a>.
-  Each integration site (IS) that we have detected in your data will be shown in a row of the
-  table below. For get more information about the report, please read the report section in our
-  <a href="https://github.com/biowt/ismapper/wiki/Report" target="_blank">wiki</a>.</p>
-
-  <!-- Download report -->
-  <p>You can filter the table by minium number of reads per each IS and by distante to the closest Cancer
-  Gene, using the form below. Additionally, you can <b>download a tabulated file</b> (in TSV format)
-  with the full report from <a href="/report/<%= projectId %>/download">here</a>.</p>
+  <h1>Report from <%= projectTitle %></h1>
 
   <!-- Filters -->
   <div class="row filters">
 
     <!-- Filter for min reads -->
-    <div class="col-6" align="center">
+    <div class="col-4" align="center">
       <b>Filter by number of reads</b><br>
-      Show only the positions that have a minimum number of reads:<br>
       <input id="filter-reads-input" class="form-input" style="width:auto;"><br>
       <div class="btn btn-small btn-blue" id="filter-reads-send">Filter</div>
       <div class="btn btn-small btn-red" id="filter-reads-reset">Reset filter</div>
     </div>
 
     <!-- Filter by distance to cancer gene -->
-    <div class="col-6" align="center">
+    <div class="col-4" align="center">
       <b>Filter by distance to Cancer Gene</b><br>
-      Set the distance from the position to the closest cancer gene:<br>
       <select id="filter-distance-select" class="form-select">
         <option value="gt">Greater than</option>
         <option value="lt">Lower than</option>
@@ -57,6 +44,13 @@
       <input id="filter-distance-input" class="form-input" style="width:auto;"><br>
       <div class="btn btn-small btn-blue" id="filter-distance-send">Filter</div>
       <div class="btn btn-small btn-red" id="filter-distance-reset">Reset filter</div>
+    </div>
+
+    <!-- Downloads -->
+    <div class="col-4" align="center">
+      <b>Download</b><br>
+      <a href="/report/<%= projectId %>/download" class="btn btn-small btn-blue">Report in TSV format</a>
+      <a href="" class="btn btn-small btn-blue">Mapped BAM file</a>
     </div>
 
   </div>
