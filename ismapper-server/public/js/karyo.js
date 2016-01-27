@@ -13,6 +13,22 @@ $(document).ready(function(){
   //Use the human test data
   k.ImportRegions({ url: Params.regions + Params.default.minreads });
 
+  //Options
+  k.Options({
+    //previewRegions: true,
+    //navbarHeight: 50,
+    //navbarShow: true,
+    //navbarShowKaryo: true,
+    //navbarShowSearch: true,
+    //navbarShowTable: true,
+    navbarShowHelp: false
+    //tipShow: true,
+    //tipText: 'You can personalize the tip message!',
+    //selectMax: -1,
+    //selectEnabled: true,
+    //showTable: true
+  });
+
   //Labels
   k.UseLabel({
     chromosome: function(chr)
@@ -35,7 +51,7 @@ $(document).ready(function(){
 
   //Report table
   k.TableOpt({
-    colsName: ['Chr','Start','End','Strand','Reads','CLCG','CRCG'],
+    colsName: ['Chr','Start','End','Strand','Reads','Left Gene','Right Gene'],
     colsAlign: ['center','right','right','center','center','center','center'],
     //openShow: true,
     //openText: 'Open',
