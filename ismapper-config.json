@@ -1,11 +1,9 @@
 {
-  "name": "ISMapper",
   "server":
   {
     "port": 3000,
     "host": "http://ismapper.babelomics.org/"
   },
-  "uploads": "/path/to/uploads/folder/",
   "vendor":
   {
     "port": 3001,
@@ -18,11 +16,22 @@
     "pass": "ismapper-db-pass",
     "db": "ismapper"
   },
-  "bin":
+  "uploads": "/path/to/uploads/folder/",
+  "run": "/path/to/run/script/folder/",
+  "node": "/complete/path/to/bin/node",
+  "aligner":
   {
-    "path": "/path/to/bin/folder/",
-    "bwa": "/complete/path/to/bwa",
-    "samtools": "/complete/path/to/samtools"
+    "bwa": { "name": "BWA", "path": "/complete/path/to/bwa" }
   },
-  "reference": "/complete/path/to/hsapiens.fa"
+  "reference":
+  {
+    "hsapiens/grch38": { "name": "Homo Sapiens GRCh38", "path": "/complete/path/to/hsapiens.fa" }
+  },
+  "email":
+  {
+    "host": "smtp.your-email.com",
+    "user": "username",
+    "pass": "yoursecretpassword",
+    "mail": "username@your-email.com"
+  }
 }
