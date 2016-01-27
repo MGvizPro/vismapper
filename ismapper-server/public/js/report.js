@@ -125,12 +125,12 @@ function ReportTable()
   t.AddColumn({'key':'strand','label':'Strand','align':'center'});
   t.AddColumn({'key':'count','label':'Reads','align':'right'});
   t.AddColumn({'key':'mapq','label':'Mean MapQ','align':'right'});
-  t.AddColumn({'key':'leftg','label':'CLCG Name','align':'center'});
-  t.AddColumn({'key':'leftd','label':'CLCG Distance','align':'right'});
-  t.AddColumn({'key':'lefte','label':'CLCG Entrez','align':'center','style':tableStyle});
-  t.AddColumn({'key':'rightg','label':'CRCG Name','align':'center'});
-  t.AddColumn({'key':'rightd','label':'CRCG Distance','align':'right'});
-  t.AddColumn({'key':'righte','label':'CRCG Entrez','align':'center','style':tableStyle});
+  t.AddColumn({'key':'leftg','label':'Left Gene','align':'center'});
+  t.AddColumn({'key':'leftd','label':'Distance','align':'right'});
+  t.AddColumn({'key':'lefte','label':'Entrez','align':'center','style':tableStyle});
+  t.AddColumn({'key':'rightg','label':'Right Gene','align':'center'});
+  t.AddColumn({'key':'rightd','label':'Distance','align':'right'});
+  t.AddColumn({'key':'righte','label':'Entrez','align':'center','style':tableStyle});
 
   //Content
   t.Content(data.processed);
