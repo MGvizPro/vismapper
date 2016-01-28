@@ -10,13 +10,16 @@ var session = require('express-session');
 
 //My dependencies
 var db = require('dosql');
-var Config = require('../ismapper-config.json');
+
+//Import config
+var Config = require('./config.json');
+var ISConfig = require('../ismapper-config.json');
 
 //Create the new app
 var app = express();
 
 //Set port
-app.set('port', Config.server.port);
+app.set('port', ISConfig.server.port);
 
 //EJS engine
 app.set('views', path.join(__dirname, 'views'));
@@ -43,16 +46,16 @@ app.use(function(req, res, next){
 });
 
 //Initialize request client
-db.Connect(Config.db);
+db.Connect(ISConfig.db);
 
 //Local vars
 app.locals.site = {};
 app.locals.site.title = ' · ISMapper'; //Site title
-app.locals.site.url = Config.server.host; //Site url
-app.locals.site.vendor = Config.vendor.host; //Vendor files url
-app.locals.site.aligner = Config.aligner; //Available aligners
-app.locals.site.specie = Config.reference; //Available species
-
+app.locals.site.url = ISConfig.server.host; //Site url
+app.locals.site.vendor = ISConfig.vendor.host; //Vendor files url
+app.locals.site.aligner = ISConfig.aligner; //Available aligners
+app.locals.site.specie = ISConfig.reference; //Available species
+app.locals.site.demo = Config.demo; //Demo project
 
 //Routes and path
 app.use('/', require('./routes/index'));
