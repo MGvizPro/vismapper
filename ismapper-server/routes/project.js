@@ -35,6 +35,7 @@ router.get('/project/:id', Status, function(req, res, next){
 		options.projectDays = days;
 		options.projectAligner = ISConfig.aligner[req.result.aligner].name;
 		options.projectSpecie = ISConfig.reference[req.result.specie].name;
+		options.projectSpecieID = req.result.specie;
 		options.projectTime = req.result.time/1000;
 		options.projectSeqOrig = req.result.seq_orig;
 		options.projectSeqMapp = req.result.seq_mapp;
