@@ -16,7 +16,7 @@ var Config = require('../ismapper-config.json');
 //Databases source
 var sourceDB = [];
 sourceDB.push(require('./source/project.json')); //Projects table
-sourceDB.push(require('./source/demo.json')); //Demo project table
+//sourceDB.push(require('./source/demo.json')); //Demo project table
 sourceDB.push(require('./source/cancerGenes.json')); //Cancer Genes table
 sourceDB.push(require('./source/cancerTumours.json')); //Cancer Tumours table
 

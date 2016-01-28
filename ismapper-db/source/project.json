@@ -16,9 +16,5 @@
       "ready": "bigint(1) NOT NULL"
     },
     "primary": "id"
-  },
-  "content":
-  [
-    {"id":"demo","email":"null","title":"Demo data","date":0,"seq_orig":1000,"seq_mapp":930,"aligner":"bwa","specie":"hsapiens/grch38","time":1000,"ready":1}
-  ]
+  }
 }
