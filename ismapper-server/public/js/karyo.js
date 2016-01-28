@@ -8,7 +8,7 @@ $(document).ready(function(){
   k = new Karyo('karyo_div');
 
   //Use the Human test specie
-  k.ImportChrs({ fromDB: 'hsapiens/grch38' });
+  k.ImportChrs({ fromDB: Params.specie });
 
   //Use the human test data
   k.ImportRegions({ url: Params.regions + Params.default.minreads });
