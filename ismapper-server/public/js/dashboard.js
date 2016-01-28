@@ -7,6 +7,9 @@ Params.regions = '/ws/regions/' + projectId + '/';
 //Server for reads
 Params.reads = '/ws/reads/' + projectId + '/{region}';
 
+//Server for specie
+Params.specie = projectSpecieID;
+
 //For find in database related to cancer
 Params.db = {};
 Params.db.genes = {}; //For find genes
