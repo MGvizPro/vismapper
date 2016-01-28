@@ -189,54 +189,58 @@ function Regions(id, minreads, callback)
 					var leftd = { distance: 999999999999, index: -1};
 					var rightd = { distance: 999999999999, index: -1};
 
-	        //Read all genes
-	        for(var j = 0; j < g.length; j++)
-	        {
-	          //Check if read is into gene
-	          if(g[j].start <= regions[k].regions[i].start && regions[k].regions[i].start <= g[j].end)
-	          {
-	            //Set distance as 0
-	            leftd.distance = 0; rightd.distance = 0;
+					//Check for undefined
+					if(typeof g !== 'undefined')
+					{
+		        //Read all genes
+		        for(var j = 0; j < g.length; j++)
+		        {
+		          //Check if read is into gene
+		          if(g[j].start <= regions[k].regions[i].start && regions[k].regions[i].start <= g[j].end)
+		          {
+		            //Set distance as 0
+		            leftd.distance = 0; rightd.distance = 0;
 
-	            //Save the index
-	            leftd.index = j; rightd.index = j;
+		            //Save the index
+		            leftd.index = j; rightd.index = j;
 
-	            //Exit
-	            break;
-	          }
+		            //Exit
+		            break;
+		          }
 
-						//Check if gene is at left of the position
-						if(g[j].end < regions[k].regions[i].start)
-						{
-							//Save the distance
-							var d = regions[k].regions[i].start - g[j].end;
-
-							//Check for save
-							if(d < leftd.distance)
+							//Check if gene is at left of the position
+							if(g[j].end < regions[k].regions[i].start)
 							{
 								//Save the distance
-								leftd.distance = d;
+								var d = regions[k].regions[i].start - g[j].end;
 
-								//Save the index
-								leftd.index = j;
+								//Check for save
+								if(d < leftd.distance)
+								{
+									//Save the distance
+									leftd.distance = d;
+
+									//Save the index
+									leftd.index = j;
+								}
 							}
-						}
-						else if(regions[k].regions[i].start < g[j].start)
-						{
-							//Save the distance
-							var d = g[j].start - regions[k].regions[i].start;
-
-							//Check for save the distance
-							if(d < rightd.distance)
+							else if(regions[k].regions[i].start < g[j].start)
 							{
 								//Save the distance
-								rightd.distance = d;
+								var d = g[j].start - regions[k].regions[i].start;
 
-								//Save the index
-								rightd.index = j;
+								//Check for save the distance
+								if(d < rightd.distance)
+								{
+									//Save the distance
+									rightd.distance = d;
+
+									//Save the index
+									rightd.index = j;
+								}
 							}
-						}
-	        }
+		        }
+					}
 
 					//Save the left gene
 					regions[k].regions[i].leftg = (leftd.index > -1)? g[leftd.index].name : '--';
