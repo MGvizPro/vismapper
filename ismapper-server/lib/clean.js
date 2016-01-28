@@ -6,6 +6,7 @@ var Days = require('./utils/days.js');
 
 //Import config
 var Config = require('../config.json');
+var ISConfig = require('../../ismapper-config.json');
 
 //Function for clean the projects
 function CleanProjects(req, res, next)
@@ -39,7 +40,7 @@ function CleanProjects(req, res, next)
 			//Show in console
 			console.log('Remove the next projects: ');
 			console.log(remove);
-			
+
 			//Remove all the projects
 			RemoveProject(0, remove, function(){ return next(); });
 		}
@@ -63,6 +64,16 @@ function RemoveProject(n, remove, callback)
 
 		//Remove from project list
 		db.Do({ in: 'project', do: 'delete', where: { id: remove[n]}}, function(result){
+
+			//project folder
+			var folder = path.join(ISConfig.uploads, remove[n] + '/');
+
+			//Remove files
+			fs.unlinkSync(folder + 'output.sam');
+			fs.unlinkSync(folder + 'input.fastq');
+
+			//Delete the folder
+			fs.rmdirSync(folder);
 
 			//Increment the counter
 			n = n + 1;
