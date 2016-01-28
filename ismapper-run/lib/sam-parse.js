@@ -61,8 +61,7 @@ function SamParse(line, quality)
 	obj.cigar = line[5];
 
 	//Save the sequence
-	//obj.seq = line[9];
-	obj.seq = 'A';
+	obj.seq = line[9];
 
 	//Return the object
 	return obj;
