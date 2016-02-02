@@ -1,0 +1,9 @@
+[submodule "ismapper-bin/hpg-aligner"]
+	path = ismapper-bin/hpg-aligner
+	url = https://github.com/opencb/hpg-aligner
+[submodule "ismapper-bin/bwa"]
+	path = ismapper-bin/bwa
+	url = https://github.com/lh3/bwa
+[submodule "ismapper-bin/samtools"]
+	path = ismapper-bin/samtools
+	url = https://github.com/samtools/samtools
