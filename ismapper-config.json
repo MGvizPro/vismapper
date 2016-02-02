@@ -18,14 +18,22 @@
   },
   "uploads": "/path/to/uploads/folder/",
   "run": "/path/to/run/script/folder/",
-  "node": "/complete/path/to/bin/node",
+  "bin":
+  {
+    "node": "/complete/path/to/bin/node",
+    "samtools": "/complete/path/to/bin/samtools",
+    "bwa": "/complete/path/to/bwa",
+    "hpga": "/complete/path/to/hpg-aligner"
+  },
   "aligner":
   {
-    "bwa": { "name": "BWA", "path": "/complete/path/to/bwa" }
+    "bwa": "BWA",
+    "hpga": "HPG Aligner"
   },
   "reference":
   {
-    "hsapiens/grch38": { "name": "Homo Sapiens GRCh38", "path": "/complete/path/to/hsapiens.fa" }
+    "hsapiens/grch38": { "name": "Homo Sapiens GRCh38", "path": "/complete/path/to/grch38/hsapiens.fa" },
+    "hsapiens/grch37": { "name": "Homo Sapiens GRCh37", "path": "/complete/path/to/grch37/hsapiens.fa" }
   },
   "email":
   {
