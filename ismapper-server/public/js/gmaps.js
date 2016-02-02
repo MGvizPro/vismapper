@@ -31,7 +31,7 @@ function getSpecies(callback) {
 
 function run() {
 
-    var species = AVAILABLE_SPECIES.vertebrates[0];
+    var species = AVAILABLE_SPECIES.vertebrates[Params.GMSpecie];
 
     genomeViewer = new GenomeViewer({
         cellBaseHost: CELLBASE_HOST,
@@ -172,7 +172,6 @@ function run() {
 
         renderer: new FeatureRenderer({
             label: function(f){
-              console.log(f.strand);
               var str = (f.strand == 1)? '>' : '<';
               return str + ' ' + f.id;
             },
