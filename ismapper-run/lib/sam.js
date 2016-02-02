@@ -6,6 +6,7 @@ var readline = require('readline');
 //Import libs
 var samParse = require('./sam-parse.js');
 var samInsert = require('./sam-insert.js');
+var samConvert = require('./sam-convert.js');
 
 //Function for read a SAM file
 function Sam(id, file, quality, callback)
@@ -53,8 +54,16 @@ function Sam(id, file, quality, callback)
 	//End file -> do the callback
   rl.on('close', function(){
 
-		//Insert into the database and do the callback
-		samInsert(id, data, chrs, function(){ callback(counter); });
+		//Insert into the database
+		samInsert(id, data, chrs, function(){
+
+			//Convert sam to bam
+			samConvert(file);
+
+			//Do the callback
+			callback(counter);
+
+		});
 
 	});
 }
