@@ -33,7 +33,7 @@ router.get('/project/:id', Status, function(req, res, next){
 
 		//Save other project info
 		options.projectDays = days;
-		options.projectAligner = ISConfig.aligner[req.result.aligner].name;
+		options.projectAligner = ISConfig.aligner[req.result.aligner];
 		options.projectSpecie = ISConfig.reference[req.result.specie].name;
 		options.projectSpecieID = req.result.specie;
 		options.projectTime = req.result.time/1000;
