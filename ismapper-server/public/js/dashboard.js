@@ -10,6 +10,9 @@ Params.reads = '/ws/reads/' + projectId + '/{region}';
 //Server for specie
 Params.specie = projectSpecieID;
 
+//Server for GM
+Params.GMSpecie = (projectSpecieID === 'hsapiens/grch38')? 1 : 0;
+
 //For find in database related to cancer
 Params.db = {};
 Params.db.genes = {}; //For find genes
