@@ -15,7 +15,7 @@ function Run(folder, aligner, reference)
 	command = command.replace(/{aligner}/, Config[aligner]);
 
 	//Replace the path to the aligner
-	command = command.replace(/{path}/g, ISConfig.aligner[aligner].path);
+	command = command.replace(/{path}/g, ISConfig.bin[aligner]);
 
 	//Replace the reference genome
 	command = command.replace(/{reference}/g, ISConfig.reference[reference].path);
