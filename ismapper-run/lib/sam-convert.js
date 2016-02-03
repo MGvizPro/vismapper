@@ -12,7 +12,16 @@ function SamConvert(file)
 	var bam = file.replace('.sam', '.bam');
 
 	//Create the command
-	var command = ISConfig.bin.samtools + ' view -b -o ' + bam + ' ' + file;
+	var command = Config.samtools;
+
+	//Replace the samtools bin
+	command = command.replace(/{path}/g, ISConfig.bin.samtools);
+
+	//Replace the bam file
+	command = command.replace(/{bam}/g, bam);
+
+	//Replace the sam file
+	command = command.replace(/{sam}/g, file);
 
 	//Show in console
 	console.log('Convert SAM to BAM file');
