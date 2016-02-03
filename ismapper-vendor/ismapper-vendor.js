@@ -5,7 +5,7 @@ var stattic = require('stattic');
 var Config = require('../ismapper-config.json');
 
 //Set the folder with the static files
-stattic.set('static', './public');
+stattic.set('static', './');
 
 //Set the port
 stattic.set('port', Config.vendor.port);
