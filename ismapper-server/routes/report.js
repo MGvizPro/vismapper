@@ -36,14 +36,14 @@ router.get('/report/:project/get', resJson.Set, ReportMake, resJson.Show);
 //Download the report
 router.get('/report/:project/download', Status, ReportMake, ReportDownload);
 
-//Download the sam file
-router.get('/report/:id/sam', Status, function(req, res, next){
+//Download the bam file
+router.get('/report/:id/bam', Status, function(req, res, next){
 
 	//Get the ID
 	var id = req.params.id;
 
 	//Get the file
-	var sam = path.join(ISConfig.uploads, id + '/output.sam');
+	var sam = path.join(ISConfig.uploads, id + '/alignments.bam');
 
 	//Download the file
 	res.download(sam);
