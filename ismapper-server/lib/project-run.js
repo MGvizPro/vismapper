@@ -12,7 +12,7 @@ function ProjectRun(id)
 	var command = Config.command;
 
 	//Replace the node bin location
-	command = command.replace(/{node}/g, ISConfig.node);
+	command = command.replace(/{node}/g, ISConfig.bin.node);
 
 	//Get the script folder
 	var runf = path.join(ISConfig.run.replace('ismapper-run.js', ''), 'ismapper-run.js');
