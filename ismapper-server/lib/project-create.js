@@ -32,6 +32,9 @@ function ProjectCreate(req, res, next)
 	//Get the specie
 	var specie = (typeof req.body.uspecie !== 'undefined' && req.body.uspecie) ? req.body.uspecie : 'hsapiens/grch38';
 
+	//Get the mapp quality
+	var quality = (typeof req.body.uquality !== 'undefined' && req.body.uquality) ? parseInt(req.body.uquality) : 20;
+
 	//Get the new ID
 	var id = getID({ prefix: 'ISM' });
 
@@ -67,7 +70,7 @@ function ProjectCreate(req, res, next)
 		var expire = Days.Expiration(Config.time.expiration);
 
 		//Create the new object for insert
-		var obj = { id: id, email: email, ready: 0, title: title, date: expire, seq_orig: faResult.num, seq_mapp: 0, aligner: aligner, specie: specie, time: 0 };
+		var obj = { id: id, email: email, ready: 0, title: title, date: expire, seq_orig: faResult.num, seq_mapp: 0, aligner: aligner, specie: specie, quality: quality, time: 0 };
 
 		//Create the project on the database
 		db.Do({in: 'project', do: 'insert', values: obj}, function(results){
