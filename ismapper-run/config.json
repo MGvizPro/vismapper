@@ -1,5 +1,4 @@
 {
-	"quality": 20,
 	"base": "{aligner}",
 	"bwa": "{path} mem -t 2 {reference} {input} > {output}alignments.sam",
 	"hpga": "{path} dna -f {input} -i {reference}.hpga -o {output}",
