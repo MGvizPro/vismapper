@@ -9,7 +9,20 @@ var ISConfig = require('../../ismapper-config.json');
 function Run(folder, aligner, reference)
 {
 	//Get the command base
-	var command = Config.base;
+	var command = '{aligner}';
+
+	//Check for use qsub
+	if(ISConfig.qsub.use == true)
+	{
+		//Get the qsub command
+		command = Config.qsub;
+
+		//Replace the queue name
+		command = command.replace(/{queue}/, ISConfig.qsub.queue);
+
+		//Replace the memory
+		command = command.replace(/{memory}/, ISConfig.qsub.memory[aligner]);
+	}
 
 	//Add the aligner path
 	command = command.replace(/{aligner}/, Config[aligner]);
