@@ -24,7 +24,7 @@ function Run(folder, aligner, reference)
 	command = command.replace(/{input}/g, folder + 'input.fastq');
 
 	//Replace the output
-	command = command.replace(/{output}/g, folder + 'output.sam');
+	command = command.replace(/{output}/g, folder);
 
 	//Show the command
 	console.log(command);
