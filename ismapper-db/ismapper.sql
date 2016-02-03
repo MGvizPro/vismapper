@@ -10,6 +10,7 @@ CREATE TABLE project
   seq_mapp bigint(99) NOT NULL,
   aligner varchar(255) NOT NULL,
   specie varchar(255) NOT NULL,
+  quality bigint(10) NOT NULL,
   time bigint(99) NOT NULL,
   ready bigint(1) NOT NULL,
   PRIMARY KEY (id)
