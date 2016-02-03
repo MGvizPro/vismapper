@@ -43,7 +43,7 @@ db.Do({ in: 'project', do: 'select', where: { id: id }}, function(results){
 	console.log('Run ' + results[0].aligner + ' in ' + time + 'ms');
 
 	//Read the sam file
-	Sam(id, folder + 'output.sam', Config.quality, function(num){
+	Sam(id, folder + 'alignments.sam', Config.quality, function(num){
 
 		//Create the update object
 		var upd = { ready: 1, time: time, seq_mapp: num };
