@@ -23,7 +23,8 @@
     "node": "/complete/path/to/bin/node",
     "samtools": "/complete/path/to/bin/samtools",
     "bwa": "/complete/path/to/bwa",
-    "hpga": "/complete/path/to/hpg-aligner"
+    "hpga": "/complete/path/to/hpg-aligner",
+    "qsub": "/complete/path/to/qsub"
   },
   "aligner":
   {
@@ -41,5 +42,11 @@
     "user": "username",
     "pass": "yoursecretpassword",
     "mail": "username@your-email.com"
+  },
+  "qsub":
+  {
+    "use": false,
+    "memory": { "bwa": "16", "hpga": "40" },
+    "queue": "queue_list_name"
   }
 }
