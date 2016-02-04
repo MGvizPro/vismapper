@@ -1,3 +1,7 @@
+//Import dependencies
+var path = require('path');
+var rimraf = require('rimraf');
+
 //Import libs
 var db = require('dosql');
 
@@ -68,12 +72,8 @@ function RemoveProject(n, remove, callback)
 			//project folder
 			var folder = path.join(ISConfig.uploads, remove[n] + '/');
 
-			//Remove files
-			fs.unlinkSync(folder + 'output.sam');
-			fs.unlinkSync(folder + 'input.fastq');
-
-			//Delete the folder
-			fs.rmdirSync(folder);
+			//Remove files from the project folder
+			rimraf.sync(folder);
 
 			//Increment the counter
 			n = n + 1;
