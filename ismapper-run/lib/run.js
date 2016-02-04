@@ -17,6 +17,9 @@ function Run(folder, aligner, reference)
 		//Get the qsub command
 		command = Config.qsub;
 
+		//Replace the qsub path
+		command = command.replace(/{path}/g, ISConfig.bin.qsub);
+
 		//Replace the queue name
 		command = command.replace(/{queue}/, ISConfig.qsub.queue);
 
