@@ -1,0 +1,94 @@
+/* jTables main */
+.jtables { display: block; width: calc(100% - 20px); border-radius: 5px; border: 1px solid #ccdde4; }
+.jtables { overflow: hidden; font-family: 'OpenSans', 'Open Sans'; background-color: #ffffff; }
+.jtables { font-size: 16px; padding-left: 10; padding-right: 10; font-weight: 300; color: #546E7A; }
+
+/* jTables closed */
+.jtables-closed > .jtables-body { display: none; }
+.jtables-closed > .jtables-head { border: 0px; }
+.jtables-closed > .jtables-head > .jtables-arrow { transform: rotate(180deg); }
+
+/* jTables head */
+.jtables-head { display: inline-block; width: calc(100% - 20px); height: 55px; line-height: 55px; }
+.jtables-head { font-weight: bold; border-bottom: 1px solid #ccdde4; background-color: #ffffff; }
+.jtables-head { padding-left: 9px; padding-right: 9px; }
+
+/* jTables title */
+.jtables-title { display: inline-block; height: 55px; line-height: 55px; }
+
+/* jTables Arrow */
+.jtables-arrow { width: 39px; height: 55px; float: right; transition: 0.3s all; }
+.jtables-arrow { background-size: 39px 55px; background-position: center center; }
+.jtables-arrow { background-image: url('../img/arrow.png'); background-repeat: no-repeat; }
+
+/* jTables body */
+.jtables-body { display: block; }
+
+/* jTables table */
+.jtables-table { display: table; width: calc(100% - 0px); border-width: 0px; border-collapse: collapse; }
+.jtables-table { margin-left: 0px; margin-right: 0px; }
+
+/* jTables Table cols */
+.jtables-table tr td { border-bottom: 1px solid #ccdde4; padding-top: 10px; padding-bottom: 10px; }
+.jtables-table tr td { padding-left: 10px; color: #455A64; font-weight: 300; }
+
+/* jTables Table head */
+.jtables-table thead { font-weight: bold; border-bottom: 2px solid #ccdde4; color: #546E7A; }
+.jtables-table thead td { font-weight: bold; padding-left: 20px; }
+
+/* jTables Table hover */
+.jtables-table  tr:hover > td { background-color: #eaf0f2; cursor: pointer; }
+.jtables-table  thead tr:hover > td { background-color: #ffffff; cursor: auto; }
+
+/* jTables Table striped */
+.jtables-table  tr:nth-child(even) { background-color: #FAFAFA; }
+
+/* jTables Sort icon */
+.jtables-sort { background-repeat: no-repeat; background-position: center left; }
+.jtables-sort { background-image: url('../img/default.svg'); background-size: 15px 30px; }
+
+/* jTables sort asc */
+.jtables-sort-asc { background-image: url('../img/asc.svg'); }
+
+/* jTables sort des */
+.jtables-sort-des { background-image: url('../img/des.svg'); }
+
+/* jTables no data div */
+.jtables-nodata { display: block; width: calc(100% - 20px); height: 40px; line-height: 40px; }
+.jtables-nodata { background-color: #eaf0f2; padding-left: 10px; padding-right: 10px; }
+
+/* jTables foot */
+.jtables-foot { display: block; font-size: 14px; }
+
+/* jTables foot button */
+.jTables-foot-btn { display: inline-block; text-align: center; line-height: 20px; }
+.jTables-foot-btn { border-radius: 5px; text-decoration: none; font-size: 14px; }
+.jTables-foot-btn { font-weight: normal; font-family: OpenSans; }
+.jTables-foot-btn { padding-left: 15px; padding-right: 15px; padding-top: 4px; padding-bottom: 4px; }
+.jTables-foot-btn { margin-left: 5px; margin-right: 5px; margin-top: 10px; margin-bottom: 10px; }
+.jTables-foot-btn { border: 1px solid #09a0f6; color: #09a0f6; background-color: transparent; }
+.jTables-foot-btn { transition: background-color 0.3s, color 0.3s; }
+.jTables-foot-btn:hover { color: #ffffff; background-color: #09a0f6; cursor: hand; }
+
+/* jTables foot text */
+.jtables-foot-text { display: inline-block; line-height: 20px; font-weight: 300; }
+.jtables-foot-text { padding-left: 10px; padding-right: 10px; padding-top: 4px; padding-bottom: 4px; }
+.jtables-foot-text { margin-top: 10px; margin-bottom: 10px; }
+
+/* jTables foot text pages */
+.jtables-foot-text-page { width: 110px; text-align: center; }
+
+/* jTables foot text total */
+.jtables-foot-text-total { float: right; }
+
+/* jTables foot rows select */
+.jtables-foot-rows-select { display: inline-block; font-size: 14px; height: 30px; }
+.jtables-foot-rows-select { padding-left: 15px; padding-right: 15px; padding-top: 4px; padding-bottom: 4px; }
+.jtables-foot-rows-select { -webkit-appearance: menulist-button; -webkit-rtl-ordering: logical; }
+.jtables-foot-rows-select { background-color: #ffffff; border: 1px solid #ccdde4; color: #546E7A; }
+.jtables-foot-rows-select { outline: 0px; transition: all 0.3s; margin-top: 10px; margin-bottom: 10px; }
+.jtables-foot-rows-select:focus { border: 1px solid #09a0f6; }
+
+/* jTables foot rows text */
+.jtables-foot-rows-text { display: inline-block; line-height: 20px; font-weight: 300; }
+.jtables-foot-rows-text { margin-left: 20px; margin-right: 5px; padding-top: 4px; padding-bottom: 4px; }

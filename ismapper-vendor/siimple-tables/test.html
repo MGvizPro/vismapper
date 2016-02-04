@@ -1,0 +1,71 @@
+<html>
+<head>
+
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="css/font.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- Javascript dependencies -->
+  <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="vendor/objectsort/objectsort.js"></script>
+
+  <!-- Javascript libs -->
+  <script type="text/javascript" src="src/jtables.js"></script>
+  <script type="text/javascript" src="src/build.js"></script>
+  <script type="text/javascript" src="src/callback.js"></script>
+  <script type="text/javascript" src="src/click.js"></script>
+  <script type="text/javascript" src="src/configure.js"></script>
+  <script type="text/javascript" src="src/foot.js"></script>
+  <script type="text/javascript" src="src/pages.js"></script>
+  <script type="text/javascript" src="src/sort.js"></script>
+
+  <!-- JavaScript test code -->
+  <script type="text/javascript">
+
+    //Test content
+    var test = [];
+    test.push({"id":1, "symbol":"AML", "name":"acute myeloid leukaemia"});
+    test.push({"id":2, "symbol":"CML", "name":"chronic myeloid leukaemia"})
+    test.push({"id":3, "symbol":"ALL", "name":"acute lymphocytic leukaemia"});
+    test.push({"id":4, "symbol":"T-ALL", "name":"T-cell acute lymphoblastic leukaemia"});
+    test.push({"id":5, "symbol":"AEL", "name":"acute eosinophilic leukaemia"});
+    test.push({"id":6, "symbol":"DIPG", "name":"diffuse intrinsic pontine glioma"});
+    test.push({"id":7, "symbol":"AL", "name":"acute leukaemia"});
+
+    //Initialize the element
+    var t = null;
+
+    //When document is ready
+    $(document).ready(function(){
+
+      //Initialize the table
+      t = new jTables('table_div');
+
+      //Set the title
+      t.Title('This is just a test');
+
+      //Add the content
+      t.Content(test);
+
+      //Add the columns
+      t.AddColumn({"key":"id", "label":"Number"});
+      t.AddColumn({"key":"symbol", "label":"Symbol"});
+      t.AddColumn({"key":"name", "label":"Name"});
+
+      //Callbak
+      t.Callback(function(row, col){ alert('Callback for ' + col + '=' + row[col]); });
+
+      //Create the table
+      t.Create();
+
+    });
+  </script>
+
+</head>
+<body style="margin: 20px; padding: 0px; background-color: #eaf0f2;">
+
+  <!-- Content div -->
+  <div id="table_div"></div>
+
+</body>
+</html>
