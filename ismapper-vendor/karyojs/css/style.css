@@ -1,0 +1,168 @@
+/* Karyo hand */
+.karyo-hand { cursor: hand; }
+
+/* Karyo resize cursor */
+.karyo-resize { cursor: e-resize; }
+
+/* Karyo move cursor */
+.karyo-move { cursor: move; }
+
+/* karyo loading */
+.karyo-loading { display: block; }
+
+/* karyo loading screen */
+.karyo-loading-screen { display: block; position: relative; transition: all 0.5s; z-index: 99999; }
+.karyo-loading-screen { top: 0px; background-color: rgba(255, 255, 255, 0.9); }
+
+/* karyo loading anim */
+.karyo-anim, .karyo-anim:before, .karyo-anim:after { border-radius: 100px; width: 10px; height: 10px; }
+.karyo-anim, .karyo-anim:before, .karyo-anim:after { animation: load 1.2s infinite ease-in-out; }
+.karyo-anim, .karyo-anim:before, .karyo-anim:after { animation-fill-mode: both; }
+
+.karyo-anim:before { left: -15px; animation-delay: -0.4s; }
+.karyo-anim:after { left: 15px; }
+.karyo-anim:before, .karyo-anim:after { content: ''; position: absolute; top: 0; }
+
+.karyo-anim { margin-left: auto; position: relative; transform: translateZ(0); animation-delay: -0.2s; }
+.karyo-anim { margin-right: auto; margin-top: 0px; text-indent: -9999em; font-size: 10px; }
+
+/* Load animation */
+@keyframes load { 0%, 80%, 100% { background-color: #ed321f; } }
+@keyframes load { 40% { background-color: #ed321f; } }
+
+
+/* Karyo parent */
+.karyo-parent { display: block; border-radius: 5px; border: 1px solid #ccdde4; overflow: hidden; }
+.karyo-parent { font-family: OpenSans; background-color: #ffffff; }
+
+/* Karyo navbar */
+.karyo-navbar { display: table; background-color: #e3eaf3; color: #ffffff; height: 50px; }
+.karyo-navbar { line-height: 50px; z-index: 999; border-bottom: 1px solid #ccdde4; }
+
+/* Karyo navbar button */
+.karyo-navbar-btn { display: inline-block; height: 30px; background-repeat: no-repeat; width: 30px; }
+.karyo-navbar-btn { background-position: center center; background-size: 30px 30px; opacity: 0.5; }
+.karyo-navbar-btn { border-radius: 5px; margin-top: 10px; margin-left: 5px; margin-right: 5px; }
+.karyo-navbar-btn { border: 0px solid #e6eff4; }
+.karyo-navbar-btn:hover { cursor: hand; opacity: 1.0; background-color: #ffffff; }
+
+/* Karyo navbar button home */
+.karyo-navbar-btn-home { background-image: url('../img/home.svg'); }
+
+/* Karyo navbar button search */
+.karyo-navbar-btn-search { background-image: url('../img/search.svg'); }
+
+/* Karyo navbar button table */
+.karyo-navbar-btn-table { background-image: url('../img/table.svg'); }
+
+/* Karyo navbar button help */
+.karyo-navbar-btn-help { background-image: url('../img/help.svg'); float: right; }
+
+/* Karyo navbar input */
+.karyo-navbar-input { display: inline-block; height: 30px; width: 200px; background-color: #ffffff; }
+.karyo-navbar-input { color: #6f7887; border: 1px solid #ccdde4; border-radius: 5px; vertical-align: top; }
+.karyo-navbar-input { margin-top: 10px; margin-left: 1px; margin-right: 1px; font-family: OpenSans; }
+.karyo-navbar-input { line-height: 28px; padding-left: 5px; padding-right: 5px; font-size: 14px; }
+.karyo-navbar-input { outline: 0px; text-align: center; opacity: 0.8; }
+
+/* Karyo input hover */
+.karyo-navbar-input:hover { opacity: 1.0; }
+
+/* Karyo table */
+.karyo-table { background-color: #ffffff; color: #546E7A; font-size: 14px; font-weight: 300; }
+
+/* Karyo table display */
+.karyo-table-display { height: 200px; }
+
+/* Karyo table empty */
+.karyo-table-empty { height: 50px; text-align: center; line-height: 50px; background-color: #e3eaf3; }
+.karyo-table-empty { font-weight: bold; font-size: 13px; }
+
+/* Karyo table head */
+.karyo-table-head { border-bottom: 0px solid #ccdde4; padding-right: 20px !important; font-weight: bold; }
+.karyo-table-head { width: calc(100% - 30px) !important; height: 40px !important; font-size: 13px; }
+.karyo-table-head { line-height: 40px !important; background-color: #e3eaf3 !important; }
+
+/* Karyo table content */
+.karyo-table-content { display: block; height: 160px; width: 100%; }
+.karyo-table-content { overflow-y: auto; overflow-x: hidden; }
+
+/* Karyo table row */
+.karyo-table-row { display: block; width: calc(100% - 20px); height: 35px; line-height: 35px; }
+.karyo-table-row { padding-left: 10px; padding-right: 10px; background-color: #f2f6fa; }
+.karyo-table-row:nth-child(even) { background-color: #e8edf4; }
+
+/* Karyo table row over */
+.karyo-table-row-over { cursor: hand; }
+.karyo-table-row-over:hover { background-color: #d6e0ed; } 
+
+/* Karyo table col */
+.karyo-table-col { display: inline-block; float: left; }
+
+/* Karyo table col open */
+.karyo-table-open { display: block; float: right; margin-right: 10px; width: 80px; height: 20px; color: #ffffff; }
+.karyo-table-open { margin-top: 7px; line-height: 18px !important; text-align: center; font-size: 12px; }
+.karyo-table-open { border-radius: 5px; background-color: #b8c6d6; transition: all 0.3s; }
+.karyo-table-row-over:hover .karyo-table-open { background-color: #ed321f; }
+
+/* Karyo footer */
+.karyo-foot { display: block; background-color: #e3eaf3; color: #546E7A; font-size: 14px; }
+.karyo-foot { font-weight: normal; border-top: 1px solid #ccdde4; }
+
+/* Karyo foot position */
+.karyo-foot-pos { display: inline-block; height: 30px; line-height: 26px; color: #546E7A; }
+
+/* Karyo foot specie */
+.karyo-foot-specie { display: inline-block; height: 30px; padding-right: 10px; line-height: 26px; }
+.karyo-foot-specie { color: #546E7A; }
+
+/* Karyo foot logo */
+.karyo-foot-logo { display: inline-block; height: 30px; line-height: 30px; float: right; font-weight: bold; }
+.karyo-foot-logo { text-decoration: none; color: #ed321f; line-height: 26px; opacity: 0.6; }
+.karyo-foot-logo:hover { opacity: 1.0; }
+
+/* Karyo Powered by */
+.karyo-foot-powered { display: inline-block; height: 30px; line-height: 26px; float: right; }
+.karyo-foot-powered { padding-right: 5px; color: #546E7A; }
+
+/* Karyo chromosome */
+.karyo-chr { stroke: #588bfe; fill: #f1f5ff; stroke-width: 1.5px; }
+
+/* Karyo hover box */
+.karyo-hover { fill: #588bfe; }
+
+/* Karyo label box */
+.karyo-label { fill: #ed321f; }
+
+/* Karyo centromere */
+.karyo-centromere { fill: #588bfe; }
+.karyo-centromere-bg { fill: #ffffff; }
+
+/* Karyo region */
+.karyo-region { stroke: #ed321f; stroke-width: 1; }
+.karyo-region-bg { fill: #ed321f; }
+
+/* Karyo selected region */
+.karyo-select { stroke: #67ba2f; stroke-width: 3; }
+.karyo-select-bg { fill: #67ba2f; }
+
+/* Karyo select label */
+.karyo-selectlabel { fill: #67ba2f; }
+
+/* Karyo title */
+.karyo-title { fill: #ffffff; }
+
+/* Karyo alert */
+.karyo-alert { display: block; width: 100%; height: 0px; }
+
+/* Karyo alerts */
+.karyo-alert-cont { display: block; position: relative; border-radius: 5px; font-family: OpenSans; }
+.karyo-alert-cont { color: #546E7A; font-weight: normal; z-index: 99; transition: all 0.3s; }
+.karyo-alert-cont { background-repeat: no-repeat; background-color: #f2f6fa; line-height: 30px; }
+.karyo-alert-cont { font-size: 14px; background-size: 18px 18px; background-position: 10px 6px; }
+
+/* Karyo alert error */
+.karyo-alert-error { background-image: url('../img/error.svg'); }
+
+/* Karyo alert tip */
+.karyo-alert-tip { background-image: url('../img/tip.svg'); }
