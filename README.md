@@ -23,5 +23,7 @@ The main developers of **ISMapper** are:
 
 - Joaquín Dopazo &lt;jdopazo@cipf.es&gt;
 - Joaquín Tárraga &lt;jtarraga@cipf.es&gt;
+- Susi Gallego &lt;agallego@cipf.es&gt;
+- Ignacio Medina &lt;im411@cam.ac.uk&gt;
 - Vicente Arnau &lt;Vicente.Arnau@uv.es&gt;
 - Jose M. Juanes &lt;J.Miguel.Juanes@uv.es&gt;
