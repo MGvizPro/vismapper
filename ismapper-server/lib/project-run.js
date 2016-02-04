@@ -9,6 +9,10 @@ var ISConfig = require('../../ismapper-config.json');
 //Function for run the command
 function ProjectRun(id)
 {
+	//Get the log file
+	var log = ISConfig.uploads + id + '/run.log';
+
+	//Get the command
 	var command = Config.command;
 
 	//Replace the node bin location
@@ -22,6 +26,9 @@ function ProjectRun(id)
 
 	//Replace the project ID
 	command = command.replace(/{project}/g, id);
+
+	//Replace the logs
+	command = command.replace(/{log}/g, log);
 
 	//Show in console the command
 	console.log(command);
