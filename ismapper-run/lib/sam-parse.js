@@ -35,8 +35,14 @@ function SamParse(line, quality)
 	//Split the line by tab
 	line = line.split('\t');
 
-	//Check for the quality
+	//Check the quality
 	if(parseInt(line[4]) < quality){ return null; }
+
+	//Get the cigar
+	var cigar = line[5].toLowerCase();
+
+	//Check the CIGAR
+	if(cigar.indexOf('s') < 0 && cigar.indexOf('h') < 0){ return null; }
 
 	//Generate the new object
 	var obj = {};
