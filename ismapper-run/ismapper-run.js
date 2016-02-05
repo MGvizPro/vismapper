@@ -51,6 +51,16 @@ db.Do({ in: 'project', do: 'select', where: { id: id }}, function(results){
 		//Update the project
 		db.Do({ in: 'project', do: 'update', where: { id: id }, set: upd }, function(res){
 
+			//Check for clean the project folder
+			if(Config.clean === true)
+			{
+				//Remove the fastq file
+				fs.unlinkSync(folder + 'input.fastq');
+
+				//Remove the sam file
+				fs.unlinkSync(folder + 'alignments.sam');
+			}
+
 			//Send the mail and exit
 			Mail(id, results[0], function(){ process.exit(0); });
 

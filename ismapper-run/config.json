@@ -2,5 +2,6 @@
 	"qsub": "{path} -N ismapper -q {queue} -l clinicq=true -sync y -l h_vmem={memory}G -pe smp 1 -o {output} -j y -b y '{aligner}'",
 	"bwa": "{path} mem -t 1 {reference} {input} > {output}alignments.sam",
 	"hpga": "{path} dna -f {input} -i {reference}.hpga -o {output}",
-	"samtools": "{path} view -b -o {bam} {sam}"
+	"samtools": "{path} view -b -o {bam} {sam}",
+	"clean": true
 }
