@@ -39,6 +39,7 @@
   "email":
   {
     "host": "smtp.your-email.com",
+    "port": 25,
     "user": "username",
     "pass": "yoursecretpassword",
     "mail": "username@your-email.com"
