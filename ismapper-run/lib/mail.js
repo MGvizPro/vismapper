@@ -27,6 +27,7 @@ function Mail(id, results, callback)
 	serverSet.user = ISConfig.email.user; //Email username
 	serverSet.password = ISConfig.email.pass; //Email password
 	serverSet.host = ISConfig.email.host; //Email host
+	serverSet.port = ISConfig.email.port; //Email port
 
 	//Connect to server
 	var server = emailjs.server.connect(serverSet);
@@ -43,7 +44,7 @@ function Mail(id, results, callback)
 	server.send(email, function(err, message){
 
 		//Show confirmation
-		//console.log(err || message);
+		console.log(err || message);
 
 		//Do the callback
 		callback();
