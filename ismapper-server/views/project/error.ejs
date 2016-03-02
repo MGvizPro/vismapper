@@ -1,0 +1,24 @@
+<% include ../layouts/head %>
+
+<!-- Main div -->
+<div class="grid main">
+
+	<!-- Title -->
+	<h1>Project status</h1>
+
+	<!-- Show the error -->
+	<div class="alert alert-red alert-error">Error running your data</div>
+
+	<!-- Show -->
+	<p>There was an error running the data for the project <b><%= projectId %></b>.
+	The aligner returned 0 mapped reads.</p>
+
+	<p>Please, check your data and run it again.</p>
+
+	<!-- Spaces -->
+	<br><br>
+
+</div>
+
+
+<% include ../layouts/foot %>
