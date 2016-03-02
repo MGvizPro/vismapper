@@ -22,8 +22,14 @@ router.get('/project/:id', Status, function(req, res, next){
 	//Get the project ID
 	var id = req.params.id;
 
+	//Check for error in the project
+	if(req.result.ready == 2)
+	{
+		res.render('project/error', {title: 'Error on project', projectId: req.result.id });
+	}
+
 	//Check if project is successful created
-	if(req.result.ready > 0)
+	else if(req.result.ready == 1)
 	{
 		//Get the remaining days
 		var days = Days.Remaining(req.result.date, Config.time.extend);
@@ -43,6 +49,8 @@ router.get('/project/:id', Status, function(req, res, next){
 		//Show project dashboard
 		res.render('project/dashboard', options);
 	}
+
+	//Else, project is not ready
 	else
 	{
 		//Wait
