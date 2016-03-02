@@ -54,6 +54,13 @@ function Sam(id, file, quality, callback)
 	//End file -> do the callback
   rl.on('close', function(){
 
+		//Check the data length
+		if(data === {} || Object.keys(data).length == 0)
+		{
+			//do the callback
+			return callback(0);
+		}
+
 		//Insert into the database
 		samInsert(id, data, chrs, function(){
 
