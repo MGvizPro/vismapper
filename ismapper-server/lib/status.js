@@ -8,7 +8,7 @@ function CheckProject(req, res, next)
 	var id = req.params.id;
 
 	//Get the info from the database
-	db.Do({in: 'project', do: 'select', where: {'id': id}}, function(results){
+	db.Do({in: 'project', do: 'select', where: { 'id': id }}, function(results){
 
 		//Check for results
 		if(results.length > 0)
