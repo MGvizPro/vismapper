@@ -48,6 +48,13 @@ db.Do({ in: 'project', do: 'select', where: { id: id }}, function(results){
 		//Create the update object
 		var upd = { ready: 1, time: time, seq_mapp: num };
 
+		//Check the number for error
+		if(num == 0)
+		{
+			//Change to 2
+			upd.ready = 2;
+		}
+
 		//Update the project
 		db.Do({ in: 'project', do: 'update', where: { id: id }, set: upd }, function(res){
 
@@ -62,7 +69,7 @@ db.Do({ in: 'project', do: 'select', where: { id: id }}, function(results){
 			}
 
 			//Send the mail and exit
-			Mail(id, results[0], function(){ process.exit(0); });
+			Mail(id, results[0], num, function(){ process.exit(0); });
 
 		});
 
