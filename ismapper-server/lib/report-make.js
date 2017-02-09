@@ -15,7 +15,7 @@ function MakeReport(req, res, next)
   req.output = { "json": null };
 
   //Get the project
-  var project = req.params.project;
+  var project = req.params.id;
 
   //Get the regions
   Regions(project, 0, function(regions){
