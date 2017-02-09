@@ -2,12 +2,12 @@
   "server":
   {
     "port": 3000,
-    "host": "http://ismapper.babelomics.org/"
+    "host": "http://vismapper.babelomics.org/"
   },
   "vendor":
   {
     "port": 3001,
-    "host": "http://ismapper.babelomics.org:3001/"
+    "host": "http://vismapper.babelomics.org:3001/"
   },
   "db":
   {
