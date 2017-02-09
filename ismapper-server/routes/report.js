@@ -31,10 +31,10 @@ router.get('/report/:id', Status, function(req, res, next){
 });
 
 //Generate the report
-router.get('/report/:project/get', resJson.Set, ReportMake, resJson.Show);
+router.get('/report/:id/get', resJson.Set, ReportMake, resJson.Show);
 
 //Download the report
-router.get('/report/:project/download', Status, ReportMake, ReportDownload);
+router.get('/report/:id/download', Status, ReportMake, ReportDownload);
 
 //Download the bam file
 router.get('/report/:id/bam', Status, function(req, res, next){
