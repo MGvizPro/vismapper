@@ -50,7 +50,7 @@ db.Connect(ISConfig.db);
 
 //Local vars
 app.locals.site = {};
-app.locals.site.title = ' · ISMapper'; //Site title
+app.locals.site.title = ' · VISMapper'; //Site title
 app.locals.site.url = ISConfig.server.host; //Site url
 app.locals.site.vendor = ISConfig.vendor.host; //Vendor files url
 app.locals.site.aligner = ISConfig.aligner; //Available aligners
