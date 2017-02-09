@@ -38,7 +38,7 @@ function Mail(id, results, num, callback)
 		msg = msg + 'Regards.<br><br>';
 
 		//Set the title
-		title = 'ISMapper - Your project ' + results.title + ' is ready.';
+		title = 'VISMapper - Your project ' + results.title + ' is ready.';
 	}
 	else
 	{
@@ -49,7 +49,7 @@ function Mail(id, results, num, callback)
 		msg = msg + 'Regards.<br><br>';
 
 		//Set the title
-		title = 'ISMapper - Error running ' + results.title + '';
+		title = 'VISMapper - Error running ' + results.title + '';
 	}
 
 	//Server connect
