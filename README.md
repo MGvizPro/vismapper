@@ -26,4 +26,6 @@ The main developers of **VISMapper** are:
 - Asunci&oacute;n Gallego &lt;agallego@cipf.es&gt;
 - Ignacio Medina &lt;im411@cam.ac.uk&gt;
 - Vicente Arnau &lt;Vicente.Arnau@uv.es&gt;
+- Felipe J. Chaves &lt;felipe.chaves@uv.es&gt;
+- Pablo Marín Garcia &lt;pablo.marin@uv.es&gt;
 - Jose M. Juanes &lt;J.Miguel.Juanes@uv.es&gt;
