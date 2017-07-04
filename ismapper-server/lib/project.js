@@ -32,20 +32,29 @@ project.create = function(file, opt, cb)
   //Generate the new project id
   var id = get_id({ prefix: 'ISM' });
 
+  //Display in console
+  console.log('Creating project ' + id);
+
   //Extract the zip file
   return zip.extract(file, function(error, extracted_path)
   {
     //Check the error
     if(error){ return cb(error, null); }
 
+    //Display in console
+    console.log('Extracted FASTA/FASTQ file at ' + extracted_path);
+
     //Project path
     var project_path = project.folder(id);
 
     //Create the new project folder
-    return mkdirp.sync(project_path, '0777', function(error)
+    return mkdirp(project_path, '0777', function(error)
     {
       //check the error
       if(error){ return cb(error, null); }
+
+      //Display in console
+      console.log('Created project folder: ' + project_path);
 
       //Fastq file path
       var project_fastq = path.join(project_path, 'input.fastq');
@@ -56,6 +65,9 @@ project.create = function(file, opt, cb)
         //Check the error
         if(error)
         {
+          //Display in console
+          console.log('Error parsing fasta file, remove project project...');
+
           //Delete the project
           return project.remove(id, function()
           {
@@ -63,6 +75,9 @@ project.create = function(file, opt, cb)
             return cb(error, null);
           });
         }
+
+        //Display in console
+        console.log('FASTQ file saved as ' + project_fastq);
 
         //Get the expiration time
         var project_expire = days.Expiration(Config.time.expiration);
