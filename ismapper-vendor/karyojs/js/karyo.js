@@ -67,7 +67,7 @@ function Karyo(parent_id)
   this.navbar.btnHelpShow = true; //Help button show
   this.navbar.input = this.navbar.id + '_input'; //Input ID
   this.navbar.inputClass = 'karyo-navbar-input'; //Input css class
-  this.navbar.inputPlaceholder = 'Find region'; //Input placeholder
+  this.navbar.inputPlaceholder = '13:32889557-32889665'; //Input placeholder
   this.navbar.btnLogo = 'karyo-navbar-logo'; //Logo button css
   this.navbar.callbackBackBtn = null; //Go back callback
   this.navbar.callbackSearchBtn = null; //Search btn callback
