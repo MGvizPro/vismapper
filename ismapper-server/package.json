@@ -21,7 +21,8 @@
     "fasta-tools": "0.2.0",
     "gen-coord": "1.0.0",
     "getid": "0.1.0",
-    "rimraf": "2.5.1"
+    "rimraf": "2.5.1",
+    "rmr": "0.0.4"
   },
   "devDependencies": {
     "should": "~7.1.0",
