@@ -5,6 +5,7 @@ var mkdirp = require('mkdirp');
 var exec = require('child_process').exec;
 var get_id = require('getid');
 var rmr = require('rmr');
+var path = require('path');
 
 //Import configs
 var Config = require('../config.json');
