@@ -3,6 +3,7 @@ var fs = require('fs');
 var db = require('dosql');
 var mkdirp = require('mkdirp');
 var exec = require('child_process').exec;
+var exec_sync = require('child_process').execSync;
 var get_id = require('getid');
 var rmr = require('rmr');
 var path = require('path');
@@ -48,13 +49,16 @@ project.create = function(file, opt, cb)
     var project_path = project.folder(id);
 
     //Create the new project folder
-    return mkdirp(project_path, '0777', function(error)
+    return mkdirp(project_path, function(error)
     {
       //check the error
       if(error){ return cb(error, null); }
 
       //Display in console
       console.log('Created project folder: ' + project_path);
+
+      //Change the directory permissions
+      exec_sync('chmod a+w ' + project_path);
 
       //Fastq file path
       var project_fastq = path.join(project_path, 'input.fastq');
