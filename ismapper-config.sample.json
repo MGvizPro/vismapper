@@ -1,53 +1,48 @@
 {
-  "server":
-  {
-    "port": 3000,
-    "host": "http://vismapper.babelomics.org/"
-  },
-  "vendor":
-  {
-    "port": 3001,
-    "host": "http://vismapper.babelomics.org:3001/"
-  },
-  "db":
-  {
-    "host": "ismapper-db-host",
-    "user": "ismapper-db-user",
-    "pass": "ismapper-db-pass",
-    "db": "ismapper"
-  },
-  "uploads": "/path/to/uploads/folder/",
-  "run": "/path/to/run/script/folder/",
-  "bin":
-  {
-    "node": "/complete/path/to/bin/node",
-    "samtools": "/complete/path/to/bin/samtools",
-    "bwa": "/complete/path/to/bwa",
-    "hpga": "/complete/path/to/hpg-aligner",
-    "qsub": "/complete/path/to/qsub"
-  },
-  "aligner":
-  {
-    "bwa": "BWA",
-    "hpga": "HPG Aligner"
-  },
-  "reference":
-  {
-    "hsapiens/grch38": { "name": "Homo Sapiens GRCh38", "path": "/complete/path/to/grch38/hsapiens.fa" },
-    "hsapiens/grch37": { "name": "Homo Sapiens GRCh37", "path": "/complete/path/to/grch37/hsapiens.fa" }
-  },
-  "email":
-  {
-    "host": "smtp.your-email.com",
-    "port": 25,
-    "user": "username",
-    "pass": "yoursecretpassword",
-    "mail": "username@your-email.com"
-  },
-  "qsub":
-  {
-    "use": false,
-    "memory": { "bwa": "16", "hpga": "40" },
-    "queue": "queue_list_name"
-  }
+    "server": {
+        "port": 3000,
+        "host": "http://vismapper.babelomics.org/"
+    },
+    "db": {
+        "host": "ismapper",
+        "user": "ismapper",
+        "pass": "ismapper",
+        "db": "ismapper"
+    },
+    "uploads": "/path/to/uploads/folder/",
+    "run": "/path/to/run/script/folder/",
+    "bin": {
+        "node": "/complete/path/to/bin/node",
+        "samtools": "/complete/path/to/bin/samtools",
+        "bwa": "/complete/path/to/bwa",
+        "hpga": "/complete/path/to/hpg-aligner",
+        "qsub": "/complete/path/to/qsub",
+        "tsp": "/usr/bin/tsp"
+    },
+    "aligner": {
+        "bwa": "BWA",
+        "hpga": "HPG Aligner"
+    },
+    "reference": {
+        "hsapiens/grch38": { 
+            "name": "Homo Sapiens GRCh38", 
+            "path": "/complete/path/to/grch38/hsapiens.fa"
+        },
+        "hsapiens/grch37": {
+            "name": "Homo Sapiens GRCh37",
+            "path": "/complete/path/to/grch37/hsapiens.fa"
+        }
+    },
+    "email": {
+        "host": "smtp.your-email.com",
+        "port": 25,
+        "user": "username",
+        "pass": "yoursecretpassword",
+        "mail": "username@your-email.com"
+    },
+    "qsub": {
+        "use": false,
+        "memory": { "bwa": "16", "hpga": "40" },
+        "queue": "queue_list_name"
+    }
 }
