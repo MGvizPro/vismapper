@@ -4,6 +4,7 @@ var db = require('dosql');
 var mkdirp = require('mkdirp');
 var exec = require('child_process').exec;
 var exec_sync = require('child_process').execSync;
+var execFile = require("child_process").execFileSync;
 var get_id = require('getid');
 var rmr = require('rmr');
 var path = require('path');
@@ -21,10 +22,8 @@ var days = require('./utils/days.js');
 var project = {};
 
 //Generate the project folder
-project.folder = function(id)
-{
-  //Return the project folder
-  return path.join(ISConfig.uploads, id + '/');
+project.folder = function(id) {
+    return path.join(ISConfig.uploads, id + '/');
 };
 
 //Create a new project
@@ -104,48 +103,36 @@ project.create = function(file, opt, cb)
 };
 
 //Delete a project
-project.remove = function(id, cb)
-{
-  //Project path
-  var project_path = project.folder(id);
-
-  //Remove the project folder
-  return rmr(project_path, { parent: true }, function(error)
-  {
-    //do the callback
-    return cb(error);
-  });
+project.remove = function(id, cb) {
+    var projectPath = project.folder(id); //Project path
+    return rmr(projectPath, {"parent": true}, function(error) {
+        return cb(error);
+    });
 };
 
 //Run the project
-project.run = function(id)
-{
-  //Get the log file
-  var log = path.join(project.folder(id), 'run.log');
-
-  //Get the command
-  var command = Config.command;
-
-  //Replace the node bin location
-  command = command.replace(/{node}/g, ISConfig.bin.node);
-
-  //Get the script folder
-  var runf = path.join(ISConfig.run.replace('ismapper-run.js', ''), 'ismapper-run.js');
-
-  //Replace the run script location
-  command = command.replace(/{run}/g, runf);
-
-  //Replace the project ID
-  command = command.replace(/{project}/g, id);
-
-  //Replace the logs
-  command = command.replace(/{log}/g, log);
-
-  //Show in console the command
-  console.log(command);
-
-  //Execute the command
-  exec(command);
+project.run = function(id) {
+    //var log = path.join(project.folder(id), 'run.log');
+    //var command = Config.command;
+    //command = command.replace(/{node}/g, ISConfig.bin.node);
+    //var runf = path.join(ISConfig.run.replace('ismapper-run.js', ''), 'ismapper-run.js');
+    //command = command.replace(/{run}/g, runf);
+    //command = command.replace(/{project}/g, id);
+    //command = command.replace(/{log}/g, log);
+    //console.log(command);
+    //exec(command);
+    let runFolder = ISConfig.run.replace("ismapper-run.js", "");
+    let args = [
+        ISConfig.bin.node,
+        path.join(runFolder, "ismapper-run.js"),
+        id
+    ];
+    let options = {
+        "cwd": runFolder
+    };
+    console.log(`[DEBUG] Running command '${ISConfig.bin.tsp} ${args.join(" ")}'`);
+    let output = execFile(ISConfig.bin.tsp, args, options);
+    console.log(output);
 };
 
 //Exports to node
