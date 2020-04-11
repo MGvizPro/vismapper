@@ -52,9 +52,8 @@ db.Connect(ISConfig.db);
 //Local vars
 app.locals.site = {};
 app.locals.site.title = ' · VISMapper'; //Site title
-app.locals.site.url = ISConfig.server.host; //Site url
-//app.locals.site.vendor = ISConfig.vendor.host; //Vendor files url
-app.locals.site.vendor = "/vendor/";
+app.locals.site.url = "/"; //ISConfig.server.host; //Site url
+app.locals.site.vendor = "/vendor/"; //ISConfig.vendor.host; //Vendor files url
 app.locals.site.aligner = ISConfig.aligner; //Available aligners
 app.locals.site.specie = ISConfig.reference; //Available species
 app.locals.site.demo = Config.demo; //Demo project
