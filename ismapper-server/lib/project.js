@@ -22,96 +22,71 @@ var days = require('./utils/days.js');
 var project = {};
 
 //Generate the project folder
-project.folder = function(id) {
+project.folder = function (id) {
     return path.join(ISConfig.uploads, id + '/');
 };
 
 //Create a new project
-project.create = function(file, opt, cb)
-{
-  //Generate the new project id
-  var id = get_id({ prefix: 'ISM' });
-
-  //Display in console
-  console.log('Creating project ' + id);
-
-  //Extract the zip file
-  return zip.extract(file, function(error, extracted_path)
-  {
-    //Check the error
-    if(error){ return cb(error, null); }
-
-    //Display in console
-    console.log('Extracted FASTA/FASTQ file at ' + extracted_path);
-
-    //Project path
-    var project_path = project.folder(id);
-
-    //Create the new project folder
-    return mkdirp(project_path, function(error)
-    {
-      //check the error
-      if(error){ return cb(error, null); }
-
-      //Display in console
-      console.log('Created project folder: ' + project_path);
-
-      //Change the directory permissions
-      exec_sync('chmod a+w ' + project_path);
-
-      //Fastq file path
-      var project_fastq = path.join(project_path, 'input.fastq');
-
-      //Parse the fasta file
-      return parse_fasta(extracted_path, project_fastq, function(error, num_reads)
-      {
-        //Check the error
-        if(error)
-        {
-          //Display in console
-          console.log('Error parsing fasta file, remove project project...');
-
-          //Delete the project
-          return project.remove(id, function()
-          {
-            //Do the callback with the original error
+project.create = function (file, opt, cb) {
+    var id = get_id({"prefix": "ISM"});
+    console.log("[DEBUG] Creating project '" + id + "'");
+    //Extract the zip file
+    return zip.extract(file, function (error, extracted_path) {
+        if (error) {
             return cb(error, null);
-          });
         }
-
-        //Display in console
-        console.log('FASTQ file saved as ' + project_fastq);
-
-        //Get the expiration time
-        var project_expire = days.Expiration(Config.time.expiration);
-
-        //Add the new options
-        opt = Object.assign(opt, { id: id, ready: 0, date: project_expire, seq_orig: num_reads, seq_mapp: 0, time: 0 });
-
-        //Create the project on the database
-        return db.Do({in: 'project', do: 'insert', values: opt}, function(results)
-        {
-          //Run the project
-          project.run(id);
-
-          //Do the callback with the project id
-          return cb(null, id);
+        console.log("[DEBUG] Extracted FASTA/FASTQ file at '" + extracted_path + "'");
+        var project_path = project.folder(id);
+        //Create the new project folder
+        return mkdirp(project_path, function (error) {
+            if (error) {
+                return cb(error, null);
+            }
+            console.log("[DEBUG] Created project folder: '" + project_path + "'");
+            //Change the directory permissions
+            exec_sync('chmod a+w ' + project_path);
+            var project_fastq = path.join(project_path, 'input.fastq');
+            //Parse the fasta file
+            return parse_fasta(extracted_path, project_fastq, function (error, num_reads) {
+                if (error) {
+                    console.log('Error parsing fasta file, remove project project...');
+                    return project.remove(id, function () {
+                        return cb(error, null);
+                    });
+                }
+                console.log("[DEBUG] FASTQ file saved as '" + project_fastq + "'");
+                var project_expire = days.Expiration(Config.time.expiration);
+                //Assign project metadata
+                opt = Object.assign(opt, {
+                    "id": id,
+                    "ready": 0,
+                    "date": project_expire,
+                    "seq_orig": num_reads,
+                    "seq_mapp": 0,
+                    "time": 0
+                });
+                console.log("[DEBUG] Creating project with the following options: ");
+                console.log(opt);
+                //Create the project on the database
+                return db.Do({"in": "project", "do": "insert", "values": opt}, function (results) {
+                    project.run(id);
+                    return cb(null, id);
+                });
+            });
         });
-      });
     });
-  });
 };
 
 //Delete a project
-project.remove = function(id, cb) {
+project.remove = function (id, cb) {
     var projectPath = project.folder(id); //Project path
-    return rmr(projectPath, {"parent": true}, function(error) {
+    return rmr(projectPath, {"parent": true}, function (error) {
         return cb(error);
     });
 };
 
 //Run the project
-project.run = function(id) {
+project.run = function (id) {
     //var log = path.join(project.folder(id), 'run.log');
     //var command = Config.command;
     //command = command.replace(/{node}/g, ISConfig.bin.node);
@@ -127,11 +102,11 @@ project.run = function(id) {
         path.join(runFolder, "ismapper-run.js"),
         id
     ];
-    let options = {
-        "cwd": runFolder
-    };
     console.log(`[DEBUG] Running command '${ISConfig.bin.tsp} ${args.join(" ")}'`);
-    let output = execFile(ISConfig.bin.tsp, args, options);
+    let output = execFile(ISConfig.bin.tsp, args, {
+        "cwd": runFolder
+        "encoding": "utf8"
+    });
     console.log(output);
 };
 
