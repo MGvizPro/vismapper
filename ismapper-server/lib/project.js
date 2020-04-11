@@ -104,7 +104,7 @@ project.run = function (id) {
     ];
     console.log(`[DEBUG] Running command '${ISConfig.bin.tsp} ${args.join(" ")}'`);
     let output = execFile(ISConfig.bin.tsp, args, {
-        "cwd": runFolder
+        "cwd": runFolder,
         "encoding": "utf8"
     });
     console.log(output);
