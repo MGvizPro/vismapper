@@ -8,6 +8,7 @@ var ISConfig = require('../../ismapper-config.json');
 //Function for send the email
 function Mail(id, results, num, callback)
 {
+    return callback(); //Email is disabled
 	//Check for send the mail
 	if(results.email === 'null')
 	{
